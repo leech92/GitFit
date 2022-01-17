@@ -70,7 +70,6 @@
 .splash-content-images {
     display: flex;
     justify-content: space-around;
-    /* border: 2px solid blue; */
     width: 99%;
     height: 500px;
 }
@@ -83,7 +82,7 @@
 .splash-message {
     display: flex;
     justify-content: center;
-    /* border: 2px solid blue; */
+    padding-bottom: 10px;
 }
 
 .splash-message-content {
@@ -111,6 +110,7 @@
 .eat-healthy-message-content{
    display: flex;
    justify-content: center;
+   padding-bottom: 10px;
 }
 
 .eat-healthy-message {
