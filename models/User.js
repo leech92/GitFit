@@ -26,18 +26,18 @@ const UserSchema = new Schema({
         type: Number, 
         default: 0
     },
-    following: {
-        user: {
+    following: [
+            {
             type: Schema.ObjectId, 
             ref: 'User'
         },
-    }, 
-    followers: {
-        user: {
+    ], 
+    followers: [
+        {
             type: Schema.ObjectId, 
             ref: 'User'
         }
-    }
+    ]
 });
 
 const User = mongoose.model('users', UserSchema);
