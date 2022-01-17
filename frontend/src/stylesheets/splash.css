@@ -1,0 +1,67 @@
+.splash-container {
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+}
+
+.video-banner {
+    width: 98vw;
+    z-index: -1;
+    /* border: 2px solid green; */
+}
+
+.splash-header-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.header-buttons {
+    width: 20vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-signup {
+    color: white;
+    background-color: #b7e4c7;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.header-logo {
+    padding-left: 5px;
+}
+
+.header-login {
+    color: white;
+    background-color: #ffcb69;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.header-git {
+    color: #b7e4c7;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.header-fit {
+     color: #ffcb69;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.splash-body {
+    
+}
+
+.splash-runner {
+    height: 100px;
+    width: 200px;
+}
