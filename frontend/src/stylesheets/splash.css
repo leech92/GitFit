@@ -1,20 +1,19 @@
 .splash-container {
     display: flex;
     flex-direction: column;
-
-    /* justify-content: center; */
+    align-items: center;
 }
 
 .video-banner {
     width: 98vw;
     z-index: -1;
-    /* border: 2px solid green; */
 }
 
 .splash-header-top {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .header-buttons {
@@ -48,20 +47,115 @@
 .header-git {
     color: #b7e4c7;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
 }
 
 .header-fit {
-     color: #ffcb69;
+    color: #ffcb69;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
 }
 
 .splash-body {
-    
+    padding-top: 10px;
+    width: 100%;
 }
 
-.splash-runner {
-    height: 100px;
-    width: 200px;
+.splash-body-content-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.splash-content-images {
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid blue; */
+    width: 99%;
+    height: 500px;
+}
+
+.splash-athlete {
+    height: 100%;
+    width: 30%;
+}
+
+.splash-message {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid blue; */
+}
+
+.splash-message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.get-fit-title {
+    color: #028476;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 58px;
+    padding-bottom: 10px;
+}
+
+.get-fit-message {
+    color: #028476;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
+}
+
+.eat-healthy-message-content{
+   display: flex;
+   justify-content: center;
+}
+
+.eat-healthy-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.eat-healthy-title {
+    color: #FF5349;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 58px;
+    padding-bottom: 10px;
+}
+
+.eat-healthy-para {
+    color: #FF5349;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
+}
+
+.meal-prep-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.meal-prep-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.meal-prep-image {
+    width: 23%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.meal-prep-image:hover {
+    width: 25%;
+    height: 100%;
+
 }
