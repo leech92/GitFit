@@ -17,5 +17,5 @@ export const login = (userData) => {
 };
 
 export const logout = () => {
-    return axios.post('/api/')
+    return axios.delete('/api/session')
 }
