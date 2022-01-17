@@ -17,6 +17,26 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    }, 
+    height: {
+        type: Number, 
+        default: 0
+    },
+    weight: {
+        type: Number, 
+        default: 0
+    },
+    following: {
+        user: {
+            type: Schema.ObjectId, 
+            ref: 'User'
+        },
+    }, 
+    followers: {
+        user: {
+            type: Schema.ObjectId, 
+            ref: 'User'
+        }
     }
 });
 
