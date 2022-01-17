@@ -4,17 +4,21 @@ import "../../stylesheets/profile.css";
 
 const Profile = ({ currentUser, logout }) => {
   
-    const personalProfile = () => (
-      <hgroup className="profile">
-          <p> One Human's Profile </p>
+  const personalProfile = () => (
+    <hgroup className="profile">
+      <p> One Human's Profile </p>
 
-          <h1> User's Activity </h1>
+      <h1> User's Activity </h1>
 
-          <button> Log Out? </button>
-      </hgroup>
-    );
+      <h1> Followers </h1>
 
-    return personalProfile(); 
+      <h1> Following </h1>
+
+      <button> Log Out? </button>
+    </hgroup>
+  );
+
+  return personalProfile(); 
 };
   
   

@@ -1,7 +1,6 @@
-import { profileEnd } from 'console';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import profile from './profile';
+import Profile from './profile';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
