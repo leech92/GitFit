@@ -1,5 +1,8 @@
 import React from 'react';
 import "../../stylesheets/splash.css";
+import Footer from "../footer.js"; 
+
+
 const Splash = (props) => {
 
     const { login, signup } = props;
@@ -77,8 +80,9 @@ const Splash = (props) => {
                 </div>
             </div>
             <div className = "splash-footer">
-
+            <Footer />
             </div>
+
         </div>
     )
 }
