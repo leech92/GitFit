@@ -18,6 +18,7 @@
 
 .header-buttons {
     width: 20vh;
+    height: 4vh;
     display: flex;
     justify-content: space-around;
 }
@@ -25,10 +26,11 @@
 .header-signup {
     color: white;
     background-color: #b7e4c7;
+    width: 5vw;
     border: none;
     border-radius: 4px;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 1vw;
 }
 
 .header-logo {
@@ -41,7 +43,8 @@
     border: none;
     border-radius: 4px;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 1vw;
+    width: 5vw;
 }
 
 .header-git {
@@ -71,7 +74,6 @@
     display: flex;
     justify-content: space-around;
     width: 99%;
-    height: 500px;
 }
 
 .splash-athlete {
@@ -97,14 +99,14 @@
 .get-fit-title {
     color: #028476;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 58px;
+    font-size: 7vw;
     padding-bottom: 10px;
 }
 
 .get-fit-message {
     color: #028476;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 24px;
+    font-size: 2vw;
 }
 
 .eat-healthy-message-content{
@@ -125,14 +127,14 @@
 .eat-healthy-title {
     color: #FF5349;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 58px;
+    font-size: 5vw;
     padding-bottom: 10px;
 }
 
 .eat-healthy-para {
     color: #FF5349;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 24px;
+    font-size: 3vh;
 }
 
 .meal-prep-container {
@@ -176,7 +178,7 @@
 
 .bottom-message {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 58px;
+    font-size: 5vw;
     padding-top: 15px;
     padding-bottom: 15px;
 }
