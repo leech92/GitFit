@@ -18,13 +18,13 @@ class TopNavBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <header className='top-nav'>
                 <p>Home</p>
                 <p>My Workouts</p>
                 <p>Meal Plans</p>
                 <p>Profile</p>
                 <button onClick={this.props.logout}>Logout</button>
-            </div>
+            </header>
         )
     }
     

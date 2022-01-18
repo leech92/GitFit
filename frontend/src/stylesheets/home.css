@@ -1,0 +1,15 @@
+.home-container {
+    border: 1px solid green
+}
+
+
+.home-main {
+    border: 1px solid goldenrod;
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+}
+
+.left-nav {
+    border:  1px solid burlywood;
+}
