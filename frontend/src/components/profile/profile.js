@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "../../stylesheets/profile.css";
 import Footer from '../footer.js'; 
-import NavBar from '../navBar.js'
+// import TopNavBar from '../navBar.js'
 
 const Profile = ({ currentUser, logout }) => {
   
   const personalProfile = () => (
     <hgroup className="profile">
 
-      <NavBar />
+      {/* <TopNavBar /> */}
 
       <p> One Human's Profile </p>
 
@@ -20,8 +20,6 @@ const Profile = ({ currentUser, logout }) => {
       <h1> Workout Plans </h1>
 
       <h1> User's Activity </h1>
-
-      <h1> Gyms near You!</h1>
 
       <h1> Followers </h1>
 
