@@ -70,7 +70,6 @@
 .splash-content-images {
     display: flex;
     justify-content: space-around;
-    /* border: 2px solid blue; */
     width: 99%;
     height: 500px;
 }
@@ -83,7 +82,7 @@
 .splash-message {
     display: flex;
     justify-content: center;
-    /* border: 2px solid blue; */
+    padding-bottom: 10px;
 }
 
 .splash-message-content {
@@ -111,6 +110,7 @@
 .eat-healthy-message-content{
    display: flex;
    justify-content: center;
+   padding-bottom: 10px;
 }
 
 .eat-healthy-message {
@@ -158,4 +158,25 @@
     width: 25%;
     height: 100%;
 
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.video-banner-bottom {
+    width: 98vw;
+}
+
+.splash-bottom-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-message {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 58px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
