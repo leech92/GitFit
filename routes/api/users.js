@@ -4,7 +4,7 @@ const User = require("../../models/User");
 const bcrypt = require("bcryptjs");
 const keys = require("../../config/keys");
 const jwt = require("jsonwebtoken");
-// const passport = require("passport");
+const passport = require("passport");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
@@ -85,4 +85,31 @@ router.post('/login', (req, res) => {
         })
 })
 
+router.get('/users/:user_id', passport.authenticate('jwt', {session:false}), (req, res) => {
+    res.json({
+        id: req.user.id, 
+        username: req.user.username, 
+        email: req.user.email
+    })
+})
+
+router.patch('/users/:user_id', (req, res) => {  
+    let currentUser =  User.find({user: req.params.user_id})
+    let signedInUser = req.body.id; 
+      
+    const updateFollowers = currentUser.followers.push(signedInUser)
+
+    const updateSignedInUser = req.body.following.push(currentUser.id)
+})
+
 module.exports = router;
+
+// router.get('/user/:user_id', (req, res) => {
+//     Tweet.find({user: req.params.user_id})
+//         .sort({ date: -1 })
+//         .then(tweets => res.json(tweets))
+//         .catch(err =>
+//             res.status(404).json({ notweetsfound: 'No tweets found from that user' }
+//         )
+//     );
+// });
