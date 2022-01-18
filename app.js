@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
+const mealplans = require("./routes/api/mealplans");
+const meals = require("./routes/api/meals");
 const bodyParser = require('body-parser');
 
 mongoose
@@ -21,6 +23,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", users);
+app.use("/api/mealplans", mealplans);
+app.use("/api/meals", meals);
 
 const port = process.env.PORT || 4000;
 
