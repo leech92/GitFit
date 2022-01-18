@@ -51,6 +51,3 @@ export const logout = () => dispatch => {
     dispatch(logoutUser())
 };
 
-export const follow = (object) => dispatch => {
-    APIUtil.follow(object['followingId'], object['followerId']).then(user => dispatch(follow(user)))
-}
