@@ -8,6 +8,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import SplashContainer from "./splash/splash"
 import Home from "./home/home";
+import Footer from "./footer";
 
 import Map from "./maps/maps"
 
@@ -21,14 +22,18 @@ const App = () => {
 
           <AuthRoute path = "/login" component = {LoginContainer} />
           <AuthRoute path = "/signup" component = {SignupContainer} />
-          <AuthRoute exact path = "/" component = {Splash}/>
+          {/* <AuthRoute exact path = "/" component = {Splash}/> */}
           <AuthRoute exact path = "/" component = {SplashContainer}/>
           {/* <AuthRoute exact path="/" component={Map} /> */}
           <ProtectedRoute path ="/home" component = {Home} />
+          <ProtectedRoute path="/discoverWorkouts" component={Home} />
+          <ProtectedRoute path="/discoverMealPlans" component={Home} />  
+          <ProtectedRoute path="/profile" component={Home}/>
 
           <Route path='/users/:id' component={Profile}/>
         </Switch>
 
+      <Footer />
 
     </div>
   );

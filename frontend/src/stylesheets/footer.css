@@ -24,7 +24,7 @@
 }
 
 .footer-peers {
-    width: 300px;
+    width: 400px;
 }
 
 .footer-peers h1 {
@@ -38,18 +38,22 @@
 }
 
 .footer-connect {
-    width: 300px
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .socials {
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     margin-right: 10px; 
     margin-top: 10px; 
     border-radius: 20px;
-    font-size: 36px; 
-    margin-left: -30px; 
+    font-size: 14px; 
+    width: 90%;
 }
 
 .fa {

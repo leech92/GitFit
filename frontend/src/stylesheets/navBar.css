@@ -1,0 +1,6 @@
+.top-nav {
+    border: 1px solid hotpink;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
