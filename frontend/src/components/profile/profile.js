@@ -14,6 +14,7 @@ const Profile = ({ currentUser, logout }) => {
       <p> One Human's Profile </p>
 
       <button> Follow Me! </button>
+      {/* use the wildcard in the url and store it as a var, pass in current User as params.user */}
 
       <h1> Meal Plans </h1>
 
