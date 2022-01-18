@@ -2,12 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "../../stylesheets/profile.css";
 import Footer from '../footer.js'; 
+import NavBar from '../navBar.js'
 
 const Profile = ({ currentUser, logout }) => {
   
   const personalProfile = () => (
     <hgroup className="profile">
+
+      <NavBar />
+
       <p> One Human's Profile </p>
+
       <button> Follow Me! </button>
 
       <h1> Meal Plans </h1>

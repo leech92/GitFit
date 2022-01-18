@@ -85,22 +85,39 @@ router.post('/login', (req, res) => {
         })
 })
 
-router.get('/users/:user_id', passport.authenticate('jwt', {session:false}), (req, res) => {
-    res.json({
-        id: req.user.id, 
-        username: req.user.username, 
-        email: req.user.email
-    })
-})
+// router.get('/:user_id', passport.authenticate('jwt', {session:false}), (req, res) => {
+//     res.json({
+//         id: req.user.id, 
+//         username: req.user.username, 
+//         email: req.user.email
+//     })
+// })
 
-router.patch('/users/:user_id', (req, res) => {  
-    let currentUser =  User.find({user: req.params.user_id})
+router.patch('/:user_id', (req, res) => {  
     let signedInUser = req.body.id; 
+    let currentUser =  User.find({user: req.params.user_id})
       
     const updateFollowers = currentUser.followers.push(signedInUser)
-
     const updateSignedInUser = req.body.following.push(currentUser.id)
 })
+
+router.get('/:user_id', (req, res) => {  
+    // let currentUser =  User.find({user: req.params.user_id})
+    User.find({user: req.params.user_id})
+        .then(user => {
+            res.json(user)
+        })
+        //"61e64a68d09b27b1fec83173"
+        //"61e57f360d6723c1f1d1302e" 
+        //they're not numbers, they're ObjectIds which can be turned into strings depending on _id or id
+
+    // let signedInUser = req.body.id; 
+      
+    // const updateFollowers = currentUser.followers.push(signedInUser)
+
+    // const updateSignedInUser = req.body.following.push(currentUser.id)
+})
+
 
 module.exports = router;
 
