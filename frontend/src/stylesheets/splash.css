@@ -159,3 +159,24 @@
     height: 100%;
 
 }
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.video-banner-bottom {
+    width: 98vw;
+}
+
+.splash-bottom-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-message {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 58px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
