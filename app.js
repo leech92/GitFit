@@ -6,11 +6,15 @@ const users = require("./routes/api/users");
 const mealplans = require("./routes/api/mealplans");
 const meals = require("./routes/api/meals");
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
 mongoose
     .connect(db, {useNewURLParser: true})
     .then(() => console.log("Connected to mongoDB"))
     .catch(err => console.log(err))
+
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
 app.use(bodyParser.urlencoded({
     extended: false
