@@ -5,6 +5,8 @@ import { Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route } from 'react-router-dom'
 
+import Map from "./maps/maps"
+
 const App = () => {
 
 
@@ -13,8 +15,10 @@ const App = () => {
 
         <Switch>
           <AuthRoute exact path = "/" component = {SplashContainer}/>
+          {/* <AuthRoute exact path="/" component={Map} /> */}
           <Route path='/users/:id' component={Profile}/>
         </Switch>
+
 
     </div>
   );
