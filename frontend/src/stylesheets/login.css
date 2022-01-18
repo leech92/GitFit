@@ -1,0 +1,74 @@
+.login-form-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-video-background {
+    position: fixed;
+    height: 100vh;
+    z-index: -1;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #fb8b24;
+    align-items: center;
+    width: 20vw;
+    height: 30vh;
+    border-radius: 8px;
+}
+
+.login-logo {
+    color: #028476;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 5vh;
+}
+
+.login-form a {
+    text-decoration: none;
+}
+
+.login-input {
+    width: 15vw;
+    height: 3vh;
+    padding-left: 10px;
+}
+
+.login-button {
+    background-color: #028476;
+    font-family: 'Ubuntu', sans-serif;
+    border: none;
+    height: 4vh;
+    width: 10vw;
+    border-radius: 6px;
+    font-size: 2vh;
+    color: white;
+}
+
+.demo-intro {
+    display: flex;
+    justify-content: space-around;
+    width: 15vw;
+}
+
+.demo-message {
+    color: #028476;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2vh;
+}
+
+.demo-button {
+    background-color: #004e89;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    border: none;
+    height: 3vh;
+    width: 5vw;
+    border-radius: 8px;
+}

@@ -1,3 +1,7 @@
+.splash-container button{
+    cursor: pointer;
+}
+
 .splash-container {
     display: flex;
     flex-direction: column;
