@@ -25,9 +25,7 @@ const Profile = ({ currentUser, logout }) => {
 
       <h1> Following </h1>
 
-      <button> Log Out? </button>
 
-      <Footer />
 
     </hgroup>
   );
