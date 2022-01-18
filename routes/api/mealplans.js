@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const passport = require('passport');
+const passport = require('passport');
 
 const Mealplan = require('../../models/Mealplan');
 
@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
         .then(mealplan => res.json(mealplan))
 });
 
-router.post('/', (req, res) => {
+router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const newMealplan = new Mealplan({
         user: req.user.id,
         name: req.body.name,
