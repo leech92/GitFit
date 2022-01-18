@@ -1,11 +1,9 @@
 import React from 'react';
 import "../../stylesheets/splash.css";
 import Footer from "../footer.js"; 
+import { Link } from 'react-router-dom';
 
-
-const Splash = (props) => {
-
-    const { login, signup } = props;
+const Splash = () => {
 
     return (
         <div className = "splash-container">
@@ -20,8 +18,13 @@ const Splash = (props) => {
                         </div>
 
                         <div className = "header-buttons">
-                            <button className = "header-login">Log In</button>
-                            <button className = "header-signup">Sign Up</button>
+
+                            <Link to = "/login">
+                                <button className = "header-login">Log In</button>
+                            </Link>
+                            <Link to = "/signup">
+                                <button className = "header-signup">Sign Up</button>
+                            </Link>
                         </div>
                 </div>
                   <video src="https://gitfit-app-images.s3.amazonaws.com/splash_video_3.mp4" autoPlay = {true} loop muted className = "video-banner"></video>
