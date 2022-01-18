@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Meal = require('../../models/Meal');
 
-//for mealplan page meal show
+//for mealplan show page show all meals
 router.get('/mealplans/:mealplan_id', (req, res) => {
     Meal.find({mealplan: req.params.mealplan_id})
         .sort({ calories: 1,  })
