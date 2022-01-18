@@ -4,7 +4,7 @@ import Profile from './profile';
 
 const mapStateToProps = ({ session }) => {
   return {
-    currentUser: session.users
+    currentUser: session.user
   };
 };
 
