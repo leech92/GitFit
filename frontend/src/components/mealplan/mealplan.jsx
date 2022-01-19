@@ -1,5 +1,6 @@
 import React from 'react';
 import Meals from './meals';
+import "../../stylesheets/mealplan.css";
 
 class Mealplan extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Mealplan extends React.Component {
 
     componentDidMount() {
         this.props.fetchMealplan(this.props.match.params.id);
-        this.props.fetchMealplanMeals(this.props.match.params.id)
+        this.props.fetchMealplanMeals(this.props.match.params.id);
     }
 
     render() {

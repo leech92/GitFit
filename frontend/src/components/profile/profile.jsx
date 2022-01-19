@@ -10,6 +10,10 @@ class Profile extends React.Component {
     this.toggleFollow = this.toggleFollow.bind(this); 
   }
 
+  componentDidMount() {
+    this.props.fetchUserMealplans(this.props.match.params.id);
+  }
+
   toggleFollow(e) {
     // debugger; 
     e.preventDefault(); 
@@ -18,6 +22,8 @@ class Profile extends React.Component {
   }
   
   render() {
+    // if (!this.props.mealplans.length) return null;
+
     let id = this.props.match.params.id; 
     
     return(

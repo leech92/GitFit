@@ -1,0 +1,11 @@
+.mealplan-container{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ddfff7;
+}
+
+.mealplan-title{
+    margin-top: 2%;
+    margin-left: 2%;
+}
