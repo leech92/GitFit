@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //get specific mealplan show page
 export const getMealplan = id => {
-    return axios.get(`/api/tweets/${id}`)
+    return axios.get(`/api/mealplans/${id}`)
 }
 
 //get user's mealplans
