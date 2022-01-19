@@ -8,6 +8,8 @@ const path = require('path');
 const users = require("./routes/api/users");
 const mealplans = require("./routes/api/mealplans");
 const meals = require("./routes/api/meals");
+const workouts = require("./routes/api/workouts");
+const exercises = require("./routes/api/exercises");
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -48,6 +50,8 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/mealplans", mealplans);
 app.use("/api/meals", meals);
+app.use("/api/workouts", workouts);
+app.use("/api/exercises", exercises);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {console.log(`Listening on port ${port}`)});
