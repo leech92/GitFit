@@ -1,4 +1,5 @@
 import React from 'react';
+import MealplanPreview from '../mealplan/mealplan_preview';
 import "../../stylesheets/profile.css";
 
 
@@ -7,9 +8,10 @@ class Profile extends React.Component {
   constructor(props){
     super(props)
   }
-  // componentDidMount() {
-  //   this.props.fetchUserMealplans(this.props.match.params.id);
-  // }
+
+  componentDidMount() {
+    this.props.fetchUserMealplans(this.props.currentUser.id)
+  }
 
   toggleFollow(e){
     e.preventDefault(); 
@@ -19,9 +21,11 @@ class Profile extends React.Component {
   }
 
   render() {
-    // if (!this.props.mealplans.length) return null;
+    if (!this.props.mealplans.length) return null;
 
     let id = this.props.match.params.id; 
+    const { mealplans } = this.props;
+
     return(
       <div className='profile-container'>
 
@@ -39,7 +43,7 @@ class Profile extends React.Component {
 
           <div className='profile-bottom-right'>
             <div> Good Money, Good Honey! </div>
-              MEAL PLANS PREVIEWS GO HERE
+            <MealplanPreview mealplans={mealplans}/>
           </div>
         </section>
 
