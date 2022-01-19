@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import SplashContainer from "./splash/splash"
+import MealplanContainer from "./mealplan/mealplan_container"
 import Home from "./home/home";
 import Footer from "./footer";
 
@@ -30,7 +31,7 @@ const App = () => {
           <ProtectedRoute path="/discoverMealPlans" component={Home} />  
           <ProtectedRoute path="/profile" component={Home}/>
           <ProtectedRoute path="/users/:id" component={Home} />
-
+          <ProtectedRoute path="/mealplans/:id" component={Home} />
           <Route path='/users/:id' component={Profile}/>
         </Switch>
 

@@ -5,6 +5,7 @@ import TopNavBar from "../navBar";
 import LeftNav from "../leftNav";
 import Feed from "../feed/feed";
 import Profile from "../profile/profile_container";
+import MealplanContainer from "../mealplan/mealplan_container"
 import "../../stylesheets/home.css"
 
 class Home extends React.Component{
@@ -25,6 +26,7 @@ class Home extends React.Component{
                             <ProtectedRoute exact path="/buddies/:buddyId" component={Feed} />
                             <ProtectedRoute path="/profile" component={Profile}/>
                             <ProtectedRoute path="/users/:id" component={Profile} />
+                            <ProtectedRoute path="/mealplans/:id" component={MealplanContainer} />
                         </Switch>
                     </div>
                 </div>

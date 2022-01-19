@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-
+// const passport = require('passport');
 const Mealplan = require('../../models/Mealplan');
 
 //for profile page mealplan preview
@@ -16,6 +15,11 @@ router.get('/:id', (req, res) => {
     Mealplan.findById(req.params.id)
         .then(mealplan => res.json(mealplan))
 });
+
+//created for testing but will leave for possible use
+router.get('/', (req, res) => {
+    Mealplan.find().then(mealplans => res.json(mealplans))
+})
 
 router.post('/',
     // passport.authenticate('jwt', { session: false }), 

@@ -19,7 +19,7 @@ class Profile extends React.Component {
   
   render() {
     let id = this.props.match.params.id; 
-    debugger; //Anna
+    
     return(
       <div className='profile-container'>
         <section className='profile-top'>
