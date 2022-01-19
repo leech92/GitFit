@@ -7,9 +7,9 @@ class Profile extends React.Component {
   constructor(props){
     super(props)
 
-    this.toggleFollow = this.toggleFollow.bind(this); 
-    this.changeFollowButton = this.changeFollowButton.bind(this); 
-    this.findProfile = this.findProfile.bind(this); 
+    // this.toggleFollow = this.toggleFollow.bind(this); 
+    // this.changeFollowButton = this.changeFollowButton.bind(this); 
+    // this.findProfile = this.findProfile.bind(this); 
   }
 
   toggleFollow(e) {

@@ -3,4 +3,21 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    font-size: 24px;
+}
+
+
+.top-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.top-right button{
+    border: none;
+    background-color: #028476;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
 }
