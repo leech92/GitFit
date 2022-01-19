@@ -30,7 +30,7 @@ class LeftNav extends React.Component{
             return null
         }
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
-        debugger; 
+        // debugger; 
         return (
             <div>
                 <section className="discovery">
@@ -42,7 +42,7 @@ class LeftNav extends React.Component{
                 <section className="left-buddies">
                     <h3>Buddies</h3>
                     {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
-                    {currentUser.following.map(id => <NavLink to={`users/${id}`}>id</NavLink>)}
+                    {currentUser.following.map(id => <NavLink to={`/users/${id}`}>id</NavLink>)}
                 </section>
             </div>
             
