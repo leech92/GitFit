@@ -45,7 +45,7 @@ router.patch('/:id',
                 meal.photo = req.body.photo
                 meal.ingredients = req.body.ingredients
 
-                meal.save().then(() => res.json('Meal successfully updated!'))
+                meal.save().then(() => res.json(meal))
             })
     }
 );

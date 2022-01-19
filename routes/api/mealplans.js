@@ -47,7 +47,7 @@ router.patch('/:id',
                 mealplan.fat = req.body.fat
                 mealplan.description = req.body.description
 
-                mealplan.save().then(() => res.json('Mealplan successfully updated!'))
+                mealplan.save().then(() => res.json(mealplan))
             })
     }
 );
