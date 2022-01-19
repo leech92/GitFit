@@ -12,7 +12,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return ({
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
     })
 }
 
@@ -26,23 +26,26 @@ class LeftNav extends React.Component{
     }
 
     render() {
+        if (!Object.keys(this.props.users).length) {
+            return null
+        }
+        const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         debugger; 
         return (
             <div>
-                <h3>Discover</h3>
-                <ul>
-                    <li><NavLink to="discoverWorkouts">Browse workouts</NavLink></li>
-                    <li><NavLink to="discoverMealPlans">Browse meal plans</NavLink></li>
-                </ul>
+                <section className="discovery">
+                    <h3>Discover</h3>
+                    <div><NavLink to="discoverWorkouts">Browse workouts</NavLink></div>
+                    <div><NavLink to="discoverMealPlans">Browse meal plans</NavLink></div>
+                </section>
 
+                <section className="left-buddies">
+                    <h3>Buddies</h3>
+                    {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
+                    {currentUser.following.map(id => <NavLink to={`users/${id}`}>id</NavLink>)}
+                </section>
+                
 
-                <h3>Buddies</h3>
-                <ul>
-                    <li>Buddy #1</li>
-                    <li>Buddy #2</li>
-                    <li>Buddy #3</li>
-                    <li>Buddy #4</li>
-                </ul>
             </div>
             
         )

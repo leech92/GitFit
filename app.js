@@ -2,14 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
-<<<<<<< HEAD
-const passport = require('passport');
-
-=======
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
->>>>>>> main
 const users = require("./routes/api/users");
 const mealplans = require("./routes/api/mealplans");
 const meals = require("./routes/api/meals");
@@ -37,22 +32,8 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-<<<<<<< HEAD
-app.get("/", (req, res) => {
-    res.send("Hello World!!!");
-});
-
-app.use(passport.initialize());
-require('./config/passport')(passport);
-
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-=======
-app.use(bodyParser.json());
-
->>>>>>> main
 app.use("/api/users", users);
 app.use("/api/mealplans", mealplans);
 app.use("/api/meals", meals);
