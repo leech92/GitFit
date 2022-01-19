@@ -16,7 +16,7 @@ class Home extends React.Component{
                     <div className="left-nav">
                         <LeftNav />
                     </div>
-                    <div>
+                    <div className="middle-console">
                         <Switch>
                             <ProtectedRoute exact path="/home" component={Feed} />
                             <ProtectedRoute exact path="/feed" component={Feed} />

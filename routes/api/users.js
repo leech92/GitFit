@@ -100,7 +100,7 @@ router.patch('/:user_id', (req, res) => {
 })
 
 router.get('/:user_id', (req, res) => {  
-    User.find({user: req.params.user_id})
+    User.findById(req.params.user_id)
         .then(user => {
             res.json(user)
         })

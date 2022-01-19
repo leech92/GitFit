@@ -83,7 +83,7 @@ const Splash = () => {
                 </div>
             </div>
             <div className = "splash-footer">
-            <Footer />
+            {/* <Footer /> */}
             </div>
 
         </div>
