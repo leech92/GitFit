@@ -10,9 +10,9 @@ class Profile extends React.Component {
     this.toggleFollow = this.toggleFollow.bind(this); 
   }
 
-  componentDidMount() {
-    this.props.fetchUserMealplans(this.props.match.params.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchUserMealplans(this.props.match.params.id);
+  // }
 
   toggleFollow(e) {
     // debugger; 
