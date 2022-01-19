@@ -29,7 +29,11 @@ const App = () => {
           <ProtectedRoute path="/discoverMealPlans" component={Home} />  
           <ProtectedRoute exact path="/profile" component={Home}/>
           <ProtectedRoute path="/users/:id" component={Home} />
+
           <ProtectedRoute path="/gym" component={Home} />
+
+
+
         </Switch>
 
       <Footer />

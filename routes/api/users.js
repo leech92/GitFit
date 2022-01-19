@@ -34,7 +34,9 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     username: req.body.username,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
+                    height: req.body.height,
+                    weight: req.body.weight
                 });
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -52,7 +54,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-    debugger
+
 
     if (!isValid) {
         return res.status(400).json(errors);
