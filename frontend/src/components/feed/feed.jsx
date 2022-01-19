@@ -8,7 +8,7 @@ class Feed extends React.Component {
     render() {
         return (
             <div>
-                Hello, this is the feed;
+                Hello, this is the feed, indeed, indeed, indeed;
             </div>
         )
     }

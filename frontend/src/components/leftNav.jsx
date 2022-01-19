@@ -1,8 +1,32 @@
+import { connect } from "react-redux";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { fetchUsers } from "../actions/user_actions";
+
+const mSTP = (state) => {
+    return({
+        users: state.entities.users, 
+        currentUser: state.session.user, 
+    })
+}
+
+const mDTP = (dispatch) => {
+    return ({
+        fetchUsers: () => dispatch(fetchUsers())
+    })
+}
 
 class LeftNav extends React.Component{
+    constructor(props) {
+        super(props); 
+    }
+
+    componentDidMount() {
+        this.props.fetchUsers(); 
+    }
+
     render() {
+        debugger; 
         return (
             <div>
                 <h3>Discover</h3>
@@ -25,4 +49,4 @@ class LeftNav extends React.Component{
     }
 }
 
-export default LeftNav
+export default connect(mSTP, mDTP)(LeftNav); 

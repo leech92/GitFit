@@ -19,3 +19,11 @@ export const login = (userData) => {
 export const logout = () => {
     return axios.delete('/api/session')
 }
+
+export const fetchUsers = () => {
+    return axios.get(`api/users`); 
+}
+
+export const follow = (loggedId, profileId) => {
+    return axios.patch(`/api/users/${loggedId}`, {"profileId" : profileId })
+}

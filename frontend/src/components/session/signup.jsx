@@ -8,7 +8,6 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       email: '',
-      handle: '',
       password: '',
       password2: '',
       height: '',
@@ -21,14 +20,15 @@ class Signup extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
+    // if (nextProps.signedIn === true) {
+    //   this.props.history.push('/login');
+    // }
 
     this.setState({errors: nextProps.errors})
   }
 
   update(field) {
+
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -38,18 +38,16 @@ class Signup extends React.Component {
     e.preventDefault();
     let newWeight = Number(this.state.weight);
     let newHeight = Number(this.state.height);
-
     let user = {
       username : this.state.username,
       email: this.state.email,
-      handle: this.state.handle,
       password: this.state.password,
       password2: this.state.password2,
       weight: newWeight,
       height: newHeight
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user).then( () => this.props.login({email: this.state.email, password:this.state.password}));
   }
 
   renderErrors() {
@@ -92,12 +90,7 @@ class Signup extends React.Component {
                 placeholder="Email"
                 className = "signup-input"
               />
-              <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
-                className = "signup-input"
-              />
+
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -110,15 +103,15 @@ class Signup extends React.Component {
                 placeholder="Confirm Password"
                 className = "signup-input"
               />
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
+              <input type="text"
+                value={this.state.height}
+                onChange={this.update('height')}
                 placeholder="Height in centimeters (optional)"
                 className = "signup-input"
               />
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
+              <input type="text"
+                value={this.state.weight}
+                onChange={this.update('weight')}
                 placeholder="Weight in pounds (optional)"
                 className = "signup-input"
               />

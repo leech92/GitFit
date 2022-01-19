@@ -27,18 +27,8 @@ const UserSchema = new Schema({
         type: Number, 
         default: 0
     },
-    following: [
-            {
-            type: ObjectId, 
-            ref: 'User'
-        },
-    ], 
-    followers: [
-        {
-            type: Schema.ObjectId, 
-            ref: 'User'
-        }
-    ]
+    following: Array, 
+    followers: Array
 });
 
 const User = mongoose.model('users', UserSchema);
