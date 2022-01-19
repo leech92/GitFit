@@ -6,6 +6,7 @@ import LeftNav from "../leftNav";
 import Feed from "../feed/feed";
 import Profile from "../profile/profile_container";
 import "../../stylesheets/home.css"
+import UsersProfile from '../profile/users_show'; 
 
 class Home extends React.Component{
     render() {
@@ -24,6 +25,7 @@ class Home extends React.Component{
                             <ProtectedRoute exact path="/discoverMealPlans" component={Feed} />
                             <ProtectedRoute exact path="/buddies/:buddyId" component={Feed} />
                             <ProtectedRoute path="/profile" component={Profile}/>
+                            <ProtectedRoute path="/users/:id" component={UsersProfile} />
                         </Switch>
                     </div>
                 </div>

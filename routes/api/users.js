@@ -55,6 +55,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
 
+
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -94,11 +95,25 @@ router.post('/login', (req, res) => {
         })
 })
 
-router.patch('/:user_id', (req, res) => {  
+// router.patch('/:user_id', (req, res) => {  
+//     User.findById(req.params.user_id)
+//         .then(user => {
+//             user.following.push(req.body.buddyId); 
+//             user.save().then(res.json(user))
+//         })
+// })
+
+router.patch('/:user_id', (req, res) => {
     User.findById(req.params.user_id)
         .then(user => {
-            user.following.push(req.body.buddyId); 
-            user.save().then(res.json(user))
+            if(user.following.includes(req.body.buddyId)) {
+                let index = user.following.indexOf(req.body.buddyId);
+                user.following.splice(index, 1);  
+                user.save().then(res.json(user))
+            } else {
+                user.following.push(req.body.buddyId); 
+                user.save().then(res.json(user)) 
+            }
         })
 })
 
