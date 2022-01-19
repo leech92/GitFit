@@ -7,9 +7,6 @@ class Profile extends React.Component {
   constructor(props){
     super(props)
 
-    this.toggleFollow = this.toggleFollow.bind(this); 
-  }
-
   toggleFollow(e) {
     e.preventDefault(); 
     let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 

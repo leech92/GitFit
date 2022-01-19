@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 import "../stylesheets/navBar.css";
 
@@ -20,11 +20,12 @@ class TopNavBar extends React.Component {
     render() {
         return (
             <header className='top-nav'>
-                <p><Link to="/">Home</Link></p>
-                <p>My Workouts</p>
-                <p>Meal Plans</p>
-                <p><Link to="/profile">Profile</Link></p>
-                <button onClick={this.props.logout}>Logout</button>
+                <p><NavLink to="/">Home</NavLink></p>
+                <div className="top-right">
+                    <p><NavLink to="/profile">Profile</NavLink></p>
+                    <button onClick={this.props.logout}>Logout</button>
+                </div>
+                
             </header>
         )
     }
