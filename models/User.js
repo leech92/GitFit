@@ -28,7 +28,6 @@ const UserSchema = new Schema({
         default: 0
     },
     following: Array, 
-    followers: Array
 });
 
 const User = mongoose.model('users', UserSchema);
