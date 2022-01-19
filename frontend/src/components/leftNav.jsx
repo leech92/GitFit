@@ -26,7 +26,7 @@ class LeftNav extends React.Component{
     }
 
     render() {
-        debugger; 
+        // debugger; //Anna
         return (
             <div>
                 <h3>Discover</h3>
@@ -38,7 +38,9 @@ class LeftNav extends React.Component{
 
                 <h3>Buddies</h3>
                 <ul>
-                    <li>Buddy #1</li>
+                    <li>
+                     <NavLink to='/users/61e64a68d09b27b1fec83173'> Buddy #1 </NavLink>
+                    </li>
                     <li>Buddy #2</li>
                     <li>Buddy #3</li>
                     <li>Buddy #4</li>
