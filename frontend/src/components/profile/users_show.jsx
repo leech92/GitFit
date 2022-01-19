@@ -3,7 +3,6 @@ import "../../stylesheets/profile.css";
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { follow, fetchUsers } from '../../actions/user_actions'
-import { profile } from 'console';
 
 const mSTP = (state) => {
   return {
@@ -22,44 +21,19 @@ const mDTP = dispatch => ({
 
 class UsersProfile extends React.Component {
 
-  constructor(props){
-    super(props)
+    constructor(props){
+        super(props)
+        this.toggleFollow = this.toggleFollow.bind(this); 
+    }
 
-    this.toggleFollow = this.toggleFollow.bind(this); 
-    // this.changeFollowButton = this.changeFollowButton.bind(this); 
-    // setTimeout(() => {this.changeFollowButton(), 500})
-  }
-
-  componentDidMount() {
-    // this.changeFollowButton(); 
-    this.props.fetchUsers(); 
-  }
-
-//   changeFollowButton() {
-//     //   debugger
-//     if (this.props.currentUser.following.includes(this.props.match.params.id)) {
-//       // logged in user is already following the profile they are visiting
-//       let ele = document.getElementById('follow-button')
-//       ele.innerText = 'Unfollow'
-
-//     } else {
-//       // user is on a profile they have not followed
-//       let ele = document.getElementById('follow-button')
-//       ele.innerText = 'Follow'
-//     }
-//   }
-
-    // changeFollowButton() {
-    //     return ((this.props.currentUser.following.includes(this.props.match.params.id)) ? document.getElementById('follow-button').innerText = 'Unfollow' : document.getElementById('follow-button').innerText = 'Follow')
-    // }
+    componentDidMount() {
+        this.props.fetchUsers(); 
+    }
 
     toggleFollow(e) {
-        // debugger; 
         e.preventDefault(); 
         let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
         this.props.follow(obj); 
-        // setTimeout(() => {this.changeFollowButton(), 500})
-        // this.changeFollowButton(); 
     }
 
 
@@ -82,10 +56,8 @@ class UsersProfile extends React.Component {
                 <h3 className='friend-greeting' >Hey Best Buddy, {profileUser.username}</h3>
             
                 <h3>Username: {profileUser.username}</h3>
-                <h3> Been a Member of the GitFit Community since : {profileUser.created_at} </h3>
+                {/* <h3> Been a Member of the GitFit Community since : {profileUser.created_at} </h3> */}
 
-                {/* <h3>Height: {this.props.currentUser.height ? this.props.currentUser.height: 'n/a'}</h3>
-                <h3>Weight: {this.props.currentUser.weight ? this.props.currentUser.weight : 'n/a'}</h3> */}
 
                 <button onClick={this.toggleFollow} className='follow-button' id='follow-button'> {buttonText} </button>
 

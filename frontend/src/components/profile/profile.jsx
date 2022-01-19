@@ -6,8 +6,9 @@ class Profile extends React.Component {
 
   constructor(props){
     super(props)
+  }
 
-  toggleFollow(e) {
+  toggleFollow(e){
     e.preventDefault(); 
     let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
     this.props.follow(obj); 
@@ -16,17 +17,11 @@ class Profile extends React.Component {
 
   render() {
     let id = this.props.match.params.id; 
-    // debugger; //Anna
     return(
       <div className='profile-container'>
 
         <section className='profile-top'>
           <p>Here's Your Story, Morning Glory</p>
-          {/* <h3>Username: {this.props.currentUser.username}</h3>
-          <h3>Height: {this.props.currentUser.height ? this.props.currentUser.height: 'n/a'}</h3>
-          <h3>Weight: {this.props.currentUser.weight ? this.props.currentUser.weight : 'n/a'}</h3> */}
-
-          {/* <button onClick={this.toggleFollow} className='follow-button' id='follow-button'> Follow </button> */}
 
         </section>
 
