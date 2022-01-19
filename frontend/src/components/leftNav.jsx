@@ -44,8 +44,6 @@ class LeftNav extends React.Component{
                     {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
                     {currentUser.following.map(id => <NavLink to={`users/${id}`}>id</NavLink>)}
                 </section>
-                
-
             </div>
             
         )
