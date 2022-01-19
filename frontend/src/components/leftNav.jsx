@@ -41,7 +41,9 @@ class LeftNav extends React.Component{
                     <li>
                      <NavLink to='/users/61e64a68d09b27b1fec83173'> Buddy #1 </NavLink>
                     </li>
-                    <li>Buddy #2</li>
+                    <li>
+                        <NavLink to='/users/61e6dc61c28e142f8a1eae0b'> Buddy #2 </NavLink>
+                    </li>
                     <li>Buddy #3</li>
                     <li>Buddy #4</li>
                 </ul>
