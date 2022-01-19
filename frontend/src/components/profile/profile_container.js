@@ -1,10 +1,11 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = state => {
   return {
-    currentUser: session.user
+    currentUser: state.session.user
   };
 };
 

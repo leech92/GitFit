@@ -1,0 +1,25 @@
+.profile-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-top{
+    border: 1px solid rebeccapurple;
+    width: 100%;
+    height: 10%;
+}
+
+.profile-btm {
+    display: flex;
+    justify-content: space-between;
+    height: 90%;
+}
+
+
+.profile-btm div {
+    border: 1px solid hotpink;
+    width: 50%;
+}

@@ -7,9 +7,14 @@
     border: 1px solid goldenrod;
     display: flex;
     flex-direction: row;
-    height: 800px;
+    height: 1200px;
 }
 
 .left-nav {
     border:  1px solid burlywood;
+}
+
+.middle-console {
+    width: 100%;
+    height: 100%;
 }
