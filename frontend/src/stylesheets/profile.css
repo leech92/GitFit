@@ -6,22 +6,39 @@
     border: 1px solid red;
     display: flex;
     flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    line-height: 130%
 }
 
 .profile-top{
     border: 1px solid rebeccapurple;
     width: 100%;
     height: 10%;
+    background-color: #B7E4C7; 
+    color: #028476
+    
 }
 
 .profile-btm {
     display: flex;
     justify-content: space-between;
     height: 90%;
+    color: #fb8b24;
 }
 
 
 .profile-btm div {
     border: 1px solid hotpink;
     width: 50%;
+}
+
+.profile-bottom-left {
+    background-color: #ffcb69;
+    color: #DDFFF7
+}
+
+.profile-bottom-right {
+    background-color: #FF5349;
+    color: #DDFFF7
 }

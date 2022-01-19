@@ -3,6 +3,7 @@ import "../../stylesheets/profile.css";
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { follow, fetchUsers } from '../../actions/user_actions'
+import { profile } from 'console';
 
 const mSTP = (state) => {
   return {
@@ -71,13 +72,17 @@ class UsersProfile extends React.Component {
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         const buttonText = currentUser.following.includes(profileUser._id) ? "Unfollow" : 'Follow'
         // debugger; //Anna
+
+
+
         return(
         <div className='profile-container'>
 
             <section className='profile-top'>
+                <h3 className='friend-greeting' >Hey Best Buddy, {profileUser.username}</h3>
             
                 <h3>Username: {profileUser.username}</h3>
-
+                <h3> Been a Member of the GitFit Community since : {profileUser.created_at} </h3>
 
                 {/* <h3>Height: {this.props.currentUser.height ? this.props.currentUser.height: 'n/a'}</h3>
                 <h3>Weight: {this.props.currentUser.weight ? this.props.currentUser.weight : 'n/a'}</h3> */}
@@ -88,15 +93,17 @@ class UsersProfile extends React.Component {
 
 
             <section className='profile-btm'>
-                <div>
+                <div className='profile-bottom-left'>
+                    <div> Here's the tea </div>
                     WORKOUTS PREVIEWS GO HERE
                 </div>
 
-                <div>
+                <div className='profile-bottom-right'>
+                    <div> from the busy bee </div>
                     MEAL PLANS PREVIEWS GO HERE
                 </div>
             </section>
-            
+
         </div>
         )
     };
