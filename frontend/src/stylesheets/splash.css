@@ -35,6 +35,7 @@
     border-radius: 4px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1vw;
+    height: 4vh;
 }
 
 .header-logo {
@@ -49,6 +50,7 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 1vw;
     width: 5vw;
+    height: 4vh;
 }
 
 .header-git {
