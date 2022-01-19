@@ -12,6 +12,12 @@ router.get("/test", (req, res) => {
     res.json({ msg: "this is the user route" })
 });
 
+router.get("/", (req, res) => {
+    User.find()
+    .then(users => 
+        res.json(users)
+    )
+})
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
@@ -46,6 +52,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
+    debugger
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -87,31 +94,9 @@ router.post('/login', (req, res) => {
 })
 
 router.patch('/:user_id', (req, res) => {  
-    // let signedInUser = req.body.id; 
-    // let currentUser = User.find({user: req.params.user_id})
-    // const updateFollowers = currentUser.followers.push(signedInUser)
-    // const updateSignedInUser = req.body.following.push(currentUser.id)
-
-    // debugger
-    // User.find({user: req.params.user_id})
-    //     .then(user => {
-    //         $push:{following:req.params.user._id}
-    //     })
-    //     .catch(err => {
-    //         return res.status(422).json
-    //     })
-    // User.findByIdAndUpdate(req.body.id, {$push(following:req.params.id)}
-
-//    inside the req body take in the signed in user and the current user (taken from the front end)
-//    User.find({user: user.followId})
-
-//    User.find({user: user.currentId})
-//         .then 
-//         .save 
-
     User.findById(req.params.user_id)
         .then(user => {
-            user.following.push(req.body.currentUserId); 
+            user.following.push(req.body.buddyId); 
             user.save().then(res.json(user))
         })
 })

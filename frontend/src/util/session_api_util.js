@@ -20,6 +20,10 @@ export const logout = () => {
     return axios.delete('/api/session')
 }
 
-export const follow = (followingId, followerId) => {
-    return axios.patch(`/api/users/${followingId}`, {"currentUserId" : followerId })
+export const fetchUsers = () => {
+    return axios.get(`api/users`); 
+}
+
+export const follow = (loggedId, profileId) => {
+    return axios.patch(`/api/users/${loggedId}`, {"profileId" : profileId })
 }

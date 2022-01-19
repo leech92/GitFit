@@ -4,9 +4,17 @@ const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
 const users = require("./routes/api/users");
 const mealplans = require("./routes/api/mealplans");
 const meals = require("./routes/api/meals");
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(___dirname, 'frontend', 'build', 'index.html'))
+    })
+}
 
 mongoose
     .connect(db, {useNewURLParser: true})

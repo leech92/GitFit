@@ -18,6 +18,7 @@ class Login extends React.Component {
   }
 
   handleDemo() {
+    // e.preventDefault();
     const demo = {
       email: "demo@email.com",
       password: "password"
@@ -68,8 +69,10 @@ class Login extends React.Component {
 
          <video src="https://gitfit-app-images.s3.amazonaws.com/team-run.mp4" 
         autoPlay = {true} loop muted className = "login-video-background"></video>
-        <form onSubmit={this.handleSubmit}>
           <div className = "login-form">
+
+
+            <form onSubmit={this.handleSubmit} className = "form-content">
 
               <Link to = "/">            
                 <span className = "login-logo">GitFit</span>
@@ -89,15 +92,12 @@ class Login extends React.Component {
                 className = "login-input"
               />
 
-            <input type="submit" value="Submit" className = "login-button"/>
+            <button className = "login-button">Log In</button>
             {this.renderErrors()}
 
-            <div className = "demo-intro">
-              <span className = "demo-message">No Account?</span>
-              <button className='demo-button' onClick = {this.handleDemo}>Demo</button>
-            </div>
+            </form>
+            <button className='demo-button' onClick = {this.handleDemo}>Demo</button>
           </div>
-        </form>
       </div>
     );
   }
