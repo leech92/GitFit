@@ -7,6 +7,9 @@ class Profile extends React.Component {
   constructor(props){
     super(props)
   }
+  // componentDidMount() {
+  //   this.props.fetchUserMealplans(this.props.match.params.id);
+  // }
 
   toggleFollow(e){
     e.preventDefault(); 
@@ -16,6 +19,8 @@ class Profile extends React.Component {
   }
 
   render() {
+    // if (!this.props.mealplans.length) return null;
+
     let id = this.props.match.params.id; 
     return(
       <div className='profile-container'>

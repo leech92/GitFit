@@ -1,6 +1,6 @@
 import { RECEIVE_MEALPLAN, RECEIVE_USER_MEALPLANS, RECEIVE_NEW_MEALPLAN } from "../actions/mealplan_actions";
 
-const MealplansReducer = (state = { specific: undefined, user: {}, new: undefined }, action) => {
+const MealplansReducer = (state = { specific: {}, user: [], new: {} }, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch(action.type) {

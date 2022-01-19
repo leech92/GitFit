@@ -5,6 +5,7 @@ import TopNavBar from "../navBar";
 import LeftNav from "../leftNav";
 import Feed from "../feed/feed";
 import Profile from "../profile/profile_container";
+import MealplanContainer from "../mealplan/mealplan_container"
 import UsersProfile from '../profile/users_show'; 
 import Map from "../maps/maps"
 import "../../stylesheets/home.css"
@@ -25,6 +26,9 @@ class Home extends React.Component{
                             <ProtectedRoute exact path="/discoverWorkouts" component={Feed} />
                             <ProtectedRoute exact path="/discoverMealPlans" component={Feed} />
                             <ProtectedRoute exact path="/buddies/:buddyId" component={Feed} />
+                            <ProtectedRoute path="/profile" component={Profile}/>
+                            <ProtectedRoute path="/users/:id" component={Profile} />
+                            <ProtectedRoute path="/mealplans/:id" component={MealplanContainer} />
                             <ProtectedRoute exact path="/profile" component={Profile}/>
                             <ProtectedRoute path="users/:id" component={UsersProfile} />
                             <ProtectedRoute path="/gym" component={Map}/>
