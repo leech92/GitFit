@@ -1,11 +1,13 @@
 .footer {
-    background-color: #ceccc9; 
+    background-color: #B7E4C7; 
     font-size: 14px; 
     display: flex; 
     flex-direction: row;
     padding: 10px; 
     padding-top: 20px; 
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: #028476; 
+    line-height: 130%
 }
 
 .footer-tech {
@@ -15,6 +17,8 @@
 
 .footer-tech h1 {
     margin-bottom: 10px; 
+    font-size: 18px; 
+    font-weight: bolder; 
 }
 
 .footer-tech p {
@@ -29,6 +33,8 @@
 
 .footer-peers h1 {
     margin-bottom: 10px; 
+    font-size: 18px; 
+    font-weight: bolder; 
 }
 
 .footer-peers p {
@@ -41,7 +47,8 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    
+    font-size: 18px; 
+    font-weight: bolder; 
 }
 
 .socials {
@@ -54,6 +61,7 @@
     border-radius: 20px;
     font-size: 14px; 
     width: 90%;
+    font-weight: normal; 
 }
 
 .fa {
@@ -62,6 +70,6 @@
     text-align: center;
     text-decoration: none;
     border-radius: 10px; 
-    color: rgb(50,54,45);
-    border: solid rgb(50,54,45) 2px;
+    color: #FB8B24;
+    border: solid #FB8B24 2px;
 }
