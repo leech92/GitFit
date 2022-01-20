@@ -3,7 +3,7 @@
     background-color: #028476;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     font-size: 24px;
     /* color: white; */
 }
@@ -19,7 +19,30 @@
 .top-right button{
     border: none;
     background-color: #028476;
-    color: white;
+    color: black;
     cursor: pointer;
     font-size: 24px;
+    border-radius: 10px; 
+    padding: 8px; 
+}
+
+.top-button {
+    padding: 8px; 
+    border-radius: 10px; 
+    
+}
+
+.top-right button:hover {
+    background-color: #FF5349; 
+    /* border: 3px #FB8B24 solid; 
+    border-radius: 6px; */
+    color: #DDFFF7; 
+}
+
+.top-button:hover {
+    background-color: #FF5349;
+    /* border: 3px #FB8B24 solid; 
+    border-radius: 6px; */
+    color: #DDFFF7; 
+    
 }

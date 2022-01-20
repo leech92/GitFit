@@ -20,10 +20,10 @@ class TopNavBar extends React.Component {
     render() {
         return (
             <header className='top-nav'>
-                <p><NavLink to="/">Home</NavLink></p>
+                <p className='top-button'><NavLink className='top-button' to="/">Home</NavLink></p>
                 
                 <div className="top-right">
-                    <p><NavLink to="/profile">Profile</NavLink></p>
+                    <p><NavLink className='top-button' to="/profile">Profile</NavLink></p>
                     <button onClick={this.props.logout}>Logout</button>
                 </div>
                 
@@ -34,3 +34,4 @@ class TopNavBar extends React.Component {
 }
 
 export default connect(null, mDTP)(TopNavBar); 
+// className='top-button'
