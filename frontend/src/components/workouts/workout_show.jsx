@@ -36,7 +36,7 @@ class WorkoutShow extends React.Component {
                      <span className = "workout-grind">SLEEP.SWEAT.GRIND.REPEAT.</span>
                 </div>
                 <div className = "workout-show-title">
-                    <span>Let's get it, time for some {this.props.workout.title}</span>
+                    <span>Let's get it, time for {this.props.workout.title}</span>
                 </div>
                 <ul className = "workout-show-list">
                     {exerciseItems}
