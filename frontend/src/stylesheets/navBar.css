@@ -1,9 +1,11 @@
 .top-nav {
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
+    background-color: #028476;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     font-size: 24px;
+    /* color: white; */
 }
 
 
@@ -17,7 +19,42 @@
 .top-right button{
     border: none;
     background-color: #028476;
-    color: white;
+    color: #DDFFF7; 
     cursor: pointer;
     font-size: 24px;
+    border-radius: 10px; 
+    padding: 8px; 
+}
+
+.top-button {
+    padding: 8px; 
+    border-radius: 10px; 
+    color: #DDFFF7;
+}
+
+.top-right button:hover {
+    background-color: #FF5349; 
+    color: black; 
+}
+
+.top-button:hover {
+    background-color: #FF5349;
+    color: black;
+}
+
+.top-button-outter {
+    padding: 8px; 
+}
+
+.top-button-profile {
+    color: #DDFFF7;
+}
+
+.top-button-home {
+    padding: 8px; 
+    color: #DDFFF7
+}
+
+.top-button-home:hover {
+    color: black; 
 }

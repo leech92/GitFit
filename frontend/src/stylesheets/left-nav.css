@@ -2,15 +2,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    line-height: 130%
+    line-height: 130%; 
+    width: 100px; 
+    background-color: hsl(166, 100%, 93%);
+    color: #028476; 
+    padding-left: 8px; 
+    padding-right: 8px; 
 }
 
 .discovery {
+    margin-top: 10px; 
     margin-bottom: 20px;
 }
 
 .left-buddies {
     margin-bottom: 20px;
+}
+
+.featured-buddies {
+    margin-bottom: 20px; 
 }
 
 .gym {
@@ -19,10 +29,18 @@
 .left-titles {
     color: grey;
     font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+.left-links {
+    margin-bottom: 5px; 
 }
 
 .left-links:hover{
-    background-color: rgb(182, 179, 179);
+    background-color: #ffcb69;
     cursor: pointer;
+    border: 3px #ffcb69 solid; 
+    border-radius: 6px; 
+    padding: 3px; 
 }
 
