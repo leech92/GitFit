@@ -26,6 +26,15 @@ class LeftNav extends React.Component{
         this.props.fetchUsers(); 
     }
 
+    componentDidUpdate(prevProps) {
+        // when the follow button is clicked the left nav rerenders immediately and the follow button will also switch follow/unfollow
+        const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
+        const buddies = currentUser.following.filter(id => id !== null)
+        if (buddies !== (prevProps.users.filter(user => prevProps.currentUser.id)[0]).following.filter(id => id !== null)) {
+            this.props.fetchUsers(); 
+        }
+    }
+
     render() {
         if (!Object.keys(this.props.users).length) {
             return null
