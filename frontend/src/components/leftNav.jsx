@@ -49,10 +49,6 @@ class LeftNav extends React.Component{
                     {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)}
                 </section>
 
-                <div>
-                    <NavLink to={'/users/61e57f360d6723c1f1d1302e'}> Test User </NavLink>
-                </div>
-
                 <section className="gym">
                     <NavLink to="/gym"><div className="left-links">Find a gym!</div></NavLink>
                 </section>
