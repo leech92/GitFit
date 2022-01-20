@@ -38,11 +38,9 @@ class MapContainer extends React.Component {
         };
         axios(config)
             .then((response) => {
-                debugger
                 console.log(JSON.stringify(response.data));
             })
             .catch(function (error) {
-                debugger
                 console.log(error);
             });
 
@@ -54,7 +52,6 @@ class MapContainer extends React.Component {
 
     //     fetch(proxyurl + url).then((resp) => resp.json())
     //         .then(function (data) {
-    //             debugger
     //             console.log(data);
     //         })
     //         .catch(function (error) {

@@ -48,11 +48,10 @@ class UsersProfile extends React.Component {
 
     toggleFollow(e) {
         e.preventDefault(); 
-        let obj = {'loggedId': this.props.currentUser.id, 'profileId': this.props.match.params.id}; 
+        let obj = {'loggedId': this.props.currentUser.id, 'profileId': this.props.match.params.id};
         // I am able to find the current logged in user and push to the following array, but I am not finding the currentProfileUser correctly and am pushing null to the follow array
         this.props.follow(obj); 
     }
-
 
     render() {
         let id = this.props.match.params.id; 
@@ -65,18 +64,16 @@ class UsersProfile extends React.Component {
 
 
         const { mealplans } = this.props;
-        // debugger; //Anna
         
         const listWorkouts = this.props.workouts.map((workout,idx) => {
-
             return (
                 <li key = {`workout-${idx}`}>
                     <span>{workout.title}</span>
                     <br />
                     <span>{workout.description}</span>
                 </li>
-            )
-        })
+                  )
+            })
 
         return(
         <div className='profile-container'>
