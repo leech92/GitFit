@@ -45,7 +45,7 @@ export const fetchWorkout = id => dispatch => {
 }
 
 export const fetchUserWorkout = id => dispatch => {
-
+    
     return getUserWorkout(id)
         .then(workouts => dispatch(receiveUserWorkout(workouts)))
         .catch(error => console.log(error))

@@ -5,6 +5,7 @@ const passport = require('passport');
 const Workout = require('../../models/Workout');
 
 router.get('/users/:user_id', (req,res) => {
+    
     Workout.find({user: req.params.user_id})
         .then(workouts => res.json(workouts))
 });
