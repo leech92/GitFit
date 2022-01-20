@@ -1,13 +1,15 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
+import CreateMealplanFormContainer from '../mealplan/create_mealplan_form_container'
+import UpdateMealplanFormContainer from '../mealplan/update_mealplan_form_container'
 
 const mSTP = state => ({
     modal: state.ui.modal
 });
 
 const mDTP = dispatch => ({
-    closeModal: () => dispatch(closeModal)
+    closeModal: () => dispatch(closeModal())
 });
 
 function Modal({modal, closeModal}) {
@@ -18,10 +20,10 @@ function Modal({modal, closeModal}) {
     let component;
     switch (modal) {
         case 'create mealplan':
-            // component = <CreateMealplanForm/>
+            component = <CreateMealplanFormContainer/>
             break;
         case 'update mealplan':
-            // component = <UpdateMealplanForm/>
+            component = <UpdateMealplanFormContainer/>
             break;
         case 'create meal':
             // component = <CreateMealForm/>

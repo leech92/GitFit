@@ -14,7 +14,7 @@ router.post('/',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const newMeal = new Meal({
-            mealplan: req.body.id,
+            mealplan: req.body.user,
             name: req.body.name,
             mealType: req.body.mealType,
             calories: req.body.calories,
