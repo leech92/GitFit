@@ -11,7 +11,6 @@ import MealplanContainer from "./mealplan/mealplan_container"
 import Home from "./home/home";
 import Footer from "./footer";
 
-
 const App = () => {
 
 
@@ -36,8 +35,6 @@ const App = () => {
 
 
           <ProtectedRoute path="/gym" component={Home} />
-
-
 
         </Switch>
 

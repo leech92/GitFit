@@ -106,7 +106,9 @@ router.post('/login', (req, res) => {
 router.patch('/:user_id', (req, res) => {
     User.findById(req.params.user_id)
         .then(user => {
+            // debugger; 
             if(user.following.includes(req.body.buddyId)) {
+                // debugger; 
                 let index = user.following.indexOf(req.body.buddyId);
                 user.following.splice(index, 1);  
                 user.save().then(res.json(user))

@@ -30,6 +30,18 @@ class UsersProfile extends React.Component {
         this.props.fetchUsers(); 
     }
 
+    // componentDidUpdate(prevProps) {
+    //     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
+    //     const prevCurrentUser = prevProps.users.filter(user =>user._id === prevProps.currentUser.id)[0]
+    //     if(currentUser.following.length !== prevCurrentUser.following.length) {
+    //         this.props.fetchUsers(); 
+    //     }
+
+    //     // if(this.props.currentUser.following !== prevProps.currentUser.following) {
+    //     //     this.props.fetchUsers(); 
+    //     // }
+    // }
+
     toggleFollow(e) {
         e.preventDefault(); 
         let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
@@ -45,18 +57,17 @@ class UsersProfile extends React.Component {
         const profileUser = this.props.users.filter((user) => user._id === id)[0]; 
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         const buttonText = currentUser.following.includes(profileUser._id) ? "Unfollow" : 'Follow'
-        // debugger; //Anna
-
-
 
         return(
         <div className='profile-container'>
 
             <section className='profile-top'>
-                <h3 className='friend-greeting' >Hey Best Buddy, {profileUser.username}</h3>
+                <p>Hey Best Buddy, {profileUser.username}</p>
             
                 <h3>Username: {profileUser.username}</h3>
-                {/* <h3> Been a Member of the GitFit Community since : {profileUser.created_at} </h3> */}
+                <h3> Joined the Team on {profileUser.date.split("T")[0]} </h3>
+                <h3> Following {profileUser.following.length} buddies </h3>
+                <h3>Height: Just Right</h3>
 
 
                 <button onClick={this.toggleFollow} className='follow-button' id='follow-button'> {buttonText} </button>
