@@ -29,7 +29,6 @@ class Home extends React.Component{
                             <ProtectedRoute path="/profile" component={Profile}/>
                             <ProtectedRoute path="/users/:id" component={UsersProfile} />
                             <ProtectedRoute path="/mealplans/:id" component={MealplanContainer} />
-
                             <ProtectedRoute path="/gym" component={Map}/>
                         </Switch>
                     </div>

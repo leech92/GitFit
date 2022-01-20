@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     User.find()
     .then(users => 
         res.json(users)
-    )
+    ).catch(err => res.json(err))
 })
 
 router.post('/register', (req, res) => {
@@ -107,26 +107,18 @@ router.patch('/:user_id', (req, res) => {
     User.findById(req.params.user_id)
         .then(user => {
             if(user.following.includes(req.body.profileId)) {
-                // params: { user_id: '61e8dc4327f92fe724f83b63
-                // body: { profileId: '61e57f360d6723c1f1d1302e' },
-                // console.log(req.body.profileId)
-                // console.log(user.username)
-                // console.log(user.id)
                 let index = user.following.indexOf(req.body.profileId);
                 user.following.splice(index, 1);  
                 user.save().then(res.json(user))
-                // console.log('UNFOLLOWED SUCCESSFULLY')
             } else {
-                // console.log(req.body.buddyId)
                 user.following.push(req.body.profileId); 
                 user.save().then(res.json(user)) 
-                // console.log('FOLLOWED SUCCESSFULLY')
             }
         }).catch(err => {
-            // console.log('just errors')
             return res.status(422).json
         })
 })
+
 
 
 router.get('/:user_id', (req, res) => {  
@@ -137,15 +129,6 @@ router.get('/:user_id', (req, res) => {
         .catch(err => {
             return res.status(422).json
         })
-
-    // User.find({user: req.body.id})
-    //     .then(user => {
-    //         res.json(user)
-    //     })
-
-        //"61e64a68d09b27b1fec83173"
-        //"61e57f360d6723c1f1d1302e" 
-        //they're not numbers, they're ObjectIds which can be turned into strings depending on _id or id
 })
 
 
