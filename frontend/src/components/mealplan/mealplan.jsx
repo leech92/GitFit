@@ -14,6 +14,7 @@ class Mealplan extends React.Component {
     }
 
     handleDelete() {
+        
         this.props.destroyMealplan(this.props.match.params.id)
             .then(() => this.props.history.push('/profile'))
     }
