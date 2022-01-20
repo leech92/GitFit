@@ -30,7 +30,6 @@ class LeftNav extends React.Component{
         if (!Object.keys(this.props.users).length) {
             return null
         }
-
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         const buddies = currentUser.following.filter(id => id !== null)
 

@@ -27,3 +27,4 @@ export const fetchUsers = () => {
 export const follow = (loggedId, profileId) => {
     return axios.patch(`/api/users/${loggedId}`, {"profileId" : profileId })
 }
+
