@@ -4,6 +4,7 @@ import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 import { follow } from '../../actions/user_actions'
 import { fetchUserMealplans } from '../../actions/mealplan_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -17,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()), 
   follow: (obj) => dispatch(follow(obj)),
-  fetchUserMealplans: id => dispatch(fetchUserMealplans(id))
+  fetchUserMealplans: id => dispatch(fetchUserMealplans(id)),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
