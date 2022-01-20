@@ -9,6 +9,7 @@ import MealplanContainer from "../mealplan/mealplan_container"
 import UsersProfile from '../profile/users_show'; 
 import Map from "../maps/maps"
 import "../../stylesheets/home.css"
+import DiscoverWorkoutsContainer from '../workouts/discover_workouts_container';
 
 class Home extends React.Component{
     render() {
@@ -23,7 +24,7 @@ class Home extends React.Component{
                         <Switch>
                             <ProtectedRoute exact path="/home" component={Feed} />
                             <ProtectedRoute exact path="/feed" component={Feed} />
-                            <ProtectedRoute exact path="/discoverWorkouts" component={Feed} />
+                            <ProtectedRoute exact path="/discoverWorkouts" component={DiscoverWorkoutsContainer} />
                             <ProtectedRoute exact path="/discoverMealPlans" component={Feed} />
                             <ProtectedRoute exact path="/buddies/:buddyId" component={Feed} />
                             <ProtectedRoute path="/profile" component={Profile}/>
