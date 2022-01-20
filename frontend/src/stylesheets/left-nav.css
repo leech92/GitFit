@@ -3,11 +3,13 @@
     flex-direction: column;
     justify-content: space-between;
     line-height: 130%; 
-    width: 100px; 
+    width: 100%; 
     background-color: hsl(166, 100%, 93%);
     color: #028476; 
     padding-left: 8px; 
-    padding-right: 8px; 
+    /* padding-right: 15px;  */
+    /* margin-right: 10px;  */
+    /* height: 100vw;  */
 }
 
 .discovery {
