@@ -6,13 +6,14 @@ import LoginContainer from './session/login_container';
 import SplashContainer from "./splash/splash"
 import Home from "./home/home";
 import Footer from "./footer";
+import Modal from "./modal/modal";
 
 const App = () => {
 
 
   return (
     <div className="App">
-
+      <Modal/>
         <Switch>
 
           <AuthRoute path = "/login" component = {LoginContainer} />
