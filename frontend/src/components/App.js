@@ -37,8 +37,6 @@ const App = () => {
 
           <ProtectedRoute path="/gym" component={Home} />
 
-
-
         </Switch>
 
       <Footer />
