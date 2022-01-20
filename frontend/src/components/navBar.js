@@ -20,10 +20,10 @@ class TopNavBar extends React.Component {
     render() {
         return (
             <header className='top-nav'>
-                <p className='top-button'><NavLink className='top-button' to="/">Home</NavLink></p>
+                <p className='top-button-outter top-button'><NavLink className='top-button-home' to="/">Home</NavLink></p>
                 
                 <div className="top-right">
-                    <p><NavLink className='top-button' to="/profile">Profile</NavLink></p>
+                    <p className='top-button-outter'><NavLink className='top-button-profile top-button' to="/profile">Profile</NavLink></p>
                     <button onClick={this.props.logout}>Logout</button>
                 </div>
                 

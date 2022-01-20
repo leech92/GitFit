@@ -19,7 +19,7 @@
 .top-right button{
     border: none;
     background-color: #028476;
-    color: black;
+    color: #DDFFF7; 
     cursor: pointer;
     font-size: 24px;
     border-radius: 10px; 
@@ -29,20 +29,32 @@
 .top-button {
     padding: 8px; 
     border-radius: 10px; 
-    
+    color: #DDFFF7;
 }
 
 .top-right button:hover {
     background-color: #FF5349; 
-    /* border: 3px #FB8B24 solid; 
-    border-radius: 6px; */
-    color: #DDFFF7; 
+    color: black; 
 }
 
 .top-button:hover {
     background-color: #FF5349;
-    /* border: 3px #FB8B24 solid; 
-    border-radius: 6px; */
-    color: #DDFFF7; 
-    
+    color: black;
+}
+
+.top-button-outter {
+    padding: 8px; 
+}
+
+.top-button-profile {
+    color: #DDFFF7;
+}
+
+.top-button-home {
+    padding: 8px; 
+    color: #DDFFF7
+}
+
+.top-button-home:hover {
+    color: black; 
 }
