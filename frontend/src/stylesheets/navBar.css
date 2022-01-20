@@ -1,9 +1,11 @@
 .top-nav {
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
+    background-color: #028476;
     display: flex;
     justify-content: space-between;
     padding: 10px;
     font-size: 24px;
+    /* color: white; */
 }
 
 

@@ -1,0 +1,70 @@
+.workout-image {
+    height: 45vh;
+    width: 20vw;
+    border-radius: 8px;
+    /* box-shadow: 5px 5px 5px #FB8B24; */
+    /* padding-bottom: 5px; */
+}
+
+.discover-workout-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid gold; */
+    overflow-y: scroll;
+}
+
+.workout-list-item {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+
+}
+
+.workout-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    width: 85vw;
+}
+
+.workout-motivation {
+    font-size: 3vh;
+    padding: 20px 20px 20px 20px;
+    position: absolute;
+    color: white;
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.workout-video-container {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.workout-banner {
+    height: 80vh;
+    width: 85vw;
+}
+
+.workout-motivation span {
+    color: white;
+}
+
+.workout-description {
+    width: 20vw;
+}
+
+.workout-title {
+    font-size: 4vh;
+    padding-bottom: 5px;
+}
