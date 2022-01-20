@@ -1,4 +1,5 @@
 import React from "react";
+import { createMealplan } from '../../util/mealplan_api_util'
 
 class CreateMealplanForm extends React.Component {
     constructor(props) {
@@ -31,8 +32,8 @@ class CreateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        debugger
         this.props.generateMealplan(data)
+        window.location.reload();
     }
 
     render() {

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import CreateMealplanFormContainer from '../mealplan/create_mealplan_form_container'
+import UpdateMealplanFormContainer from '../mealplan/update_mealplan_form_container'
 
 const mSTP = state => ({
     modal: state.ui.modal
@@ -22,7 +23,7 @@ function Modal({modal, closeModal}) {
             component = <CreateMealplanFormContainer/>
             break;
         case 'update mealplan':
-            // component = <UpdateMealplanForm/>
+            component = <UpdateMealplanFormContainer/>
             break;
         case 'create meal':
             // component = <CreateMealForm/>

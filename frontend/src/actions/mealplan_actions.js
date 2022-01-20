@@ -36,3 +36,4 @@ export const generateMealplan = data => dispatch => (
         .then(mealplan => dispatch(receiveNewMealplan(mealplan)))
         .catch(err => console.log(err))
 );
+

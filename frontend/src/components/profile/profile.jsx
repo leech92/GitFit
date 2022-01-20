@@ -44,7 +44,7 @@ class Profile extends React.Component {
           <div className='profile-bottom-right'>
             <div> Good Money, Good Honey! </div>
             <button onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
-            <MealplanPreview mealplans={mealplans}/>
+            <MealplanPreview mealplans={mealplans} openModal={this.props.openModal}/>
           </div>
         </section>
 
