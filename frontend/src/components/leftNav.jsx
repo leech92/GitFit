@@ -55,6 +55,8 @@ class LeftNav extends React.Component{
                     {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
 
                     {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)}
+
+
                 </section>
 
                 <section className='featured-buddies'>
@@ -63,6 +65,7 @@ class LeftNav extends React.Component{
                     <NavLink to='/users/61e8b5990a41587ae6dbcd2c'><div className="left-links">Marco</div></NavLink>
                     <NavLink to='/users/61e64a68d09b27b1fec83173'><div className="left-links">Anna</div></NavLink>
                     <NavLink to='/users/61e820d434256ef3da85279a'><div className="left-links">Christian</div></NavLink>
+
                 </section>
 
                 <section className="gym">

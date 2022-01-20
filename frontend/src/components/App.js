@@ -26,7 +26,7 @@ const App = () => {
           <ProtectedRoute path="/users/:id" component={Home} />
           <ProtectedRoute path="/mealplans/:id" component={Home} />
           <ProtectedRoute path="/gym" component={Home} />
-
+          <ProtectedRoute path="/workouts/:id" component={Home} />
         </Switch>
 
       <Footer />

@@ -10,6 +10,7 @@ import UsersProfile from '../profile/users_show';
 import Map from "../maps/maps"
 import "../../stylesheets/home.css"
 import DiscoverWorkoutsContainer from '../workouts/discover_workouts_container';
+import WorkoutShowContainer from '../workouts/workout_show_container';
 
 class Home extends React.Component{
     render() {
@@ -30,6 +31,10 @@ class Home extends React.Component{
                             <ProtectedRoute path="/profile" component={Profile}/>
                             <ProtectedRoute path="/users/:id" component={UsersProfile} />
                             <ProtectedRoute path="/mealplans/:id" component={MealplanContainer} />
+
+                            <ProtectedRoute path="/workouts/:id" component={WorkoutShowContainer} />
+
+
                             <ProtectedRoute path="/gym" component={Map}/>
                         </Switch>
                     </div>
