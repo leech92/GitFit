@@ -47,6 +47,14 @@ class LeftNav extends React.Component{
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         const buddies = currentUser.following.filter(id => id !== null)
 
+        // if they aren't following anyone there is a prompt to tell them to follow someone.
+        let alone = null; 
+        if(buddies.length < 1) {
+            alone = 'You aren\'t following anyone yet, try following someone to have a buddy!'; 
+        } else {
+            alone = null; 
+        }
+
         return (
             <div className="left-container">
                 <section className="discovery">
@@ -57,9 +65,10 @@ class LeftNav extends React.Component{
 
                 <section className="left-buddies">
                     <h3 className="left-titles">Buddies</h3>
+                    <div>{alone}</div>
                     {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
 
-                    {/* {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)} */}
+                    {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)}
                 </section>
 
                 <section className='featured-buddies'>
