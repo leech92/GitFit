@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!!!");
 });
 
+
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
@@ -41,8 +42,6 @@ app.use("/api/mealplans", mealplans);
 app.use("/api/meals", meals);
 app.use("/api/workouts", workouts);
 app.use("/api/exercises", exercises);
-
-
 
 
 const port = process.env.PORT || 4000;

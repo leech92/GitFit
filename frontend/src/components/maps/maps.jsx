@@ -1,7 +1,5 @@
 import React from "react";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import axios from "axios";
-
 
 
 const mapStyles = {
@@ -28,7 +26,8 @@ class MapContainer extends React.Component {
         };
         const error = err => console.log(err);
         navigator.geolocation.getCurrentPosition(success, error);
-        this.handleGymSearch();
+
+        //this.handleGymSearch();
     }
 
     handleGymSearch() {
@@ -58,7 +57,6 @@ class MapContainer extends React.Component {
     //             console.log(error);
     //         }); 
     // }
-
 
     render() {
         if (!this.state.lat) {
