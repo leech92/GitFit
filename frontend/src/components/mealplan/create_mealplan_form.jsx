@@ -1,5 +1,4 @@
 import React from "react";
-import { createMealplan } from '../../util/mealplan_api_util'
 
 class CreateMealplanForm extends React.Component {
     constructor(props) {

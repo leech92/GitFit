@@ -14,3 +14,8 @@ export const getUserMealplans = id => {
 export const createMealplan = data => {
     return axios.post('/api/mealplans/', data)
 };
+
+//update mealplans
+export const updateMealplan = data => {
+    return axios.patch(`/api/mealplans/${data.user}`, data)
+};

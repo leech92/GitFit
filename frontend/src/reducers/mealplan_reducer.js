@@ -1,4 +1,7 @@
-import { RECEIVE_MEALPLAN, RECEIVE_USER_MEALPLANS, RECEIVE_NEW_MEALPLAN } from "../actions/mealplan_actions";
+import { RECEIVE_MEALPLAN, 
+         RECEIVE_USER_MEALPLANS, 
+         RECEIVE_NEW_MEALPLAN,
+        } from "../actions/mealplan_actions";
 
 const MealplansReducer = (state = { specific: {}, user: [], new: {} }, action) => {
     Object.freeze(state);
@@ -13,6 +16,7 @@ const MealplansReducer = (state = { specific: {}, user: [], new: {} }, action) =
         case RECEIVE_NEW_MEALPLAN:
             newState.new = action.mealplan.data;
             return newState;
+        
         default:
             return state;
     }

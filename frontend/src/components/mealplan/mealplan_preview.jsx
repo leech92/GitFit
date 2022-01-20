@@ -15,14 +15,11 @@ class MealplanPreview extends React.Component {
                 <div>
                 {mealplans.map((mealplan,idx) => {
                     return(
-                        <div key={idx}>
-                            <Link className="mealplan-pre-link" to={`/mealplans/${mealplan._id}`}>
-                                <h1 className="mealplan-pre-name">{mealplan.name}</h1>
-                                <p className="mealplan-pre-type">Meal Plan Goal: {mealplan.mealplanType}</p>
-                                <p className="mealplan-pre-desc">{mealplan.description}</p>
-                            </Link>
-                            <button onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button>
-                        </div>
+                        <Link key={idx} className="mealplan-pre-link" to={`/mealplans/${mealplan._id}`}>
+                            <h1 className="mealplan-pre-name">{mealplan.name}</h1>
+                            <p className="mealplan-pre-type">Meal Plan Goal: {mealplan.mealplanType}</p>
+                            <p className="mealplan-pre-desc">{mealplan.description}</p>
+                        </Link>
                     )
                 })}
                 </div>

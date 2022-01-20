@@ -14,7 +14,6 @@ class Mealplan extends React.Component {
 
     render() {
         if (!this.props.mealplan) return null;
-        if (!this.props.meals.length) return null;
 
         const { mealplan, meals } = this.props;
 
@@ -34,6 +33,7 @@ class Mealplan extends React.Component {
                     <p className="mealplan-carbs">Carbs: {mealplan.carbs} grams</p>
                     <p className="mealplan-fat">Fat: {mealplan.fat} grams</p>
                 </div>
+                {/* <button onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button> */}
                 <Meals meals={meals}/>
             </div>
         )
