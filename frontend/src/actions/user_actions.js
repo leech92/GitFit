@@ -14,5 +14,6 @@ export const fetchUsers = () => dispatch => (
 ); 
 
 export const follow = (object) => dispatch => (
-    APIUtil.follow(object['loggedId'], object['profileId']).then(user => dispatch(follow(user)))
+    APIUtil.follow(object['loggedId'], object['profileId'])
+        .then(object => dispatch(follow(object['loggedId'], object['profileId'])))
 )
