@@ -6,11 +6,12 @@ const ExerciseReducer = (state = { all: {}, some: {} }, action) => {
 
     switch(action.type) {
         case RECEIVE_ALL_EXERCISES:
-            newState.all = action.workouts.data;
+            newState.all = action.exercises.data;
             return newState;
 
         case RECEIVE_WORKOUT_EXERCISES:
-            newState.some = action.workouts.data;
+            
+            newState.some = action.exercises.data;
             return newState;
 
         default:

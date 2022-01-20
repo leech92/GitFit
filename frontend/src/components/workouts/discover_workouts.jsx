@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../stylesheets/discover_workout.css';
+import { Link } from 'react-router-dom';
 
 class DiscoverWorkouts extends React.Component {
 
@@ -11,7 +12,7 @@ class DiscoverWorkouts extends React.Component {
     render() {
         if (!this.props.workouts.length) return null;
 
-        const workoutItems = this.props.workouts.map(workout => {
+        const workoutItems = this.props.workouts.map((workout, idx) => {
                 let photo;
 
                 if (workout.title === "Chest") {
@@ -28,8 +29,10 @@ class DiscoverWorkouts extends React.Component {
                 else {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
                 }
-                return (<li className = "workout-list-item">
-                    <img src= {photo} alt= "athlete" className = "workout-image"/>
+                return (<li className = "workout-list-item" key = {`workout-${idx}`}>
+                    <Link to = {`/workouts/${workout._id}`}>
+                        <img src= {photo} alt= "athlete" className = "workout-image"/>
+                    </Link>
                     <span className = "workout-title">{workout.title}</span>
                     <span className='workout-description'>{workout.description}</span>
                 </li>)
@@ -43,8 +46,7 @@ class DiscoverWorkouts extends React.Component {
                     <video src= "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" autoPlay = {true} loop muted className = "workout-banner"></video>
                     <div className = "workout-motivation">
                         <span className = "workout-message">“Just like in bodybuilding, failure is also a necessary experience for growth in our own lives, for if we’re never tested to our limits, how will we know how strong we really are? How will we ever grow?”</span>
-                        {/* <br /> */}
-                        <span classNamee = "workout-author">– Arnold Schwarzenegger</span>
+                        <span className = "workout-author">– Arnold Schwarzenegger</span>
                     </div>
                 </div>
 

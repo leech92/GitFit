@@ -59,7 +59,7 @@ class LeftNav extends React.Component{
                     <h3 className="left-titles">Buddies</h3>
                     {/* {this.props.currentUser.followings.map(id => <div><NavLink to={`users/${id}`}></NavLink></div>)} */}
 
-                    {/* {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)} */}
+                    {buddies.map(id => <NavLink to={`/users/${id}`} key={id}><div className="left-links">{this.props.users.filter(user => user._id === id)[0].username}</div></NavLink>)}
                 </section>
 
                 <section className="gym">

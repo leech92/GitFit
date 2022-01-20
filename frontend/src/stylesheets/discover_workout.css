@@ -9,16 +9,12 @@
 .discover-workout-container {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid gold; */
-    overflow-y: scroll;
 }
 
 .workout-list-item {
-    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
     width: 25%;
-    /* padding-top: 10px; */
     padding-bottom: 10px;
 
 }
