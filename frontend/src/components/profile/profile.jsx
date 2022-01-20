@@ -10,10 +10,13 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserMealplans(this.props.currentUser.id)
+    this.props.fetchUserMealplans(this.props.currentUser.id);
+    this.props.fetchUsers();
   }
 
   render() {
+    if (!this.props.users.length) return null;
+
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
