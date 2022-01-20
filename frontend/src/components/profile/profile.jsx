@@ -13,12 +13,6 @@ class Profile extends React.Component {
     this.props.fetchUserMealplans(this.props.currentUser.id)
   }
 
-  toggleFollow(e){
-    e.preventDefault(); 
-    let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
-    this.props.follow(obj); 
-  }
-
   render() {
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
