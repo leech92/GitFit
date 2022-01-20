@@ -1,16 +1,16 @@
 import React from "react";
 
-class CreateMealplanForm extends React.Component {
+class UpdateMealplanForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            mealplanType: '',
-            calories: 0,
-            protein: 0,
-            carbs: 0,
-            fat: 0,
-            description: ''
+            name: this.props.mealplan.name,
+            mealplanType: this.props.mealplan.mealplanType,
+            calories: this.props.mealplan.calories,
+            protein: this.props.mealplan.protein,
+            carbs: this.props.mealplan.carbs,
+            fat: this.props.mealplan.fat,
+            description: this.props.mealplan.description
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,49 +31,49 @@ class CreateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        this.props.generateMealplan(data)
+        this.props.editMealplan(data)
         window.location.reload();
     }
 
     render() {
         return (
-           <div className="create-mealplan-container">
-               <form className="create-mealplan-form" onSubmit={this.handleSubmit}>
-                    <h1>Create Mealplan</h1>
-                    <div className="create-mealplan-name">
+            <div className="edit-mealplan-container">
+                <form className="edit-mealplan-form" onSubmit={this.handleSubmit}>
+                    <h1>Edit Mealplan</h1>
+                    <div className="edit-mealplan-name">
                         <p>Meal Plan Name</p>
                         <input type="text" value={this.state.name} onChange={this.update('name')}/>
                     </div>
-                    <div className="create-mealplan-type">
+                    <div className="edit-mealplan-type">
                         <p>Meal Plan Type</p>
                         <input type="text" value={this.state.mealplanType} onChange={this.update('mealplanType')}/>
                     </div>
-                    <div className="create-mealplan-calories">
+                    <div className="edit-mealplan-calories">
                         <p>Daily Calories</p>
                         <input type="text" value={this.state.calories} onChange={this.update('calories')}/>
                     </div>
-                    <div className="create-mealplan-protein">
+                    <div className="edit-mealplan-protein">
                         <p>Daily Protein</p>
                         <input type="text" value={this.state.protein} onChange={this.update('protein')}/>
                     </div >
-                    <div className="create-mealplan-carbs">
+                    <div className="edit-mealplan-carbs">
                         <p>Daily Carbs</p>
                         <input type="text" value={this.state.carbs} onChange={this.update('carbs')}/>
                     </div>
-                    <div className="create-mealplan-fat">
+                    <div className="edit-mealplan-fat">
                         <p>Daily Fat</p>
                         <input type="text" value={this.state.fat} onChange={this.update('fat')}/>
                     </div>
-                    <div className="create-mealplan-desc">
+                    <div className="edit-mealplan-desc">
                         <p>Meal Plan Description</p>
                         <input type="text" value={this.state.description} onChange={this.update('description')}/>
                     </div>
-                    <button className="create-mealplan-exit" onClick={this.props.closeModal}>Exit</button>
+                    <button className="edit-mealplan-exit" onClick={this.props.closeModal}>Exit</button>
                     <button>Submit</button>
                </form>
-           </div> 
+            </div>
         )
     }
 }
 
-export default CreateMealplanForm;
+export default UpdateMealplanForm;

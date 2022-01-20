@@ -29,7 +29,7 @@ const App = () => {
           <ProtectedRoute path="/workouts/:id" component={Home} />
         </Switch>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
   );
