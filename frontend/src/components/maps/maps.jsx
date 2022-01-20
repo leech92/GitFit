@@ -1,7 +1,5 @@
 import React from "react";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import axios from "axios";
-
 
 
 const mapStyles = {
@@ -28,40 +26,8 @@ class MapContainer extends React.Component {
         };
         const error = err => console.log(err);
         navigator.geolocation.getCurrentPosition(success, error);
-        this.handleGymSearch();
+        // this.handleGymSearch();
     }
-
-    handleGymSearch() {
-        let config = {
-            method: 'get',
-            url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.state.lat}%2C${this.state.lng}&radius=1500&type=gym&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
-        };
-        axios(config)
-            .then((response) => {
-                debugger
-                console.log(JSON.stringify(response.data));
-            })
-            .catch(function (error) {
-                debugger
-                console.log(error);
-            });
-
-    }
-
-    // handleGymSearch() {
-    //     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    //     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.state.lat}%2C${this.state.lng}&radius=1500&type=gym&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
-
-    //     fetch(proxyurl + url).then((resp) => resp.json())
-    //         .then(function (data) {
-    //             debugger
-    //             console.log(data);
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         }); 
-    // }
-
 
     render() {
         if (!this.state.lat) {
