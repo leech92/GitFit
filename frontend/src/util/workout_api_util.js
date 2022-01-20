@@ -11,7 +11,7 @@ export const getAllWorkouts = () => {
 }
 
 export const getUserWorkout = id => {
-
+    
     return axios.get(`/api/workouts/users/${id}`)
 };
 
