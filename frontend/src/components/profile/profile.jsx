@@ -17,7 +17,6 @@ class Profile extends React.Component {
     e.preventDefault(); 
     let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
     this.props.follow(obj); 
-    this.changeFollowButton(); 
   }
 
   render() {

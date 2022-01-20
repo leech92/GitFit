@@ -44,7 +44,8 @@ class UsersProfile extends React.Component {
 
     toggleFollow(e) {
         e.preventDefault(); 
-        let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
+        let obj = {'loggedId': this.props.currentUser.id, 'profileId': this.props.match.params.id}; 
+        debugger; 
         this.props.follow(obj); 
     }
 
@@ -57,7 +58,7 @@ class UsersProfile extends React.Component {
         const profileUser = this.props.users.filter((user) => user._id === id)[0]; 
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
         const buttonText = currentUser.following.includes(profileUser._id) ? "Unfollow" : 'Follow'
-
+        debugger; 
         return(
         <div className='profile-container'>
 

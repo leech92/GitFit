@@ -106,18 +106,23 @@ router.post('/login', (req, res) => {
 router.patch('/:user_id', (req, res) => {
     User.findById(req.params.user_id)
         .then(user => {
-            // debugger; 
             if(user.following.includes(req.body.buddyId)) {
-                // debugger; 
                 let index = user.following.indexOf(req.body.buddyId);
                 user.following.splice(index, 1);  
                 user.save().then(res.json(user))
+                console.log('UNFOLLOWED SUCCESSFULLY')
             } else {
                 user.following.push(req.body.buddyId); 
                 user.save().then(res.json(user)) 
+                console.log('FOLLOWED SUCCESSFULLY')
             }
+        }).catch(err => {
+            console.log('just errors')
+            debugger; 
+            return res.status(422).json
         })
 })
+
 
 router.get('/:user_id', (req, res) => {  
     User.findById(req.params.user_id)
