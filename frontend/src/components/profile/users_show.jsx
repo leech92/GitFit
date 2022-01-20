@@ -5,13 +5,15 @@ import { logout } from '../../actions/session_actions';
 import { follow, fetchUsers } from '../../actions/user_actions'
 import { fetchUserMealplans } from '../../actions/mealplan_actions';
 import MealplanPreview from '../mealplan/mealplan_preview';
+import { fetchUserWorkout } from '../../actions/workout_actions';
 
 const mSTP = (state) => {
   return {
     currentUser: state.session.user, 
     users: state.entities.users, 
     // buddy: state.entities.users[.match.params.id]
-    mealplans: state.entities.mealplans.user
+    mealplans: state.entities.mealplans.user,
+    workouts: Object.values(state.entities.workouts.user)
   };
 };
 
@@ -19,7 +21,8 @@ const mDTP = dispatch => ({
   logout: () => dispatch(logout()), 
   follow: (obj) => dispatch(follow(obj)),
   fetchUsers: () => dispatch(fetchUsers()),
-  fetchUserMealplans: id => dispatch(fetchUserMealplans(id))
+  fetchUserMealplans: id => dispatch(fetchUserMealplans(id)),
+  fetchUserWorkout: id => dispatch(fetchUserWorkout(id))
 });
 
 
@@ -33,6 +36,8 @@ class UsersProfile extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
         this.props.fetchUserMealplans(this.props.match.params.id)
+        this.props.fetchUserWorkout(this.props.match.params.id)
+    
     }
 
     componentDidUpdate(prevProps) {
@@ -48,7 +53,6 @@ class UsersProfile extends React.Component {
         this.props.follow(obj); 
     }
 
-
     render() {
         let id = this.props.match.params.id; 
         if(Object.keys(this.props.users).length < 2) {
@@ -60,8 +64,16 @@ class UsersProfile extends React.Component {
 
 
         const { mealplans } = this.props;
-
-
+        
+        const listWorkouts = this.props.workouts.map((workout,idx) => {
+            return (
+                <li key = {`workout-${idx}`}>
+                    <span>{workout.title}</span>
+                    <br />
+                    <span>{workout.description}</span>
+                </li>
+                  )
+            })
 
         return(
         <div className='profile-container'>
@@ -83,7 +95,9 @@ class UsersProfile extends React.Component {
             <section className='profile-btm'>
                 <div className='profile-bottom-left'>
                     <div> Here's the tea </div>
-                    WORKOUTS PREVIEWS GO HERE
+                    <ul>
+                        {listWorkouts}
+                    </ul>
                 </div>
 
                 <div className='profile-bottom-right'>

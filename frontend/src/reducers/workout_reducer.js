@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_WORKOUTS, RECEIVE_WORKOUT, RECEIVE_USER_WORKOUT,RECEIVE_NEW_WORKOUT } from "../actions/workout_actions";
 
-const WorkoutReducer = (state = { specific: {}, user: [], new: {}, all: {} },action) => {
+const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },action) => {
     Object.freeze(state);
     const newState = Object.assign({}, state);
 
@@ -10,8 +10,9 @@ const WorkoutReducer = (state = { specific: {}, user: [], new: {}, all: {} },act
             return newState;
 
         case RECEIVE_USER_WORKOUT: 
-            newState.user = action.workouts.data;
 
+            newState.user = action.workouts.data;
+            return newState;
         case RECEIVE_NEW_WORKOUT:
             newState.new = action.workout.data;
             return newState;
