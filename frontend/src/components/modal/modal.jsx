@@ -18,16 +18,16 @@ function Modal({modal, closeModal}) {
     let component;
     switch (modal) {
         case 'create mealplan':
-            component = <CreateMealplanForm/>
+            // component = <CreateMealplanForm/>
             break;
         case 'update mealplan':
-            component = <UpdateMealplanForm/>
+            // component = <UpdateMealplanForm/>
             break;
         case 'create meal':
-            component = <CreateMealForm/>
+            // component = <CreateMealForm/>
             break;
         case 'update meal':
-            component = <UpdateMealForm/>
+            // component = <UpdateMealForm/>
             break;
         default:
             return null;    

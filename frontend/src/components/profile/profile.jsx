@@ -20,8 +20,6 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (!this.props.mealplans.length) return null;
-
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
