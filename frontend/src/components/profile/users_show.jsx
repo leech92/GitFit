@@ -46,21 +46,14 @@ class UsersProfile extends React.Component {
         }
     }
 
-    // componentDidUpdate(prevProps) {
-    //     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
-    //     const prevCurrentUser = prevProps.users.filter(user =>user._id === prevProps.currentUser.id)[0]
-    //     if(currentUser.following.length !== prevCurrentUser.following.length) {
-    //         this.props.fetchUsers(); 
-    //     }
-
-    //     // if(this.props.currentUser.following !== prevProps.currentUser.following) {
-    //     //     this.props.fetchUsers(); 
-    //     // }
-    // }
-
     toggleFollow(e) {
         e.preventDefault(); 
         let obj = {'loggedId': this.props.currentUser.id, 'profileId': this.props.match.params.id}; 
+
+
+       
+        // I am able to find the current logged in user and push to the following array, but I am not finding the currentProfileUser correctly and am pushing null to the follow array
+
         this.props.follow(obj); 
     }
 
