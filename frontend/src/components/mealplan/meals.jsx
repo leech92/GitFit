@@ -12,7 +12,7 @@ class Meals extends React.Component {
             <div className="meals-container">
                 <h1 className="meals-container-head">Meals</h1>
                 <div>
-                {meals.map((meal, idx) =>{
+                {meals.map((meal, idx) => {
                     return(
                         <div key={idx} className="meal-container">
                             <h1 className={`meal-category-${meal.mealType}`}>{meal.mealType}</h1>
