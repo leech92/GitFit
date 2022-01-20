@@ -10,17 +10,12 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserMealplans(this.props.currentUser.id)
-  }
-
-  toggleFollow(e){
-    e.preventDefault(); 
-    let obj = {'loggedId': this.props.currentUser, 'profileId': this.props.match.params.id}; 
-    this.props.follow(obj); 
+    this.props.fetchUserMealplans(this.props.currentUser.id);
+    this.props.fetchUsers();
   }
 
   render() {
-    if (!this.props.mealplans.length) return null;
+    if (!this.props.users.length) return null;
 
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
@@ -48,6 +43,7 @@ class Profile extends React.Component {
 
           <div className='profile-bottom-right'>
             <div> Good Money, Good Honey! </div>
+            <button onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
             <MealplanPreview mealplans={mealplans}/>
           </div>
         </section>
