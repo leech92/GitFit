@@ -26,7 +26,7 @@ export const fetchAllExercises = () => dispatch => {
         .catch(error => console.log(error))
 };
 
-export const fetchWorkoutExercises = () => dispatch => {
+export const fetchWorkoutExercises = (id) => dispatch => {
 
     return getWorkoutExercises(id)
         .then(exercises => dispatch(receiveWorkoutExercises(exercises)))
