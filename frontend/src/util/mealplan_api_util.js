@@ -19,3 +19,8 @@ export const createMealplan = data => {
 export const updateMealplan = data => {
     return axios.patch(`/api/mealplans/${data.user}`, data)
 };
+
+//delete mealplans
+export const deleteMealplan = id => {
+    return axios.delete(`/api/mealplans/${id}`)
+}

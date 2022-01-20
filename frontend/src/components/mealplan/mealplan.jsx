@@ -5,11 +5,18 @@ import "../../stylesheets/mealplan.css";
 class Mealplan extends React.Component {
     constructor(props) {
         super(props)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchMealplan(this.props.match.params.id);
         this.props.fetchMealplanMeals(this.props.match.params.id);
+    }
+
+    handleDelete() {
+        
+        this.props.destroyMealplan(this.props.match.params.id)
+            .then(() => this.props.history.push('/profile'))
     }
 
     render() {
@@ -34,6 +41,7 @@ class Mealplan extends React.Component {
                     <p className="mealplan-fat">Fat: {mealplan.fat} grams</p>
                 </div>
                 {/* <button onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button> */}
+                <button onClick={this.handleDelete}>Delete Mealplan</button>
                 <Meals meals={meals}/>
             </div>
         )
