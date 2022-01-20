@@ -7,16 +7,20 @@
     /* border: 1px solid goldenrod; */
     display: flex;
     flex-direction: row;
-    height: 1200px;
+    /* height: 1200px; */
 }
 
 .left-nav {
     width: 15%;
     /* border:  1px solid burlywood; */
     border-right: 1px solid lightgray;
+    background-color: #DDFFF7; 
+    padding-right: 10px; 
 }
 
 .middle-console {
     width: 100%;
     height: 100%;
+    margin-left: 15px; 
+    margin-right: 15px; 
 }
