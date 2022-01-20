@@ -106,19 +106,24 @@ router.post('/login', (req, res) => {
 router.patch('/:user_id', (req, res) => {
     User.findById(req.params.user_id)
         .then(user => {
-            if(user.following.includes(req.body.buddyId)) {
-                let index = user.following.indexOf(req.body.buddyId);
+            if(user.following.includes(req.body.profileId)) {
+                // params: { user_id: '61e8dc4327f92fe724f83b63
+                // body: { profileId: '61e57f360d6723c1f1d1302e' },
+                // console.log(req.body.profileId)
+                // console.log(user.username)
+                // console.log(user.id)
+                let index = user.following.indexOf(req.body.profileId);
                 user.following.splice(index, 1);  
                 user.save().then(res.json(user))
-                console.log('UNFOLLOWED SUCCESSFULLY')
+                // console.log('UNFOLLOWED SUCCESSFULLY')
             } else {
-                user.following.push(req.body.buddyId); 
+                // console.log(req.body.buddyId)
+                user.following.push(req.body.profileId); 
                 user.save().then(res.json(user)) 
-                console.log('FOLLOWED SUCCESSFULLY')
+                // console.log('FOLLOWED SUCCESSFULLY')
             }
         }).catch(err => {
-            console.log('just errors')
-            debugger; 
+            // console.log('just errors')
             return res.status(422).json
         })
 })
