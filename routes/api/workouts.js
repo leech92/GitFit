@@ -1,4 +1,5 @@
 const express = require('express');
+const res = require('express/lib/response');
 const router = express.Router();
 const passport = require('passport');
 const Workout = require('../../models/Workout');
@@ -8,12 +9,18 @@ router.get('/users/:user_id', (req,res) => {
         .then(workouts => res.json(workouts))
 });
 
+router.get('/', (req,res) => {
+    Workout.find()
+    .then(workouts => res.json(workouts))
+});
+
 router.get('/:id', (req,res) => {
 
     Workout.findById(req.params.id)
         .then(workout => res.json(workout))
 });
-
+//had to change to user to pull ID from body. I might
+//need to change this later- Marco
 router.post('/',
 
     (req, res) => {
@@ -22,14 +29,14 @@ router.post('/',
             title: req.body.title,
             description: req.body.description
         })
-
+        
     newWorkout.save().then(workout => res.json(workout))
 })
 
 router.patch('/:id',
 
     (req,res) => {
-        debugger
+
         Workout.findById(req.params.id)
             .then(workout => {
                 workout.title = req.body.title,
