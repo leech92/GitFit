@@ -84,7 +84,6 @@ class Profile extends React.Component {
               <ul className= 'profile-workout-list'>
 
            
-              <ul>
 
                 {userWorkouts}
               </ul>

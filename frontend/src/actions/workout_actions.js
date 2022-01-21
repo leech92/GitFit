@@ -30,7 +30,6 @@ const receiveNewWorkout = workout => {
 };
 
 const receiveAllWorkouts = workouts => {
-
     return {
         type: RECEIVE_ALL_WORKOUTS,
         workouts

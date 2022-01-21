@@ -20,7 +20,6 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
         case RECEIVE_ALL_WORKOUTS:
             newState.all = action.workouts.data;
             return newState;
-
         default:
             return state;
     };
