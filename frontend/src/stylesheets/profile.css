@@ -56,22 +56,27 @@
 }
 
 
+
 .profile-btm div {
     width: 100%;
 }
 
+
 .profile-bottom-top {
-    /* background-color: #ffcb69; */
+    background-color: #ffcb69;
     color: #DDFFF7; 
     padding: 10px; 
     border-bottom: 1px solid lightgray;
 }
 
 .profile-bottom-bottom {
-    /* background-color: #FF5349; */
     color: #DDFFF7; 
-    padding: 10px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 .profile-workout-pic {
     width: 20vw;
@@ -108,6 +113,25 @@
     font-size: 5vh;
     padding-top: 15px;
     padding-bottom: 15px;
+
+.create-button{
+    color: #B7E4C7;
+    background-color: #028476;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1vw;
+    margin: 10px; 
+    padding: 5px; 
+    font-size: 16px; 
+    font-weight: bolder; 
+}
+
+.create-button:hover{
+    cursor: pointer;
+    color: #028476;
+    background-color: #B7E4C7;
+
 }
 
 .delete-workout-button {
