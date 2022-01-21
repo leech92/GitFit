@@ -21,7 +21,7 @@ const App = () => {
           <AuthRoute exact path = "/" component = {SplashContainer}/>
           <ProtectedRoute path ="/home" component = {Home} />
           <ProtectedRoute path="/discoverWorkouts" component={Home} />
-          <ProtectedRoute path="/discoverMealPlans" component={Home} />  
+          <ProtectedRoute path="/findBuddies" component={Home} />  
           <ProtectedRoute exact path="/profile" component={Home}/>
           <ProtectedRoute path="/users/:id" component={Home} />
           <ProtectedRoute path="/mealplans/:id" component={Home} />

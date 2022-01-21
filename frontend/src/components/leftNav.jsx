@@ -46,7 +46,7 @@ class LeftNav extends React.Component{
                 <section className="discovery">
                     <h3 className="left-titles">Discover</h3>
                     <NavLink to="/discoverWorkouts"><div className="left-links">Browse workouts</div></NavLink>
-                    <NavLink to="/discoverMealPlans"><div className="left-links">Browse meal plans</div></NavLink>
+                    <NavLink to="/findBuddies"><div className="left-links">Find Buddies</div></NavLink>
                 </section>
 
                 <section className="left-buddies">

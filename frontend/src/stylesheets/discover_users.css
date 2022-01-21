@@ -1,0 +1,26 @@
+#disco-buddy {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+    color: #028476;
+}
+
+.not-buddy {
+    background-color: hsl(166, 100%, 93%);
+    border-radius: 25px;
+    height: 80px;
+    width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.not-buddy:hover {
+    background-color: hsl(273, 100%, 93%);
+}

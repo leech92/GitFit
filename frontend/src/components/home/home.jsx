@@ -11,6 +11,7 @@ import Map from "../maps/maps"
 import "../../stylesheets/home.css"
 import DiscoverWorkoutsContainer from '../workouts/discover_workouts_container';
 import WorkoutShowContainer from '../workouts/workout_show_container';
+import BrowseUser from "../profile/users_browse"
 
 class Home extends React.Component{
     render() {
@@ -26,12 +27,11 @@ class Home extends React.Component{
                             <ProtectedRoute exact path="/home" component={Feed} />
                             <ProtectedRoute exact path="/feed" component={Feed} />
                             <ProtectedRoute exact path="/discoverWorkouts" component={DiscoverWorkoutsContainer} />
-                            <ProtectedRoute exact path="/discoverMealPlans" component={Feed} />
+                            <ProtectedRoute exact path="/findBuddies" component={BrowseUser} />
                             <ProtectedRoute exact path="/buddies/:buddyId" component={Feed} />
                             <ProtectedRoute path="/profile" component={Profile}/>
                             <ProtectedRoute path="/users/:id" component={UsersProfile} />
                             <ProtectedRoute path="/mealplans/:id" component={MealplanContainer} />
-
                             <ProtectedRoute path="/workouts/:id" component={WorkoutShowContainer} />
 
 
