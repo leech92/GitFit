@@ -52,7 +52,7 @@ export const fetchUserWorkout = id => dispatch => {
 };
 
 export const generateWorkout = data => dispatch => {
-
+    
     return createWorkout(data)
         .then(workout => dispatch(receiveNewWorkout(workout)))
         .catch(error => console.log(error))

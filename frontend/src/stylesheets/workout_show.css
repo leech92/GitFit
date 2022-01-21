@@ -71,3 +71,22 @@
 .workout-show-title span {
     font-size: 5vh;
 }
+
+.workout-show-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.add-workout-button {
+    background-color: #028476;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    height: 5vh;
+    width: 20vw;
+    font-size: 4vh;
+ 
+}

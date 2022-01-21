@@ -14,6 +14,7 @@ export const getUserWorkout = id => {
 };
 
 export const createWorkout = data => {
-    return axios.post('/api/workouts/')
+    debugger
+    return axios.post('/api/workouts/', data)
 };
 

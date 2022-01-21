@@ -12,11 +12,12 @@
 
 .profile-top{
     width: 100%;
-    background-color: #B7E4C7; 
+    /* background-color: #B7E4C7;  */
     color: #028476;  
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
 }
 
 .profile-top p {
@@ -59,16 +60,60 @@
     width: 100%;
 }
 
-.profile-bottom-left {
-    background-color: #ffcb69;
+.profile-bottom-top {
+    /* background-color: #ffcb69; */
+    color: #DDFFF7; 
+    padding: 10px; 
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-bottom-bottom {
+    /* background-color: #FF5349; */
     color: #DDFFF7; 
     padding: 10px; 
 }
 
-.profile-bottom-right {
-    background-color: #FF5349;
-    color: #DDFFF7; 
-    padding: 10px; 
+.profile-workout-pic {
+    width: 20vw;
+    height: 40vh;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px lightgray;
 }
 
+.profile-workout-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
 
+.profile-workout-item {
+    width: 20vw;
+    padding-right: 20px;
+}
+
+.profile-workout-title {
+    font-size: 4vh;
+}
+
+.profile-workout-description {
+    color: gray;
+}
+
+.profile-myworkouts {
+    font-size: 6vh;
+}
+
+.checkout-workout {
+    color: #003049;
+    font-size: 5vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.delete-workout-button {
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
