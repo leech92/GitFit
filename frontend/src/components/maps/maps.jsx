@@ -56,7 +56,7 @@ class MapContainer extends React.Component {
                 <Marker position={this.state} icon={"https://img.icons8.com/fluency/48/000000/home-page.png"}/>
                 {dummyPoints.map(location => <Marker position={location} icon={"https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-gym-location-pins-soft-fill-soft-fill-juicy-fish.png"}/>)}
 
-                {bubblePoints.map(location => <Marker position={location} icon={"https://s3.console.aws.amazon.com/s3/object/gitfit-app-images?region=us-east-1&prefix=bubble_tea_tinier.png"}/>)}
+                {bubblePoints.map(location => <Marker position={location} icon={"https://raw.githubusercontent.com/leech92/GitFit/main/frontend/src/stylesheets/images/bubble_tea_tinier.png"}/>)}
             </Map>
         )
     }
@@ -66,6 +66,8 @@ class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_API_KEY})(MapContainer);
+
+
 
 
 
