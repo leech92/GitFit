@@ -7,7 +7,7 @@
 }
 
 .mealplan-title{
-    margin-top: 20px;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
     font-size: 30px;
@@ -16,28 +16,36 @@
 }
 
 .mealplan-description{
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: tomato;
+    background-color: rgb(255, 152, 67);
 }
 
 .mealplan-goal-head{
-    margin-top: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(247, 247, 125);
     font-size: 20px;
 }
 
 .mealplan-type{
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .mealplan-desc-head{
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(247, 247, 125);
     margin-top: 15px;
     font-size: 20px;
 }
 
 .mealplan-desc{
-    margin-top: 5px;
+    margin-top: 8px;
     width: 400px;
     text-align: center;
 }
@@ -46,13 +54,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 152, 67);
 }
 
 .mealplan-nutri-head{
-    margin-top: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(247, 247, 125);
     font-size: 20px;
 }
 
 .mealplan-calories{
-    margin-top: 5px;
+    margin-top: 8px;
+}
+
+.mealplan-button{
+    color: #B7E4C7;
+    background-color: #028476;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1vw;
+    margin: 10px; 
+    padding: 5px; 
+    font-size: 16px; 
+    font-weight: bolder; 
+}
+
+.mealplan-button:hover{
+    cursor: pointer;
+    color: #028476;
+    background-color: #B7E4C7;
 }
