@@ -1,0 +1,89 @@
+.meals-container{
+    width: 75%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.meals-container-head{
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(247, 247, 125);
+    font-size: 20px;
+}
+
+.meals-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.meal-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 750px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #7fd3c1;
+    border-radius: 15px;
+}
+
+.meal-photo{
+    margin-left: 10px;
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+}
+
+.meal-right{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-category-Breakfast{
+    margin-top: 5px;
+    background-color: #FB8B24;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.meal-category-Lunch{
+    margin-top: 5px;
+    background-color: #DDFFF7;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.meal-category-Dinner{
+    margin-top: 5px;
+    background-color: #FF5349;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.meal-name{
+    margin-top: 5px;
+}
+
+.meal-calories{
+    margin-top: 5px;
+}
+
+.meal-desc{
+    margin-top: 5px;
+}
+
+.meal-ingredients{
+    margin-top: 5px;
+}
