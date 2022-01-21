@@ -6,7 +6,7 @@ import { follow } from '../../actions/user_actions'
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchUserMealplans } from '../../actions/mealplan_actions';
 import { openModal } from '../../actions/modal_actions';
-import { fetchUserWorkout, fetchAllWorkouts } from '../../actions/workout_actions';
+import { fetchUserWorkout, fetchAllWorkouts, destroyWorkout } from '../../actions/workout_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => ({
   openModal: modal => dispatch(openModal(modal)),
   fetchUsers: () => dispatch(fetchUsers()),
   fetchUserWorkout: id => dispatch(fetchUserWorkout(id)),
-  fetchAllWorkouts: () => dispatch(fetchAllWorkouts())
-
+  fetchAllWorkouts: () => dispatch(fetchAllWorkouts()),
+  destroyWorkout: id => dispatch(destroyWorkout(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

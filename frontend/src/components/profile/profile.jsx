@@ -58,7 +58,7 @@ class Profile extends React.Component {
           <br />
           <span className = "profile-workout-description">{workout.description}</span>
           <br />
-          <button className = "delete-workout-button">Delete Workout</button>
+          {/* <button className = "delete-workout-button">Delete Workout</button> */}
         </li>
       )
     }) : <Link to = "/discoverWorkouts"><div>Check out some workouts!</div></Link>

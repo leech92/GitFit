@@ -1,4 +1,6 @@
-import { RECEIVE_ALL_WORKOUTS, RECEIVE_WORKOUT, RECEIVE_USER_WORKOUT,RECEIVE_NEW_WORKOUT } from "../actions/workout_actions";
+import { RECEIVE_ALL_WORKOUTS, RECEIVE_WORKOUT, 
+    RECEIVE_USER_WORKOUT,RECEIVE_NEW_WORKOUT,
+    REMOVE_WORKOUT} from "../actions/workout_actions";
 
 const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },action) => {
     Object.freeze(state);
@@ -19,6 +21,10 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
 
         case RECEIVE_ALL_WORKOUTS:
             newState.all = action.workouts.data;
+            return newState;
+        
+        case REMOVE_WORKOUT:
+            delete newState.user[action.id];
             return newState;
         default:
             return state;
