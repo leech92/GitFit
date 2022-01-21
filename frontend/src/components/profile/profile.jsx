@@ -46,16 +46,16 @@ class Profile extends React.Component {
 
 
         <section className='profile-btm'>
-          <div className='profile-bottom-left'>
+          <div className='profile-bottom-top'>
               <div> Don't Shirk Your Work! </div>
               <ul>
                 {userWorkouts}
               </ul>
           </div>
 
-          <div className='profile-bottom-right'>
+          <div className='profile-bottom-bottom'>
             <div> Good Money, Good Honey! </div>
-            <button onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
+            <button className='create-button' onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
             <MealplanPreview mealplans={mealplans} openModal={this.props.openModal}/>
           </div>
         </section>
