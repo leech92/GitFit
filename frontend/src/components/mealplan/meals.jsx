@@ -16,7 +16,10 @@ class Meals extends React.Component {
                 {meals.map((meal, idx) => {
                     return(
                         <div key={idx} className="meal-container">
-                            <img className="meal-photo" src={meal.photo}/>
+                            {meal.photo ? 
+                                <img className="meal-photo" src={meal.photo}/> 
+                            : 
+                                <img className="meal-photo" src="https://git-fit-2.s3.amazonaws.com/rotten_nana.jpg"/>}
                             <div className="meal-right">
                                 <h1 className={`meal-category-${meal.mealType}`}>{meal.mealType}</h1>
                                 <h2 className="meal-name">{meal.name}</h2>

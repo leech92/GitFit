@@ -6,7 +6,7 @@ import { follow } from '../../actions/user_actions'
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchUserMealplans } from '../../actions/mealplan_actions';
 import { openModal } from '../../actions/modal_actions';
-import { fetchUserWorkout } from '../../actions/workout_actions';
+import { fetchUserWorkout, fetchAllWorkouts } from '../../actions/workout_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
     users: state.entities.users, 
     // buddy: state.entities.users[.match.params.id]
     mealplans: state.entities.mealplans.user,
-    workouts: state.entities.workouts.user
+    workouts: state.entities.workouts.user,
+    allWorkouts: state.entities.workouts.all
   };
 };
 
@@ -24,7 +25,8 @@ const mapDispatchToProps = dispatch => ({
   fetchUserMealplans: id => dispatch(fetchUserMealplans(id)),
   openModal: modal => dispatch(openModal(modal)),
   fetchUsers: () => dispatch(fetchUsers()),
-  fetchUserWorkout: id => dispatch(fetchUserWorkout(id))
+  fetchUserWorkout: id => dispatch(fetchUserWorkout(id)),
+  fetchAllWorkouts: () => dispatch(fetchAllWorkouts())
 
 });
 

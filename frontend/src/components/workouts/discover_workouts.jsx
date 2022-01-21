@@ -12,7 +12,18 @@ class DiscoverWorkouts extends React.Component {
     render() {
         if (!this.props.workouts.length) return null;
 
-        const workoutItems = this.props.workouts.map((workout, idx) => {
+        let uniqueWorkouts = [];
+        let titles = [];
+
+        for (let i = 0; i < this.props.workouts.length ;i++) {
+            if (!titles.includes(this.props.workouts[i].title)) {
+                titles.push(this.props.workouts[i].title);
+                uniqueWorkouts.push(this.props.workouts[i]);
+            }
+        }
+       
+
+        const workoutItems = uniqueWorkouts.map((workout, idx) => {
                 let photo;
 
                 if (workout.title === "Chest") {
@@ -25,6 +36,8 @@ class DiscoverWorkouts extends React.Component {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
                 } else if (workout.title === "Legs") {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
+                } else if (workout.title.includes("Abs")) {
+                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
                 }
                 else {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
@@ -41,7 +54,6 @@ class DiscoverWorkouts extends React.Component {
 
         return (
             <div className = "discover-workout-container">
-                {/* "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" */}
                 <div className = "workout-video-container">
                     <video src= "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" autoPlay = {true} loop muted className = "workout-banner"></video>
                     <div className = "workout-motivation">
@@ -49,8 +61,6 @@ class DiscoverWorkouts extends React.Component {
                         <span className = "workout-author">– Arnold Schwarzenegger</span>
                     </div>
                 </div>
-
-                
 
                 <ul className = "workout-list">
                     {workoutItems}
