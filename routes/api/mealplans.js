@@ -35,7 +35,7 @@ router.post('/',
             description: req.body.description
     })
 
-    newMealplan.save().then(mealplan => res.json(mealplan));
+    newMealplan.save().then(mealplan => res.json(mealplan)).catch(err => res.json(err));
 });
 
 router.patch('/:id',

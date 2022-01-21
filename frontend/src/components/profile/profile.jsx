@@ -21,7 +21,7 @@ class Profile extends React.Component {
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
-    let userWorkouts = this.props.workouts ? this.props.workouts.map((workout,idx) => {
+    let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
       return (
         <li>
           <span>{workout.title}</span>

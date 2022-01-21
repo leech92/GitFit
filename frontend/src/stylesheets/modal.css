@@ -1,0 +1,72 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.modal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #028476;
+  border-radius: 25px;
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.in-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 550px;
+}
+
+.in-form h1 {
+    font-size: 24px;
+    text-decoration: underline;
+    color: white;
+}
+
+.inp-mp{
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #B7E4C7;
+    text-align: center;
+    border: none;
+
+}
+
+.inp-label {
+    color: white;
+}
+
+#sub-create {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+}
+
+#sub-create:hover {
+    background-color: grey;
+}
+
+#txt-area {
+    height: 100px;
+}
