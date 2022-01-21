@@ -1,11 +1,58 @@
 .mealplan-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;
-    background-color: #ddfff7;
+    background-color: #a0ddd0;
 }
 
 .mealplan-title{
-    margin-top: 2%;
-    margin-left: 2%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: rgb(247, 247, 125);
+}
+
+.mealplan-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: tomato;
+}
+
+.mealplan-goal-head{
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.mealplan-type{
+    margin-top: 5px;
+}
+
+.mealplan-desc-head{
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.mealplan-desc{
+    margin-top: 5px;
+    width: 400px;
+    text-align: center;
+}
+
+.mealplan-nutrition{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mealplan-nutri-head{
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.mealplan-calories{
+    margin-top: 5px;
 }
