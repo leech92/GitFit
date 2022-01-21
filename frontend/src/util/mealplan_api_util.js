@@ -24,3 +24,7 @@ export const updateMealplan = data => {
 export const deleteMealplan = id => {
     return axios.delete(`/api/mealplans/${id}`)
 }
+
+export const getAllMealplans = () => {
+    return axios.get('/api/mealplans')
+}

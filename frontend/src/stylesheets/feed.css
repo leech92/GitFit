@@ -1,0 +1,21 @@
+.feed-item {
+    border-radius: 25px;
+    height: 60px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Ubuntu';
+    background-color: hsl(166, 100%, 93%);
+}
+
+.feed-item:hover{
+    background-color: hsl(273, 100%, 93%);
+}
+
+#feed {
+    font-size: 32px;
+    margin: 20px;
+    text-decoration: underline;
+}

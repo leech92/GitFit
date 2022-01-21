@@ -1,15 +1,11 @@
-import { getMealplan, 
-         getUserMealplans, 
-         createMealplan,
-         updateMealplan,
-         deleteMealplan
-        } from '../util/mealplan_api_util';
+import { getMealplan, getUserMealplans, createMealplan, updateMealplan, deleteMealplan, getAllMealplans } from '../util/mealplan_api_util';
 
 export const RECEIVE_MEALPLAN = "RECEIVE_MEALPLAN";
 export const RECEIVE_USER_MEALPLANS = "RECEIVE_USER_MEALPLANS";
 export const RECEIVE_NEW_MEALPLAN = "RECEIVE_NEW_MEALPLAN";
 export const UPDATE_MEALPLAN = "UPDATE_MEALPLAN";
-export const REMOVE_MEALPLAN = "REMOVE_MEALPLAN"
+export const REMOVE_MEALPLAN = "REMOVE_MEALPLAN";
+export const RECEIVE_ALL_MEALPLANS = "RECEIVE_ALL_MEALPLANS"
 
 const receiveMealplan = mealplan => ({
     type: RECEIVE_MEALPLAN,
@@ -34,6 +30,11 @@ const receiveUpdatedMealplan = mealplan => ({
 const removeMealplan = id => ({
     type: REMOVE_MEALPLAN,
     id
+})
+
+const receiveAllMealPlans = mealplans => ({
+    type: RECEIVE_ALL_MEALPLANS,
+    mealplans
 })
 
 export const fetchMealplan = id => dispatch => (
@@ -65,3 +66,9 @@ export const destroyMealplan = id => dispatch => (
         .then(() => dispatch(removeMealplan(id)))
         .catch(err => console.log(err))
 );
+
+export const fetchAllMealplans = () => dispatch => {
+    getAllMealplans()
+        .then(mealplans => dispatch(receiveAllMealPlans(mealplans)))
+        .catch(err => console.log(err))
+}
