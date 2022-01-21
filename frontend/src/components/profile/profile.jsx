@@ -83,9 +83,6 @@ class Profile extends React.Component {
               <span className = "profile-myworkouts">My Workouts</span>
               <ul className= 'profile-workout-list'>
 
-           
-              <ul>
-
                 {userWorkouts}
               </ul>
           </div>
