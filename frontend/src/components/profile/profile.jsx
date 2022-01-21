@@ -12,6 +12,7 @@ class Profile extends React.Component {
   componentDidMount() {
     this.props.fetchUserMealplans(this.props.currentUser.id);
     this.props.fetchUsers();
+    this.props.fetchUserWorkout(this.props.currentUser.id)
   }
 
   render() {
@@ -20,6 +21,15 @@ class Profile extends React.Component {
     let id = this.props.match.params.id; 
     const { mealplans } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
+    let userWorkouts = this.props.workouts ? this.props.workouts.map((workout,idx) => {
+      return (
+        <li>
+          <span>{workout.title}</span>
+          <br />
+          <span>{workout.description}</span>
+        </li>
+      )
+    }) : <div>Check out some workouts!</div>
     return(
 
       <div className='profile-container'>
@@ -38,7 +48,9 @@ class Profile extends React.Component {
         <section className='profile-btm'>
           <div className='profile-bottom-left'>
               <div> Don't Shirk Your Work! </div>
-              WORKOUTS PREVIEWS GO HERE
+              <ul>
+                {userWorkouts}
+              </ul>
           </div>
 
           <div className='profile-bottom-right'>
