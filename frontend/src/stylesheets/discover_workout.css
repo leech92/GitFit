@@ -2,7 +2,7 @@
     height: 45vh;
     width: 20vw;
     border-radius: 8px;
-    /* box-shadow: 5px 5px 5px #FB8B24; */
+    box-shadow: 5px 5px 5px lightgray;
     /* padding-bottom: 5px; */
 }
 

@@ -13,7 +13,7 @@ const mSTP = (state) => {
     users: state.entities.users, 
     // buddy: state.entities.users[.match.params.id]
     mealplans: state.entities.mealplans.user,
-    workouts: Object.values(state.entities.workouts.user)
+    workouts: state.entities.workouts.user
   };
 };
 
@@ -43,6 +43,7 @@ class UsersProfile extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
             this.props.fetchUserMealplans(this.props.match.params.id)
+            this.props.fetchUserWorkout(this.props.match.params.id)
         }
     }
 
@@ -65,7 +66,10 @@ class UsersProfile extends React.Component {
 
         const { mealplans } = this.props;
         
-        const listWorkouts = this.props.workouts.map((workout,idx) => {
+        
+        let listWorkouts = !this.props.workouts.length ? 
+        <div>Dicover Workouts!</div> :
+        this.props.workouts.map((workout,idx) => {
             return (
                 <li key = {`workout-${idx}`}>
                     <span>{workout.title}</span>
