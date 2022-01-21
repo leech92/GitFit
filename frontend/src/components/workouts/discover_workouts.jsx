@@ -36,6 +36,8 @@ class DiscoverWorkouts extends React.Component {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
                 } else if (workout.title === "Legs") {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
+                } else if (workout.title.includes("Abs")) {
+                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
                 }
                 else {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
