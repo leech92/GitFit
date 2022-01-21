@@ -14,7 +14,10 @@ export const getUserWorkout = id => {
 };
 
 export const createWorkout = data => {
-    debugger
+
     return axios.post('/api/workouts/', data)
 };
 
+export const deleteWorkout = id => {
+    return axios.delete(`/api/workouts/${id}`)
+}
