@@ -41,7 +41,7 @@ router.post('/',
 router.patch('/:id',
     // passport.authenticate('jwt', { session: false }), 
     (req, res) => {
-        Mealplan.findById(req.params.id)
+        Mealplan.findById(req.params.id, data)
             .then(mealplan => {
                 mealplan.name = req.body.name
                 mealplan.mealplanType = req.body.mealplanType
