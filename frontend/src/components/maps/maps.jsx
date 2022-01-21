@@ -1,6 +1,5 @@
 import React from "react";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import axios from 'axios';
 
 const mapStyles = {
     width: '1000px',
@@ -41,6 +40,8 @@ class MapContainer extends React.Component {
                 <h1>Please turn on your location in order to access this feature</h1>
             </div>
         }
+
+        const google = window.google;
 
         // dummy points to be replaced at a later point with data fetched from google places api
         const dummyPoints = [{"lat": 40.73664249999999,"lng": -73.8926099}, {"lat": 40.7478089,"lng": -73.8798619}, {"lat": 40.7469827,"lng": -73.88760909999999}, {"lat": 40.7482,"lng": -73.87995699999999}, {  "lat": 40.73652200000001,"lng": -73.89260999999999}, {"lat": 40.7559952,"lng": -73.88385219999999}, {"lat": 40.7620853,"lng": -73.9846163}, {"lat": 40.7683224,"lng": -73.9873267}, {"lat": 40.7528941,    "lng": -73.9877224},{"lat": 40.767243,"lng": -73.98781699999999}, {"lat": 40.7545853,"lng": -73.9947272}, {"lat": 40.75450499999999,"lng": -73.99218599999999}, {"lat": 40.7643104,"lng": -73.9835317}]
