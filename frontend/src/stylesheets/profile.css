@@ -54,21 +54,36 @@
     color: #fb8b24;
 }
 
-
-.profile-btm div {
-    width: 100%;
-}
-
-.profile-bottom-left {
+.profile-bottom-top {
     background-color: #ffcb69;
     color: #DDFFF7; 
     padding: 10px; 
 }
 
-.profile-bottom-right {
-    background-color: #FF5349;
+.profile-bottom-bottom {
     color: #DDFFF7; 
-    padding: 10px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.create-button{
+    color: #B7E4C7;
+    background-color: #028476;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1vw;
+    margin: 10px; 
+    padding: 5px; 
+    font-size: 16px; 
+    font-weight: bolder; 
+}
+
+.create-button:hover{
+    cursor: pointer;
+    color: #028476;
+    background-color: #B7E4C7;
+}
 
