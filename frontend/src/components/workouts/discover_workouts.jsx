@@ -12,6 +12,17 @@ class DiscoverWorkouts extends React.Component {
     render() {
         if (!this.props.workouts.length) return null;
 
+        let uniqueWorkouts = [];
+        let uniqueUsers = [];
+
+        for (let i = 0; i < this.props.workouts.length; i++) {
+            let curr = this.props.workouts[i];
+            if (!uniqueUsers.includes(curr.user)) {
+                uniqueWorkouts.push(curr);
+                uniqueUsers.push(curr.name);
+            }
+        }
+
         const workoutItems = this.props.workouts.map((workout, idx) => {
                 let photo;
 
@@ -25,6 +36,8 @@ class DiscoverWorkouts extends React.Component {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
                 } else if (workout.title === "Legs") {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
+                } else if (workout.title.includes("Abs")) {
+                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
                 }
                 else {
                     photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"

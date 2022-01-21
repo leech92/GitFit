@@ -6,6 +6,7 @@ import { follow, fetchUsers } from '../../actions/user_actions'
 import { fetchUserMealplans } from '../../actions/mealplan_actions';
 import MealplanPreview from '../mealplan/mealplan_preview';
 import { fetchUserWorkout } from '../../actions/workout_actions';
+import { Link } from 'react-router-dom';
 
 const mSTP = (state) => {
   return {
@@ -68,7 +69,9 @@ class UsersProfile extends React.Component {
         
         
         let listWorkouts = !this.props.workouts.length ? 
-        <div>Dicover Workouts!</div> :
+        <Link to = "/discoverWorkouts">
+            <div>Discover Workouts!</div> 
+        </Link> :
         this.props.workouts.map((workout,idx) => {
             return (
                 <li key = {`workout-${idx}`}>
