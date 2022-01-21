@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import CreateMealplanFormContainer from '../mealplan/create_mealplan_form_container'
 import UpdateMealplanFormContainer from '../mealplan/update_mealplan_form_container'
+import "../../stylesheets/modal.css"
 
 const mSTP = state => ({
     modal: state.ui.modal

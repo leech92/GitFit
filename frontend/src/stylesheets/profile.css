@@ -3,7 +3,6 @@
 .profile-container {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     font-family: 'Ubuntu', sans-serif;
@@ -12,12 +11,12 @@
 }
 
 .profile-top{
-    border: 1px solid rebeccapurple;
     width: 100%;
-    /* height: 10%; */
     background-color: #B7E4C7; 
-    color: #028476;   
-    padding: 20px; 
+    color: #028476;  
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .profile-top p {
@@ -33,7 +32,7 @@
     font-size: 1vw;
     width: 80px;
     height: 40px;
-    margin: 10px; 
+    margin: 15px; 
     padding: 5px; 
     font-size: 16px; 
     font-weight: bolder; 
@@ -57,7 +56,6 @@
 
 
 .profile-btm div {
-    border: 1px solid hotpink;
     width: 50%;
 }
 
@@ -72,3 +70,5 @@
     color: #DDFFF7; 
     padding: 10px; 
 }
+
+

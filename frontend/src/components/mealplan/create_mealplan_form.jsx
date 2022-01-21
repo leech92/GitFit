@@ -39,37 +39,38 @@ class CreateMealplanForm extends React.Component {
         return (
            <div className="create-mealplan-container">
                <form className="create-mealplan-form" onSubmit={this.handleSubmit}>
-                    <h1>Create Mealplan</h1>
-                    <div className="create-mealplan-name">
-                        <p>Meal Plan Name</p>
-                        <input type="text" value={this.state.name} onChange={this.update('name')}/>
+                   <div className="in-form">
+                        <h1>Create Mealplan</h1>
+                        <div className="create-mealplan-name">
+                            <p className="inp-label">Meal Plan Name</p>
+                            <input className="inp-mp" type="text" value={this.state.name} onChange={this.update('name')}/>
+                        </div>
+                        <div className="create-mealplan-type">
+                            <p className="inp-label">Meal Plan Type</p>
+                            <input className="inp-mp" type="text" value={this.state.mealplanType} onChange={this.update('mealplanType')}/>
+                        </div>
+                        <div className="create-mealplan-calories">
+                            <p className="inp-label">Daily Calories</p>
+                            <input className="inp-mp" type="text" value={this.state.calories} onChange={this.update('calories')}/>
+                        </div>
+                        <div className="create-mealplan-protein">
+                            <p className="inp-label">Daily Protein</p>
+                            <input className="inp-mp" type="text" value={this.state.protein} onChange={this.update('protein')}/>
+                        </div >
+                        <div className="create-mealplan-carbs">
+                            <p className="inp-label">Daily Carbs</p>
+                            <input className="inp-mp" type="text" value={this.state.carbs} onChange={this.update('carbs')}/>
+                        </div>
+                        <div className="create-mealplan-fat">
+                            <p className="inp-label">Daily Fat</p>
+                            <input className="inp-mp" type="text" value={this.state.fat} onChange={this.update('fat')}/>
+                        </div>
+                        <div className="create-mealplan-desc">
+                            <p className="inp-label">Meal Plan Description</p>
+                            <textarea className="inp-mp" id="txt-area" type="text" value={this.state.description} onChange={this.update('description')}/>
+                        </div>
+                        <button id="sub-create">Submit</button>
                     </div>
-                    <div className="create-mealplan-type">
-                        <p>Meal Plan Type</p>
-                        <input type="text" value={this.state.mealplanType} onChange={this.update('mealplanType')}/>
-                    </div>
-                    <div className="create-mealplan-calories">
-                        <p>Daily Calories</p>
-                        <input type="text" value={this.state.calories} onChange={this.update('calories')}/>
-                    </div>
-                    <div className="create-mealplan-protein">
-                        <p>Daily Protein</p>
-                        <input type="text" value={this.state.protein} onChange={this.update('protein')}/>
-                    </div >
-                    <div className="create-mealplan-carbs">
-                        <p>Daily Carbs</p>
-                        <input type="text" value={this.state.carbs} onChange={this.update('carbs')}/>
-                    </div>
-                    <div className="create-mealplan-fat">
-                        <p>Daily Fat</p>
-                        <input type="text" value={this.state.fat} onChange={this.update('fat')}/>
-                    </div>
-                    <div className="create-mealplan-desc">
-                        <p>Meal Plan Description</p>
-                        <input type="text" value={this.state.description} onChange={this.update('description')}/>
-                    </div>
-                    <button className="create-mealplan-exit" onClick={this.props.closeModal}>Exit</button>
-                    <button>Submit</button>
                </form>
            </div> 
         )

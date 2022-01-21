@@ -27,7 +27,7 @@ class BrowseUsers extends React.Component {
         if (!Object.keys(this.props.users).length) {return null}
         const { users, currentUserId} = this.props;
         const currentUser = users.filter(user => user._id === currentUserId)[0];
-        const notBuddies = users.filter(user => !currentUser.following.includes(user._id))
+        const notBuddies = users.filter(user => !currentUser.following.includes(user._id) && user._id !== currentUserId)
 
         return(
             <div>
