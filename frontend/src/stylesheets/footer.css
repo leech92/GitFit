@@ -8,6 +8,7 @@
     font-family: 'Ubuntu', sans-serif;
     color: #028476; 
     line-height: 130%;
+    justify-content: center;
 }
 
 .footer-tech {
