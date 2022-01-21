@@ -73,7 +73,9 @@ class UsersProfile extends React.Component {
             return (
                 <li key = {`workout-${idx}`}>
                     <span>{workout.title}</span>
+                    
                     <br />
+
                     <span>{workout.description}</span>
                 </li>
                   )
