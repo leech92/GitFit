@@ -7,6 +7,7 @@
     /* border: 1px solid goldenrod; */
     display: flex;
     flex-direction: row;
+    min-height: 1000px;
     /* height: 1200px; */
 }
 

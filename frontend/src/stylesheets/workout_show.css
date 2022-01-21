@@ -50,3 +50,24 @@
     border-radius: 16px;
     box-shadow: 5px 5px 5px gray;
 }
+
+.exercise-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.exercise-details span {
+    font-size: 2vh;
+}
+
+.workout-show-title {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.workout-show-title span {
+    font-size: 5vh;
+}

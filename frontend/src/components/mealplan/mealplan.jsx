@@ -19,9 +19,26 @@ class Mealplan extends React.Component {
             .then(() => this.props.history.push('/profile'))
     }
 
+    handleAdd() {
+        const {mealplan, currentUserId} = this.props;
+        const data = {
+            user: currentUserId,
+            name: mealplan.name,
+            mealplanType: mealplan.mealplanType,
+            calories: mealplan.calories,
+            protein: mealplan.protein,
+            carbs: mealplan.carbs,
+            fat: mealplan.fat,
+            description: mealplan.description
+        };
+        this.props.generateMealplan(data);
+
+        const ele = document.getElementById('add-btn')
+        ele.style.visibility = 'hidden'
+    }
+
     render() {
         if (!this.props.mealplan) return null;
-
         const { mealplan, meals } = this.props;
 
         return(
@@ -41,7 +58,7 @@ class Mealplan extends React.Component {
                     <p className="mealplan-fat">Fat: {mealplan.fat} grams</p>
                 </div>
                 {/* <button onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button> */}
-                <button onClick={this.handleDelete}>Delete Mealplan</button>
+                {mealplan.user === this.props.currentUserId ? <button onClick={this.handleDelete}>Delete Mealplan</button> : <button onClick={() => setTimeout(() => this.handleAdd(), 100)} id="add-btn">Add to my meal plan</button>}
                 <Meals meals={meals}/>
             </div>
         )
