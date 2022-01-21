@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import "../../stylesheets/mealplan_preview.css";
 
 class MealplanPreview extends React.Component {
     constructor(props) {

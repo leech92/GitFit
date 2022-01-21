@@ -49,14 +49,14 @@
 
 .profile-btm {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     height: 90%;
     color: #fb8b24;
 }
 
 
 .profile-btm div {
-    width: 50%;
+    width: 100%;
 }
 
 .profile-bottom-left {
