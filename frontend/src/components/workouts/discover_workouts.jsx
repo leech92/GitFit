@@ -13,17 +13,17 @@ class DiscoverWorkouts extends React.Component {
         if (!this.props.workouts.length) return null;
 
         let uniqueWorkouts = [];
-        let uniqueUsers = [];
+        let titles = [];
 
-        for (let i = 0; i < this.props.workouts.length; i++) {
-            let curr = this.props.workouts[i];
-            if (!uniqueUsers.includes(curr.user)) {
-                uniqueWorkouts.push(curr);
-                uniqueUsers.push(curr.name);
+        for (let i = 0; i < this.props.workouts.length ;i++) {
+            if (!titles.includes(this.props.workouts[i].title)) {
+                titles.push(this.props.workouts[i].title);
+                uniqueWorkouts.push(this.props.workouts[i]);
             }
         }
+       
 
-        const workoutItems = this.props.workouts.map((workout, idx) => {
+        const workoutItems = uniqueWorkouts.map((workout, idx) => {
                 let photo;
 
                 if (workout.title === "Chest") {
@@ -54,7 +54,6 @@ class DiscoverWorkouts extends React.Component {
 
         return (
             <div className = "discover-workout-container">
-                {/* "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" */}
                 <div className = "workout-video-container">
                     <video src= "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" autoPlay = {true} loop muted className = "workout-banner"></video>
                     <div className = "workout-motivation">
@@ -62,8 +61,6 @@ class DiscoverWorkouts extends React.Component {
                         <span className = "workout-author">– Arnold Schwarzenegger</span>
                     </div>
                 </div>
-
-                
 
                 <ul className = "workout-list">
                     {workoutItems}

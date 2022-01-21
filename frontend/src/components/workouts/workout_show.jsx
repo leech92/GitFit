@@ -3,6 +3,22 @@ import '../../stylesheets/workout_show.css';
 
 class WorkoutShow extends React.Component {
 
+    constructor(props) {
+        super(props)
+        
+        this.addWorkout = this.addWorkout.bind(this);
+    }
+
+    addWorkout() {
+        let workout = this.props.workout;
+        workout.id = this.props.currentUserId;
+        delete workout.user
+        delete workout._id
+        delete workout.__v
+
+        this.props.generateWorkout(workout).then(() => this.props.history.push('/profile'))
+    }
+
     componentDidMount() {
         const id = this.props.match.params.id;
         this.props.fetchWorkout(id);
@@ -41,6 +57,9 @@ class WorkoutShow extends React.Component {
                 <ul className = "workout-show-list">
                     {exerciseItems}
                 </ul>
+                <div className = "workout-show-button-container">
+                    <button onClick = {this.addWorkout} className = "add-workout-button">Add Workout</button>
+                </div>
             </div>
         )
     }
