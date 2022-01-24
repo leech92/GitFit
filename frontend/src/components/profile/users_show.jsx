@@ -108,15 +108,19 @@ class UsersProfile extends React.Component {
 
         return(
         <div className='profile-container'>
-
             <section className='profile-top'>
-                <p>Hey Best Buddy, {profileUser.username}</p>
-            
-                <h3>Username: {profileUser.username}</h3>
-                <h3> Joined the Team on {profileUser.date.split("T")[0]} </h3>
-                <h3> Following {profileUser.following.length} buddies </h3>
-                <h3>Height: Just Right</h3>
 
+                <div className='profile-top-left'> 
+                    <img src={profileUser.photo} alt="profile-photo" height='125' width='auto'/>
+                </div>
+
+                <div className='profile-top-right'> 
+                    <p>Hey Best Buddy, {profileUser.username}</p>
+                    <h3>Username: {profileUser.username}</h3>
+                    <h3> Joined the Team on {profileUser.date.split("T")[0]} </h3>
+                    <h3> Following {profileUser.following.length} buddies </h3>
+                    <h3>Height: Just Right</h3>
+                </div>
 
                 <button onClick={this.toggleFollow} className='follow-button' id='follow-button'> {buttonText} </button>
 
