@@ -29,7 +29,7 @@ const UserSchema = new Schema({
     following: Array, 
     photo: {
         type: String, 
-        default: 'https://git-fit-2.s3.amazonaws.com/dumbbell.png'
+        default: 'https://git-fit-2.s3.amazonaws.com/gitfit_icon.jpg'
     }
 });
 

@@ -14,6 +14,10 @@ const WorkoutSchema = new Schema({
     description: {
         type: String,
         default: ""
+    }, 
+    photo: {
+        type: String, 
+        default: 'https://git-fit-2.s3.amazonaws.com/gitfit_icon.jpg'
     }
 
 });
