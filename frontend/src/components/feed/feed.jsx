@@ -42,7 +42,7 @@ class Feed extends React.Component {
         const buddiesFeed = buddiesMealplans.concat(buddiesWorkouts)
 
         const feed = [];
-        while (feed.length < 10) {
+        while (feed.length < 10 && buddiesFeed.length) {
             let random = buddiesFeed[Math.floor(Math.random() * buddiesFeed.length)]
             let type = random.fat? 'Mealplan' : 'Workout'
             let typeName = random.fat? random.name : random.title
