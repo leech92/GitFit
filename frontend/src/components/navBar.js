@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 import "../stylesheets/navBar.css";
+import { openModal } from '../actions/modal_actions';
 
 
 const mDTP = dispatch => {
     return ({
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()), 
+        openModal: (modal) => dispatch(openModal(modal))
     })
 }
 
@@ -43,8 +45,8 @@ class TopNavBar extends React.Component {
 
                     <NavLink to="/profile">New Workout</NavLink>
 
-                    <NavLink to="/profile">New Meal Plan</NavLink>
-                    
+                    <button onClick={()=>this.props.openModal('create mealplan')}>New Mealplan</button>
+
                     <NavLink to="/profile">Profile</NavLink>
                  
                     <button onClick={this.props.logout}>Logout</button>
