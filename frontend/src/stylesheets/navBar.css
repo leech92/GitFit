@@ -79,8 +79,8 @@
 }
 
 .top-left > *:hover {
-    color: black; 
-    background-color: #FF5349;
+    color: #028476; 
+    background-color: #DDFFF7;
     border-radius: 10px;
     padding: 8px;
 }
@@ -100,8 +100,8 @@
 }
 
 .top-right > *:hover {
-    color: black; 
-    background-color: #FF5349;
+    color: #028476; 
+    background-color: #DDFFF7;
     border-radius: 10px;
     padding: 8px; 
 }
