@@ -21,19 +21,24 @@ module.exports = function validateMealplanInput(data) {
         errors.mealplanType = "Meal plan type is required"
     }
 
-    if (Validator.isEmpty(data.calories)) {
-        errors.calories = "Amount of calories is required"
+    if (data.calories < 0) {
+        errors.calories = "Amount of calories must be 0 or greater"
     }
 
-    if (Validator.isEmpty(data.protein)) {
-        errors.protein = "Amount of protein is required"
+    if (data.protein < 0) {
+        errors.protein = "Amount of protein must be 0 or greater"
     }
 
-    if (Validator.isEmpty(data.carbs)) {
-        errors.carbs = "Amount of carbs is required"
+    if (data.carbs < 0) {
+        errors.carbs = "Amount of carbs must be a 0 or greater"
     }
 
-    if (Validator.isEmpty(data.fat)) {
-        errors.fat = "Amount of fat is required"
+    if (data.fat < 0) {
+        errors.fat = "Amount of fat must be 0 or greater"
+    }
+
+    return {
+        errors,
+        isValid: Object.keys(errors).length === 0
     }
 }

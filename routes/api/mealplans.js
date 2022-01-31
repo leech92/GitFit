@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const passport = require('passport');
+const passport = require('passport');
 const Mealplan = require('../../models/Mealplan');
 const validateMealplanInput = require('../../validation/mealplans')
 
@@ -30,6 +30,7 @@ router.post('/',
         const { errors, isValid } = validateMealplanInput(req.body)
 
         if (!isValid) {
+            debugger
             return res.status(400).json(errors)
         }
 
@@ -44,7 +45,10 @@ router.post('/',
             description: req.body.description
     })
 
-    newMealplan.save().then(mealplan => res.json(mealplan)).catch(err => res.json(err));
+    newMealplan.save().then(mealplan => {
+        res.json(mealplan)})
+        .catch(err => {
+            res.json(err)});
 });
 
 router.patch('/:id',

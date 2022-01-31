@@ -15,6 +15,10 @@ class CreateMealplanForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.removeMealPlanErrors();
+    }
+
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
     }
@@ -32,7 +36,7 @@ class CreateMealplanForm extends React.Component {
             description: this.state.description
         }
         this.props.generateMealplan(data)
-        window.location.reload();
+        // window.location.reload();
     }
 
     render() {

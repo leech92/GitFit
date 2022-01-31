@@ -6,6 +6,8 @@ export const RECEIVE_NEW_MEALPLAN = "RECEIVE_NEW_MEALPLAN";
 export const UPDATE_MEALPLAN = "UPDATE_MEALPLAN";
 export const REMOVE_MEALPLAN = "REMOVE_MEALPLAN";
 export const RECEIVE_ALL_MEALPLANS = "RECEIVE_ALL_MEALPLANS"
+export const RECEIVE_MEALPLAN_ERRORS = "RECEIVE_MEALPLAN_ERRORS"
+export const REMOVE_MEALPLAN_ERRORS = "REMOVE_MEALPLAN_ERRORS"
 
 const receiveMealplan = mealplan => ({
     type: RECEIVE_MEALPLAN,
@@ -37,6 +39,15 @@ const receiveAllMealPlans = mealplans => ({
     mealplans
 })
 
+const receiveMealPlanErrors = errors => ({
+    type: RECEIVE_MEALPLAN_ERRORS,
+    errors
+})
+
+export const removeMealPlanErrors = () => ({
+    type: REMOVE_MEALPLAN_ERRORS
+})
+
 export const fetchMealplan = id => dispatch => (
     getMealplan(id)
         .then(mealplan => dispatch(receiveMealplan(mealplan)))
@@ -49,11 +60,14 @@ export const fetchUserMealplans = id => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const generateMealplan = data => dispatch => (
+export const generateMealplan = data => dispatch => {
     createMealplan(data)
-        .then(mealplan => dispatch(receiveNewMealplan(mealplan)))
-        .catch(err => console.log(err))
-);
+        .then(mealplan => {
+            dispatch(receiveNewMealplan(mealplan))
+        }, errors => {
+            dispatch(receiveMealPlanErrors(errors.response.data))
+        })
+}
 
 export const editMealplan = data => dispatch => (
     updateMealplan(data)
