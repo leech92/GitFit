@@ -31,6 +31,7 @@ class LeftNav extends React.Component{
             return null
         }
         const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
+        if (!currentUser) return null // added this to remove a bug where logged in user is not a user
         const buddies = currentUser.following.filter(id => id !== null)
 
         // if they aren't following anyone there is a prompt to tell them to follow someone.

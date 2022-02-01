@@ -10,12 +10,10 @@ import Modal from "./modal/modal";
 
 const App = () => {
 
-
   return (
     <div className="App">
       <Modal/>
         <Switch>
-
           <AuthRoute path = "/login" component = {LoginContainer} />
           <AuthRoute path = "/signup" component = {SignupContainer} />
           <AuthRoute exact path = "/" component = {SplashContainer}/>
