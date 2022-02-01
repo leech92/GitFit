@@ -81,3 +81,11 @@
     width: 5vw;
     border-radius: 8px;
 }
+
+.form-content button {
+    cursor: pointer;
+}
+
+.login-form .demo-button {
+    cursor: pointer;
+}

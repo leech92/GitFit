@@ -40,6 +40,10 @@
     text-decoration: none;
 }
 
+.signup-form .signup-button {
+    cursor: pointer;
+}
+
 .signup-button {
     background-color: #fb8b24;
     font-family: 'Ubuntu', sans-serif;
