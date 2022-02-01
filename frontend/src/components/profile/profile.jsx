@@ -2,7 +2,7 @@ import React from 'react';
 import MealplanPreview from '../mealplan/mealplan_preview';
 import "../../stylesheets/profile.css";
 import { Link } from 'react-router-dom';
-
+import { FaTrash } from 'react-icons/fa'
 
 class Profile extends React.Component {
 
@@ -20,7 +20,7 @@ class Profile extends React.Component {
     if (!this.props.users.length) return null;
     
     let id = this.props.match.params.id; 
-    const { mealplans } = this.props;
+    const { mealplans, destroyWorkout } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
 
     let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
@@ -58,7 +58,7 @@ class Profile extends React.Component {
           <br />
           <span className = "profile-workout-description">{workout.description}</span>
           <br />
-          {/* <button className = "delete-workout-button">Delete Workout</button> */}
+          <FaTrash className = "delete-workout-button" onClick = {() => destroyWorkout(workout._id).then(() => this.props.fetchUserWorkout(this.props.currentUser.id))}/>
         </li>
       )
     }) : <Link to = "/discoverWorkouts"><div>Check out some workouts!</div></Link>

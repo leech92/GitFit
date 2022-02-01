@@ -143,9 +143,14 @@
 }
 
 .delete-workout-button {
-    background-color: red;
-    color: white;
-    border-radius: 8px;
+    background-color: white;
+    color: red;
+    /* border-radius: 8px; */
     border: none;
     cursor: pointer;
+    visibility: hidden;
+}
+
+.profile-workout-item:hover .delete-workout-button {
+    visibility: visible;
 }
