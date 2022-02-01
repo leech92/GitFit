@@ -61,12 +61,14 @@ export const fetchUserMealplans = id => dispatch => (
 );
 
 export const generateMealplan = data => dispatch => {
+    // return to make .then possible in create mealplan form
+    return(
     createMealplan(data)
         .then(mealplan => {
             dispatch(receiveNewMealplan(mealplan))
         }, errors => {
             dispatch(receiveMealPlanErrors(errors.response.data))
-        })
+        }))
 }
 
 export const editMealplan = data => dispatch => (
