@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const { ObjectId } = mongoose.Schema.Types; 
 
 const UserSchema = new Schema({
     username: {
@@ -28,6 +27,10 @@ const UserSchema = new Schema({
         default: 0
     },
     following: Array, 
+    photo: {
+        type: String, 
+        default: 'https://git-fit-2.s3.amazonaws.com/gitfit_icon.jpg'
+    }
 });
 
 const User = mongoose.model('users', UserSchema);

@@ -1,4 +1,6 @@
-import { RECEIVE_ALL_WORKOUTS, RECEIVE_WORKOUT, RECEIVE_USER_WORKOUT,RECEIVE_NEW_WORKOUT } from "../actions/workout_actions";
+import { RECEIVE_ALL_WORKOUTS, RECEIVE_WORKOUT, 
+    RECEIVE_USER_WORKOUT,RECEIVE_NEW_WORKOUT,
+    REMOVE_WORKOUT} from "../actions/workout_actions";
 
 const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },action) => {
     Object.freeze(state);
@@ -6,11 +8,12 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
 
     switch(action.type) {
         case RECEIVE_WORKOUT:
+            // debugger
             newState.specific = action.workout.data;
             return newState;
 
         case RECEIVE_USER_WORKOUT: 
-
+            // debugger
             newState.user = action.workouts.data;
             return newState;
         case RECEIVE_NEW_WORKOUT:
@@ -19,6 +22,18 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
 
         case RECEIVE_ALL_WORKOUTS:
             newState.all = action.workouts.data;
+            return newState;
+        
+        case REMOVE_WORKOUT:
+            debugger
+            // delete newState.user[action.id];
+            for (let i = 0; i < newState.user.length; i++) {
+                if (newState.user[i]._id === action.id) {
+                    newState.user.splice(i,i);
+                    break;
+                }
+            }
+            // debugger
             return newState;
         default:
             return state;

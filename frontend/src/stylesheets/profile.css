@@ -18,6 +18,14 @@
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid lightgray;
+    justify-content: flex;
+    display: flex;
+}
+
+.profile-top-left {
+    height: 100px; 
+    width: 200px; 
+    padding-right: 20px; 
 }
 
 .profile-top p {
@@ -63,7 +71,6 @@
 
 
 .profile-bottom-top {
-    background-color: #ffcb69;
     color: #DDFFF7; 
     padding: 10px; 
     border-bottom: 1px solid lightgray;
@@ -136,9 +143,14 @@
 }
 
 .delete-workout-button {
-    background-color: red;
-    color: white;
-    border-radius: 8px;
+    background-color: white;
+    color: red;
+    /* border-radius: 8px; */
     border: none;
     cursor: pointer;
+    visibility: hidden;
+}
+
+.profile-workout-item:hover .delete-workout-button {
+    visibility: visible;
 }

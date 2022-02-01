@@ -1,9 +1,10 @@
-import { getWorkout, getUserWorkout, createWorkout, getAllWorkouts } from "../util/workout_api_util";
+import { getWorkout, getUserWorkout, createWorkout, getAllWorkouts, deleteWorkout } from "../util/workout_api_util";
 
 export const RECEIVE_WORKOUT = "RECEIVE_WORKOUT";
 export const RECEIVE_USER_WORKOUT = "RECEIVE_USER_WORKOUT";
 export const RECEIVE_NEW_WORKOUT = "RECEIVE_NEW_WORKOUT";
 export const RECEIVE_ALL_WORKOUTS = "RECEIVE_ALL_WORKOUTS";
+export const REMOVE_WORKOUT = "REMOVE_WORKOUT"
 
 const receiveWorkout = workout => {
 
@@ -36,6 +37,14 @@ const receiveAllWorkouts = workouts => {
     };
 };
 
+const removeWorkout = id => {
+    debugger
+    return {
+        type: REMOVE_WORKOUT,
+        id
+    }
+}
+
 export const fetchWorkout = id => dispatch => {
 
     return getWorkout(id)
@@ -63,3 +72,10 @@ export const fetchAllWorkouts = () => dispatch => {
         .then(workouts => dispatch(receiveAllWorkouts(workouts)))
         .catch(error => console.log(error))
 };
+
+export const destroyWorkout = id => dispatch => {
+    debugger
+    return deleteWorkout(id)
+    .then(() => dispatch(removeWorkout(id)))
+    .catch(error => console.log(error))
+}
