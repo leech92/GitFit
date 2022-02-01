@@ -33,11 +33,8 @@ class BrowseUsers extends React.Component {
             <div>
                 <h1 id="disco-buddy">EVERYONE IS A BUDDY THAT YOU JUST HAVE NOT MADE YET</h1>
                 {notBuddies.map(user =>           
-                    <Link to={`users/${user._id}`}><div className="not-buddy">
-                        
-                     {user.username}
-                           
-                    </div>     </Link>  
+                    <Link to={`users/${user._id}`} key={user._id}><div className="not-buddy">
+                        {user.username}</div></Link>  
                       
                 )}
             </div>

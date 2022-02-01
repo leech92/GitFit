@@ -12,7 +12,7 @@ class MapContainer extends React.Component {
 
         this.state = {
             lat: null,
-            lng: null
+            lng: null,
         }
     }
 
@@ -26,6 +26,7 @@ class MapContainer extends React.Component {
         const error = err => console.log(err);
         navigator.geolocation.getCurrentPosition(success, error);
     }
+
 
     render() {
         if (!this.state.lat) {
@@ -52,17 +53,14 @@ class MapContainer extends React.Component {
         ]
         // {"lat": , "lng": },
         return (
-            <Map google={this.props.google} zoom={16} style={mapStyles} initialCenter={this.state}>
+            <Map id="map" google={this.props.google} zoom={16} style={mapStyles} initialCenter={this.state}>
                 <Marker position={this.state} icon={"https://img.icons8.com/fluency/48/000000/home-page.png"}/>
-                {dummyPoints.map(location => <Marker position={location} icon={"https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-gym-location-pins-soft-fill-soft-fill-juicy-fish.png"}/>)}
+                {dummyPoints.map((location,i) => <Marker key={i} position={location} icon={"https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-gym-location-pins-soft-fill-soft-fill-juicy-fish.png"}/>)}
 
-                {bubblePoints.map(location => <Marker position={location} icon={"https://raw.githubusercontent.com/leech92/GitFit/main/frontend/src/stylesheets/images/bubble_tea_tinier.png"}/>)}
+                {bubblePoints.map((location, i)=> <Marker key={i} position={location} icon={"https://raw.githubusercontent.com/leech92/GitFit/main/frontend/src/stylesheets/images/bubble_tea_tinier.png"}/>)}
             </Map>
         )
     }
-
-
-
 }
 
 export default GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_API_KEY})(MapContainer);

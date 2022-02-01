@@ -7,7 +7,7 @@ import Feed from "../feed/feed";
 import Profile from "../profile/profile_container";
 import MealplanContainer from "../mealplan/mealplan_container"
 import UsersProfile from '../profile/users_show'; 
-import Map from "../maps/maps"
+import Map from "../maps/map_container"
 import "../../stylesheets/home.css"
 import DiscoverWorkoutsContainer from '../workouts/discover_workouts_container';
 import WorkoutShowContainer from '../workouts/workout_show_container';

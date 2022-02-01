@@ -36,10 +36,13 @@ class Feed extends React.Component {
             return null
         }
         const currentUser = allUsers.filter(user => user._id === currentUserId)[0]
+        if (!currentUser) return null // added this to remove a bug where logged in user is not a user
+
 
         const buddiesMealplans = allMealplans.filter(mealplan => currentUser.following.includes(mealplan.user))
         const buddiesWorkouts = allWorkouts.filter(workout => currentUser.following.includes(workout.user))
         const buddiesFeed = buddiesMealplans.concat(buddiesWorkouts)
+
 
         const feed = [];
         while (feed.length < 10 && buddiesFeed.length) {
@@ -60,8 +63,8 @@ class Feed extends React.Component {
                 {feed.map(item => {
                     return (
                          item.type === 'Mealplan' ?
-                        <Link to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
-                        : <Link to={`workouts/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
+                            <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
+                            : <Link key={item.id} to={`workouts/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
                     )
                 })}
             </div>
