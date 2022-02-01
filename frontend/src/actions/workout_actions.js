@@ -38,6 +38,7 @@ const receiveAllWorkouts = workouts => {
 };
 
 const removeWorkout = id => {
+    debugger
     return {
         type: REMOVE_WORKOUT,
         id
@@ -73,7 +74,8 @@ export const fetchAllWorkouts = () => dispatch => {
 };
 
 export const destroyWorkout = id => dispatch => {
-    deleteWorkout(id)
+    debugger
+    return deleteWorkout(id)
     .then(() => dispatch(removeWorkout(id)))
     .catch(error => console.log(error))
 }
