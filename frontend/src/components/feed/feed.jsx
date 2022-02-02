@@ -36,7 +36,7 @@ class Feed extends React.Component {
             return null
         }
         const currentUser = allUsers.filter(user => user._id === currentUserId)[0]
-        if (!currentUser) return null // added this to remove a bug where logged in user is not a user
+        if (!currentUser) return null
 
 
         const buddiesMealplans = allMealplans.filter(mealplan => currentUser.following.includes(mealplan.user))
@@ -48,7 +48,7 @@ class Feed extends React.Component {
         while (feed.length < 10 && buddiesFeed.length) {
             let random = buddiesFeed[Math.floor(Math.random() * buddiesFeed.length)]
             let type = random.fat? 'Mealplan' : 'Workout'
-            let typeName = random.fat? random.name : random.title
+            let typeName = random.mealplanType? random.name : random.title
             let userId = random.user
             let itemId = random._id
             let buddyName = allUsers.filter(user => user._id === userId)[0].username;
@@ -57,14 +57,22 @@ class Feed extends React.Component {
             buddiesFeed.splice(buddiesFeed.indexOf(random),1)
         }
 
+        const feedItem = (item) => (
+            <div className="feed-item">
+                <h1>Check out {item.name}'s {item.type}: </h1>
+                {item.typeName} 
+            </div>
+        )
+
         return (
-            <div>
+            <div className="feed-container">
                 <h1 id="feed">Feed:</h1>
                 {feed.map(item => {
                     return (
                          item.type === 'Mealplan' ?
-                            <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
-                            : <Link key={item.id} to={`workouts/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
+                            // <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
+                            <Link key={item.id} to={`mealplans/${item.itemId}`}>{feedItem(item)}</Link>
+                            : <Link key={item.id} to={`workouts/${item.itemId}`}>{feedItem(item)}</Link>
                     )
                 })}
             </div>
