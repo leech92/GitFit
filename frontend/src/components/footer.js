@@ -57,9 +57,9 @@ const Footer = () => {
                 <div className='socials'> 
                     <h1>Christian Lee</h1>
                     <div>
-                        <a href="CLEE'S LINKED IN PAGE" target="_blank" className="fa fa-linkedin"></a>
-                        <a href="CLEE'S GITHUB" target="_blank" className="fa fa-github"></a>
-                        <a href="" target="_blank" className="fa fa-instagram">
+                        <a href="https://www.linkedin.com/in/christianlee92/" target="_blank" className="fa fa-linkedin"></a>
+                        <a href="https://github.com/leech92" target="_blank" className="fa fa-github"></a>
+                        <a href="https://angel.co/u/christian-lee-17" target="_blank" className="fa fa-instagram">
                         </a>
                     </div>
                     
