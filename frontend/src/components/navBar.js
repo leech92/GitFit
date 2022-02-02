@@ -22,35 +22,16 @@ class TopNavBar extends React.Component {
     render() {
         return (
 
-            // <header className='top-nav'>
-            //     <p className='top-button-outter top-button'>
-            //         <NavLink className='top-button-home' to="/">Home</NavLink>
-            //     </p>
-                
-            //     <div className="top-right">
-            //         <p className='top-button-outter'> 
-            //             <NavLink className='top-button-profile top-button' to="/profile">Profile</NavLink>
-            //         </p>
-            //         <button onClick={this.props.logout}>Logout</button>
-            //     </div>
-                
-            // </header>
-
             <header className='top-nav'>
                 <div className='top-left'>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/">GitFit</NavLink>
                 </div>
                 
                 <div className="top-right">
-
-                    <NavLink to="/profile">New Workout</NavLink>
-
-                    <button onClick={()=>this.props.openModal('create mealplan')}>New Mealplan</button>
-
-                    <NavLink to="/profile">Profile</NavLink>
-                 
-                    <button onClick={this.props.logout}>Logout</button>
-
+                    <NavLink to="/"><button className='top-right-btn'>Home</button></NavLink>
+                    <button className='top-right-btn' onClick={()=>this.props.openModal('create mealplan')}>New Mealplan</button>
+                    <NavLink to="/profile"><button className='top-right-btn'>Profile</button></NavLink>
+                    <button className='top-right-btn' onClick={this.props.logout}>Logout</button>
                 </div>
                 
             </header>

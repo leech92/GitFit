@@ -1,4 +1,4 @@
-.left-container {
+/* .left-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,9 +7,6 @@
     background-color: hsl(166, 100%, 93%);
     color: #028476; 
     padding-left: 8px; 
-    /* padding-right: 15px;  */
-    /* margin-right: 10px;  */
-    /* height: 100vw;  */
 }
 
 .discovery {
@@ -45,4 +42,35 @@
     border-radius: 6px; 
     padding: 3px; 
 }
+ */
 
+ .left-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 10px;
+     font-size: 18px;
+     height: 600px;
+ }
+
+.discovery {
+    padding: 5px;
+}
+
+.left-titles {
+    margin-bottom: 5px;
+    background-color: #028476;
+    color: white;
+    padding-left: 5px;
+}
+
+.left-links {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.left-links:hover {
+    background-color: #028476;
+    color: white;
+    border-radius: 10px;
+}
