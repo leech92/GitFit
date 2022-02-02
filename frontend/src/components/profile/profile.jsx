@@ -20,7 +20,7 @@ class Profile extends React.Component {
     if (!this.props.users.length) return null;
     
     let id = this.props.match.params.id; 
-    const { mealplans, destroyWorkout } = this.props;
+    const { mealplans, newMealplan, destroyWorkout } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
 
     let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
@@ -92,7 +92,7 @@ class Profile extends React.Component {
           <div className='profile-bottom-bottom'>
             <div> Good Money, Good Honey! </div>
             <button className='create-button' onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
-            <MealplanPreview mealplans={mealplans} openModal={this.props.openModal}/>
+            <MealplanPreview newMealplan={newMealplan} mealplans={mealplans} openModal={this.props.openModal}/>
           </div>
         </section>
 

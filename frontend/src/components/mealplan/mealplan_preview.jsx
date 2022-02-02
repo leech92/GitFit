@@ -8,12 +8,22 @@ class MealplanPreview extends React.Component {
     }
 
     render() {
-        const { mealplans } = this.props;
+        const { newMealplan, mealplans } = this.props;
 
         return(
             <div className="mealplan-pre-container">
                 <h1 className="mealplan-pre-head">My Meal Plans</h1>
                 <div className="mealplan-pre-bot">
+                    {/* {Object.keys(newMealplan).length ? 
+                        <Link className="mealplan-pre-link" to={`/mealplans/${newMealplan._id}`}>
+                            <div className="mealplan-inner-link">
+                                <h1 className="mealplan-pre-name">{newMealplan.name}</h1>
+                                <p className="mealplan-pre-type">Meal Plan Goal: {newMealplan.mealplanType}</p>
+                                <p className="mealplan-pre-desc">{newMealplan.description}</p>
+                            </div>
+                        </Link>
+                    : null
+                    }    */}
                     {mealplans.map((mealplan,idx) => {
                         return(
                             <Link key={idx} className="mealplan-pre-link" to={`/mealplans/${mealplan._id}`}>
