@@ -1,9 +1,8 @@
 .workout-image {
     height: 45vh;
     width: 20vw;
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px lightgray;
-    /* padding-bottom: 5px; */
+    /* border-radius: 8px; */
+    /* box-shadow: 5px 5px 5px lightgray; */
 }
 
 .discover-workout-container {
@@ -14,9 +13,15 @@
 .workout-list-item {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    /* justify-content: center; */
+    align-items: center;
+    width: 30%;
     padding-bottom: 10px;
+    padding-top: 10px;
+}
 
+.workout-list-item:hover{
+    background-color: #ffcb69;
 }
 
 .workout-list {
@@ -24,32 +29,8 @@
     flex-wrap: wrap;
     padding-top: 20px;
     width: 85vw;
-}
-
-.workout-motivation {
-    font-size: 3vh;
-    padding: 20px 20px 20px 20px;
-    position: absolute;
-    color: white;
-    width: 20vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.workout-video-container {
-    padding-top: 15px;
-    display: flex;
+    /* border: 2px solid gold; */
     justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.workout-banner {
-    height: 80vh;
-    width: 85vw;
 }
 
 .workout-motivation span {
@@ -63,4 +44,63 @@
 .workout-title {
     font-size: 4vh;
     padding-bottom: 5px;
+    text-align: center;
+    width: 80%;
 }
+
+.workout-top-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid yellow; */
+    padding-top: 15px;
+}
+
+.discover-workout-motivation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid hotpink; */
+}
+
+.workout-header{
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+.workout-message-content {
+    font-size: 20px;
+}
+/* .workout-img-arnold {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+} */
+/* .workout-motivation {
+    font-size: 3vh;
+    padding: 20px 20px 20px 20px;
+    position: absolute;
+    color: white;
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+} */
+
+/* .workout-video-container {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 15px;
+} */
+
+/* .workout-banner {
+    height: 80vh;
+    width: 85vw;
+} */
+

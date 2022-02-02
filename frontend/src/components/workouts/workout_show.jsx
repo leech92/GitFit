@@ -29,6 +29,7 @@ class WorkoutShow extends React.Component {
     render() {
         if (!this.props.exercises.length) return null;
         let workoutIncluded;
+        
         if (this.props.userWorkouts.length > 0) {
               this.props.userWorkouts.forEach( workout => {
                   
