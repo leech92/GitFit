@@ -96,9 +96,8 @@ class Profile extends React.Component {
           </div>
 
           <div className='profile-bottom-bottom'>
-            <div> Good Money, Good Honey! </div>
             <button className='create-button' onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
-            <MealplanPreview newMealplan={newMealplan} mealplans={mealplans} openModal={this.props.openModal}/>
+            <MealplanPreview mealplans={mealplans} openModal={this.props.openModal}/>
           </div>
         </section>
 
