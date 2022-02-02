@@ -65,6 +65,7 @@ class WorkoutShow extends React.Component {
 
                 <div className = "workout-show-title">
                     <span>Let's get it, time for some {this.props.workout.title}</span>
+                    <span className = "workout-show-description" style = {{"fontSize": "24px"}}>{this.props.workout.description}</span>
                 </div>
                 <ul className = "workout-show-list">
                     {exerciseItems}
