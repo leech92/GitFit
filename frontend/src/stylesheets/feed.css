@@ -1,9 +1,9 @@
-.feed-item {
+/* .feed-item {
     border-radius: 25px;
     height: 60px;
     margin: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 24px;
     font-family: 'Ubuntu';
@@ -18,4 +18,22 @@
     font-size: 32px;
     margin: 20px;
     text-decoration: underline;
+} */
+
+.feed-container {
+    padding: 20px;
+}
+
+
+#feed {
+    font-weight: bolder;
+    text-decoration: underline ;
+    font-size: 24px;
+}
+
+.feed-item {
+    border: 1px solid blue;
+    height: 100px;
+    margin-top: 10px;
+    width: 50%;
 }
