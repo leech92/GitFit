@@ -6,6 +6,7 @@
 .discover-workout-container {
     display: flex;
     flex-direction: column;
+    padding-bottom: 15px;
 }
 
 .workout-list-item {

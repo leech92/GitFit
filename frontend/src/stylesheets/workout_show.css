@@ -3,35 +3,10 @@
     flex-direction: column;
 }
 
-.workout-show-video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 20px;
-}
-
-.workout-show-video {
-    height: 80vh;
-    width: 85vw;
-}
-
-.workout-grind {
-    font-size: 3vh;
-    padding: 20px 20px 20px 20px;
-    position: absolute;
-    color: white;
-    width: 20vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 .workout-show-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     width: 42vw;
     padding-bottom: 15px;
 }
@@ -45,16 +20,15 @@
 }
 
 .workout-show-image {
-    height: 45vh;
-    width: 41vw;
-    border-radius: 16px;
-    box-shadow: 5px 5px 5px gray;
+    height: 35vh;
+    width: 35vw;
 }
 
 .exercise-details {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
+    width: 35vw;
 }
 
 .exercise-details span {
@@ -81,12 +55,17 @@
 }
 
 .add-workout-button {
-    background-color: #028476;
+    background-color: #fb8b24;
     color: white;
     border-radius: 8px;
     border: none;
     height: 5vh;
     width: 20vw;
     font-size: 4vh;
- 
+    cursor: pointer;
+}
+
+.exercise-name {
+    color: #028476;
+    padding-bottom: 5px;
 }
