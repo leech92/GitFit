@@ -43,7 +43,6 @@ class CreateMealplanForm extends React.Component {
         this.props.generateMealplan(data).then(() => {
             if (this.state.errors.length === 0) {
                 this.props.closeModal()
-                window.location.reload()
             }
         })
     }

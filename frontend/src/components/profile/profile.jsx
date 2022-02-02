@@ -16,6 +16,12 @@ class Profile extends React.Component {
     this.props.fetchUserWorkout(this.props.currentUser.id)
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.newMealplan !== prevProps.newMealplan) {
+      this.props.fetchUserMealplans(this.props.currentUser.id);
+    }
+  }
+
   render() {
     if (!this.props.users.length) return null;
     
