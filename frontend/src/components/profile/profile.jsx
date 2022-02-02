@@ -24,23 +24,23 @@ class Profile extends React.Component {
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
 
     let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
-      let photo;
-                if (workout.title === "Chest") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/superman.jpg"
-                } else if (workout.title === "Triceps") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/the-rock.jpg"
-                } else if (workout.title === "Back") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/back-pullup.jpg"
-                } else if (workout.title === "Shoulders") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
-                } else if (workout.title === "Legs") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
-                } else if (workout.title.includes("Abs")) {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
-                }
-                else {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
-                }
+      // let photo;
+      //           if (workout.title === "Chest") {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/superman.jpg"
+      //           } else if (workout.title === "Triceps") {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/the-rock.jpg"
+      //           } else if (workout.title === "Back") {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/back-pullup.jpg"
+      //           } else if (workout.title === "Shoulders") {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
+      //           } else if (workout.title === "Legs") {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
+      //           } else if (workout.title.includes("Abs")) {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
+      //           }
+      //           else {
+      //               photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
+      //           }
       let workoutUrl;
 
      for (let i = 0; i < this.props.allWorkouts.length; i++) {
@@ -52,7 +52,7 @@ class Profile extends React.Component {
 
       return (
         <li className = "profile-workout-item" key = {`workout-${idx}`}> <Link to = {`/workouts/${workoutUrl}`}>
-              <img src= {photo} alt= "workoutphoto" className = "profile-workout-pic" />
+              <img src= {workout.photo} alt= "workoutphoto" className = "profile-workout-pic" />
         </Link>
           <span className = "profile-workout-title">{workout.title}</span>
           <br />

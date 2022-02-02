@@ -23,10 +23,24 @@ class WorkoutShow extends React.Component {
         const id = this.props.match.params.id;
         this.props.fetchWorkout(id);
         this.props.fetchWorkoutExercises(id);
+        this.props.fetchUserWorkout(this.props.currentUserId)
     }
 
     render() {
         if (!this.props.exercises.length) return null;
+        let workoutIncluded;
+        if (this.props.userWorkouts.length > 0) {
+              this.props.userWorkouts.forEach( workout => {
+                  
+                if (workout.title === this.props.workout.title) {
+                    workoutIncluded = true;
+                }
+            })
+        }
+
+        let addWorkout = !workoutIncluded ?  <div className = "workout-show-button-container">
+                    <button onClick = {this.addWorkout} className = "add-workout-button">Add Workout</button>
+                </div> : null;
 
         const exerciseItems = this.props.exercises.map( (exercise, idx) => {
 
@@ -57,9 +71,7 @@ class WorkoutShow extends React.Component {
                 <ul className = "workout-show-list">
                     {exerciseItems}
                 </ul>
-                <div className = "workout-show-button-container">
-                    <button onClick = {this.addWorkout} className = "add-workout-button">Add Workout</button>
-                </div>
+               {addWorkout}
             </div>
         )
     }
