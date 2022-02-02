@@ -10,13 +10,18 @@ class CreateMealplanForm extends React.Component {
             protein: 0,
             carbs: 0,
             fat: 0,
-            description: ''
+            description: '',
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         this.props.removeMealPlanErrors();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({errors: nextProps.errors})
     }
 
     update(field) {
@@ -35,8 +40,24 @@ class CreateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        this.props.generateMealplan(data)
-        // window.location.reload();
+        this.props.generateMealplan(data).then(() => {
+            if (this.state.errors.length === 0) {
+                this.props.closeModal()
+                window.location.reload()
+            }
+        })
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`} className="mealplan-errors">
+                        {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -73,6 +94,7 @@ class CreateMealplanForm extends React.Component {
                             <p className="inp-label">Meal Plan Description</p>
                             <textarea className="inp-mp" id="txt-area" type="text" value={this.state.description} onChange={this.update('description')}/>
                         </div>
+                        {this.renderErrors()}
                         <button id="sub-create">Submit</button>
                     </div>
                </form>
