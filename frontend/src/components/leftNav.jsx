@@ -61,7 +61,7 @@ class LeftNav extends React.Component{
                 </section>
 
                 <section className='featured-buddies'>
-                    <h3 className='left-titles'> Featured </h3>
+                    <h3 className='left-titles'> Featured Users </h3>
                     <NavLink to='/users/61e78094771326308d954d5e'><div className="left-links">Tashi</div></NavLink>
                     <NavLink to='/users/61e8b5990a41587ae6dbcd2c'><div className="left-links">Marco</div></NavLink>
                     <NavLink to='/users/61e64a68d09b27b1fec83173'><div className="left-links">Anna</div></NavLink>
@@ -70,6 +70,7 @@ class LeftNav extends React.Component{
                 </section>
 
                 <section className="gym">
+                    <h3 className='left-titles'> Map </h3>
                     <NavLink to="/gym"><div className="left-links">Find a gym!</div></NavLink>
                 </section>
 

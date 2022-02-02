@@ -12,15 +12,14 @@
 }
 
 .left-nav {
-    width: 15%;
+    width: 17.5%;
     /* border:  1px solid burlywood; */
     border-right: 1px solid lightgray;
-    background-color: #DDFFF7; 
-    padding-right: 10px; 
+    /* background-color: #DDFFF7;  */
 }
 
 .middle-console {
     width: 100%;
     height: 100%;
-
 }
+

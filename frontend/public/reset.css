@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	text-decoration: none;
 	color: black;
-	font-family: 'Ubuntu', sans-serif
+	font-family: 'Ubuntu', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
