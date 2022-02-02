@@ -23,10 +23,25 @@ class WorkoutShow extends React.Component {
         const id = this.props.match.params.id;
         this.props.fetchWorkout(id);
         this.props.fetchWorkoutExercises(id);
+        this.props.fetchUserWorkout(this.props.currentUserId)
     }
 
     render() {
         if (!this.props.exercises.length) return null;
+        let workoutIncluded;
+
+        if (this.props.userWorkouts.length > 0) {
+              this.props.userWorkouts.forEach( workout => {
+                  
+                if (workout.title === this.props.workout.title) {
+                    workoutIncluded = true;
+                }
+            })
+        }
+
+        let addWorkout = !workoutIncluded ?  <div className = "workout-show-button-container">
+                    <button onClick = {this.addWorkout} className = "add-workout-button">Add Workout</button>
+                </div> : null;
 
         const exerciseItems = this.props.exercises.map( (exercise, idx) => {
 
@@ -47,19 +62,17 @@ class WorkoutShow extends React.Component {
         })
         return (
             <div className = "workout-show-container">
-                <div className = "workout-show-video-container">
+                {/* <div className = "workout-show-video-container">
                      <video src= "https://gitfit-app-images.s3.amazonaws.com/grind.mp4" autoPlay = {true} loop muted className = "workout-show-video"></video>
                      <span className = "workout-grind">SLEEP.SWEAT.GRIND.REPEAT.</span>
-                </div>
+                </div> */}
                 <div className = "workout-show-title">
                     <span>Let's get it, time for some {this.props.workout.title}</span>
                 </div>
                 <ul className = "workout-show-list">
                     {exerciseItems}
                 </ul>
-                <div className = "workout-show-button-container">
-                    <button onClick = {this.addWorkout} className = "add-workout-button">Add Workout</button>
-                </div>
+               {addWorkout}
             </div>
         )
     }

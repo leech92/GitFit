@@ -6,7 +6,6 @@ class DiscoverWorkouts extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllWorkouts();
-
     }
 
     render() {
@@ -24,27 +23,10 @@ class DiscoverWorkouts extends React.Component {
        
 
         const workoutItems = uniqueWorkouts.map((workout, idx) => {
-                let photo;
-
-                if (workout.title === "Chest") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/superman.jpg"
-                } else if (workout.title === "Triceps") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/the-rock.jpg"
-                } else if (workout.title === "Back") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/back-pullup.jpg"
-                } else if (workout.title === "Shoulders") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
-                } else if (workout.title === "Legs") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
-                } else if (workout.title.includes("Abs")) {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
-                }
-                else {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
-                }
+       
                 return (<li className = "workout-list-item" key = {`workout-${idx}`}>
                     <Link to = {`/workouts/${workout._id}`}>
-                        <img src= {photo} alt= "athlete" className = "workout-image"/>
+                        <img src= {workout.photo} alt= "athlete" className = "workout-image"/>
                     </Link>
                     <span className = "workout-title">{workout.title}</span>
                     <span className='workout-description'>{workout.description}</span>
@@ -54,17 +36,19 @@ class DiscoverWorkouts extends React.Component {
 
         return (
             <div className = "discover-workout-container">
-                <div className = "workout-video-container">
-                    <video src= "https://gitfit-app-images.s3.amazonaws.com/motivation.mp4" autoPlay = {true} loop muted className = "workout-banner"></video>
-                    <div className = "workout-motivation">
-                        <span className = "workout-message">“Just like in bodybuilding, failure is also a necessary experience for growth in our own lives, for if we’re never tested to our limits, how will we know how strong we really are? How will we ever grow?”</span>
-                        <span className = "workout-author">– Arnold Schwarzenegger</span>
+                <div className = "workout-top-message">
+
+                    <div className = "discover-workout-motivation">
+                        <span className = "workout-header">GitFit Workouts</span>
+                        <span className = "workout-message-content">Our workouts were created by the best, for the best. It's time to get it done. No excuses. </span>
                     </div>
                 </div>
-
+             
                 <ul className = "workout-list">
                     {workoutItems}
                 </ul>
+               
+               
             </div>
         )
     }
