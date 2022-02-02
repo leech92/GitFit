@@ -99,8 +99,11 @@
 }
 
 .profile-workout-item {
+    height: 70vh;
     width: 20vw;
     padding-right: 20px;
+    /* border: 2px solid blue; */
+    position: relative;
 }
 
 .profile-workout-title {
@@ -149,6 +152,8 @@
     border: none;
     cursor: pointer;
     visibility: hidden;
+    position: absolute;
+    bottom: 0;
 }
 
 .profile-workout-item:hover .delete-workout-button {
