@@ -29,7 +29,7 @@ class WorkoutShow extends React.Component {
     render() {
         if (!this.props.exercises.length) return null;
         let workoutIncluded;
-        
+
         if (this.props.userWorkouts.length > 0) {
               this.props.userWorkouts.forEach( workout => {
                   
@@ -62,10 +62,10 @@ class WorkoutShow extends React.Component {
         })
         return (
             <div className = "workout-show-container">
-                <div className = "workout-show-video-container">
+                {/* <div className = "workout-show-video-container">
                      <video src= "https://gitfit-app-images.s3.amazonaws.com/grind.mp4" autoPlay = {true} loop muted className = "workout-show-video"></video>
                      <span className = "workout-grind">SLEEP.SWEAT.GRIND.REPEAT.</span>
-                </div>
+                </div> */}
                 <div className = "workout-show-title">
                     <span>Let's get it, time for some {this.props.workout.title}</span>
                 </div>
