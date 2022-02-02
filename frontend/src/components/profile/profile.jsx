@@ -16,11 +16,17 @@ class Profile extends React.Component {
     this.props.fetchUserWorkout(this.props.currentUser.id)
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.newMealplan !== prevProps.newMealplan) {
+      this.props.fetchUserMealplans(this.props.currentUser.id);
+    }
+  }
+
   render() {
     if (!this.props.users.length) return null;
     
     let id = this.props.match.params.id; 
-    const { mealplans, destroyWorkout } = this.props;
+    const { mealplans, newMealplan, destroyWorkout } = this.props;
     const currentUser = this.props.users.filter(user =>user._id === this.props.currentUser.id)[0];
 
     let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
@@ -90,7 +96,6 @@ class Profile extends React.Component {
           </div>
 
           <div className='profile-bottom-bottom'>
-            <div> Good Money, Good Honey! </div>
             <button className='create-button' onClick={() => this.props.openModal('create mealplan')}>Create Meal Plan</button>
             <MealplanPreview mealplans={mealplans} openModal={this.props.openModal}/>
           </div>

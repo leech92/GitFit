@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     users: state.entities.users, 
     // buddy: state.entities.users[.match.params.id]
     mealplans: state.entities.mealplans.user,
+    newMealplan: state.entities.mealplans.new,
     workouts: state.entities.workouts.user,
     allWorkouts: state.entities.workouts.all
   };

@@ -6,10 +6,10 @@
 }
 
 .mealplan-pre-head{
-    margin-top: 5px;
-    font-size: 26px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 6vh;
     font-weight: bolder;
-    color: #028476;
 }
 
 .mealplan-pre-bot{
@@ -18,30 +18,51 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
 }
 
+.mealplan-pre-bot > a{
+    margin: 25px;
+}
+
+.mealplan-pre-link{
+    border: 25px;
+    padding: 20px;
+}
+
 .mealplan-inner-link{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    background-color: #ffcb69;
     border-radius: 15px;
-    padding: 10px;
-    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.mealplan-pre-link:hover{
+    background-color: #ffcb69;
+    border-radius: 15px;
+}
+
+.mealplan-photo{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+}
+
 .mealplan-pre-name{
-    font-size: 22px;
+    margin-top: 10px;
+    text-align: center;
+    width: 300px;
+    font-size: 3vh;
 }
 
 .mealplan-pre-type{
-    margin-top: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .mealplan-pre-desc{
-    margin-top: 5px;
+    text-align: center;
+    margin-top: 10px;
+    width: 300px;
+    color: gray;
 }

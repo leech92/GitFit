@@ -17,6 +17,7 @@ const MealplansReducer = (state = { specific: {}, user: [], new: {}, all: {} }, 
             return newState;
         case RECEIVE_NEW_MEALPLAN:
             newState.new = action.mealplan.data;
+            newState.user.push(action.mealplan.data);
             return newState;
         case REMOVE_MEALPLAN:
             delete newState.user[action.id]
