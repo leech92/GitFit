@@ -21,6 +21,7 @@ router.get('/:id', (req,res) => {
 router.post('/',
 
     (req,res) => {
+        
         const newExercise = new Exercise({
             workout: req.body.id,
             bodyPart: req.body.bodyPart,
