@@ -71,11 +71,15 @@ export const generateMealplan = data => dispatch => {
         }))
 }
 
-export const editMealplan = data => dispatch => (
+export const editMealplan = data => dispatch => {
+    return(
     updateMealplan(data)
-        .then(mealplan => dispatch(receiveUpdatedMealplan(mealplan)))
-        .catch(err => console.log(err))
-);
+        .then(mealplan => {
+            dispatch(receiveUpdatedMealplan(mealplan))
+        }, errors => {
+            dispatch(receiveMealPlanErrors(errors.response.data))
+        }))
+};
 
 export const destroyMealplan = id => dispatch => (
     deleteMealplan(id)

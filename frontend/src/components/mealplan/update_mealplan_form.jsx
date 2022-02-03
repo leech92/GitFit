@@ -10,9 +10,18 @@ class UpdateMealplanForm extends React.Component {
             protein: this.props.mealplan.protein,
             carbs: this.props.mealplan.carbs,
             fat: this.props.mealplan.fat,
-            description: this.props.mealplan.description
+            description: this.props.mealplan.description,
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.removeMealPlanErrors();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({errors: nextProps.errors})
     }
 
     update(field) {
@@ -22,7 +31,7 @@ class UpdateMealplanForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = {
-            user: this.props.userId,
+            id: this.props.mealplan._id,
             name: this.state.name,
             mealplanType: this.state.mealplanType,
             calories: this.state.calories,
@@ -31,8 +40,24 @@ class UpdateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        this.props.editMealplan(data)
-        window.location.reload();
+        this.props.editMealplan(data).then(() => {
+            if (this.state.errors.length === 0) {
+                this.props.closeModal()
+            } 
+        })
+        // window.location.reload();
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`} className="mealplan-errors">
+                        {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -69,6 +94,7 @@ class UpdateMealplanForm extends React.Component {
                         <input type="text" value={this.state.description} onChange={this.update('description')}/>
                     </div>
                     <button className="edit-mealplan-exit" onClick={this.props.closeModal}>Exit</button>
+                    {this.renderErrors()}
                     <button>Submit</button>
                </form>
             </div>
