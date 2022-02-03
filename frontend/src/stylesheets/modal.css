@@ -10,12 +10,14 @@
 
 .modal {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #028476;
+  /* background-color: #028476; */
+  background-color: white;
   border-radius: 25px;
-  width: 400px;
+  border: 5px solid #028476;
+  width: 300px;
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -36,26 +38,31 @@
 .in-form h1 {
     font-size: 24px;
     text-decoration: underline;
-    color: white;
+    color: #028476;
 }
 
 .inp-mp{
     border-radius: 25px;
-    padding: 5px;
+    padding: 10px;
     background-color: #B7E4C7;
-    text-align: center;
+    text-align: start;
     border: none;
-
 }
 
-.inp-label {
-    color: white;
+.inp-select {
+    border-radius: 25px;
+    height: 40px;
+    background-color: #B7E4C7;
+    color: grey;
+    padding: 10px;
 }
+
+
 
 #sub-create {
     border-radius: 5px;
     border: none;
-    background-color: white;
+    background-color: #028476;
     height: 40px;
     width: 80px;
     cursor: pointer;
@@ -64,7 +71,7 @@
 }
 
 #sub-create:hover {
-    background-color: grey;
+    background-color: white;
 }
 
 #txt-area {

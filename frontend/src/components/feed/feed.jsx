@@ -47,7 +47,7 @@ class Feed extends React.Component {
         const feed = [];
         while (feed.length < 10 && buddiesFeed.length) {
             let random = buddiesFeed[Math.floor(Math.random() * buddiesFeed.length)]
-            let type = random.fat? 'Mealplan' : 'Workout'
+            let type = random.mealplanType? 'Mealplan' : 'Workout'
             let typeName = random.mealplanType? random.name : random.title
             let userId = random.user
             let itemId = random._id
@@ -60,7 +60,11 @@ class Feed extends React.Component {
         const feedItem = (item) => (
             <div className="feed-item">
                 <h1>Check out {item.name}'s {item.type}: </h1>
-                {item.typeName} 
+                <div className="feed-data">
+                    <h3>{item.typeName} </h3>
+                    <img src={item.data.photo} alt="Photo" style={{'height': '250px'}} />
+                </div>
+                
             </div>
         )
 
@@ -68,6 +72,7 @@ class Feed extends React.Component {
             <div className="feed-container">
                 <h1 id="feed">Feed:</h1>
                 {feed.map(item => {
+                    debugger
                     return (
                          item.type === 'Mealplan' ?
                             // <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>

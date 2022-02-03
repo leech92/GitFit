@@ -29,11 +29,35 @@
     font-weight: bolder;
     text-decoration: underline ;
     font-size: 24px;
+    color: #028476;
 }
 
 .feed-item {
-    border: 1px solid blue;
-    height: 100px;
     margin-top: 10px;
     width: 50%;
+    display: flex;
+    padding: 10px;
+}
+
+.feed-item:hover {
+    background-color: #ccc;
+    border-radius: 20px;
+}
+
+.feed-item h1 {
+    color: #028476
+}
+
+.feed-data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+
+.feed-data h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline;
 }
