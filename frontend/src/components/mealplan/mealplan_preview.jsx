@@ -21,7 +21,7 @@ class MealplanPreview extends React.Component {
                                     <img className="mealplan-photo" src={mealplan.photo}/>
                                     <h1 className="mealplan-pre-name">{mealplan.name}</h1>
                                     <p className="mealplan-pre-type">Meal Plan Goal: {mealplan.mealplanType}</p>
-                                    <p className="mealplan-pre-desc">{mealplan.description}</p>
+                                    {/* <p className="mealplan-pre-desc">{mealplan.description}</p> */}
                                 </div>
                             </Link>
                         )
