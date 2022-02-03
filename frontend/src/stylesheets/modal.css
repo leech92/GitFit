@@ -50,6 +50,7 @@
 }
 
 .inp-select {
+    width: 190px;
     border-radius: 25px;
     height: 40px;
     background-color: #B7E4C7;
