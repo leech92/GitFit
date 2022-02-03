@@ -20,11 +20,10 @@ router.get('/:id', (req,res) => {
     Workout.findById(req.params.id)
         .then(workout => res.json(workout))
 });
-//had to change to user to pull ID from body. I might
-//need to change this later- Marco
+
 router.post('/',
     (req, res) => {
-        
+
         const newWorkout = new Workout({
             user: req.body.id,
             title: req.body.title,

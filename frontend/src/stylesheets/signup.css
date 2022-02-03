@@ -56,6 +56,6 @@
 }
 
 .session-errors {
-    color: white;
+    color: red;
     font-family: 'Ubuntu', sans-serif;
 }

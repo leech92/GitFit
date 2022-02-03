@@ -62,15 +62,16 @@ class WorkoutShow extends React.Component {
         })
         return (
             <div className = "workout-show-container">
-
+              
                 <div className = "workout-show-title">
                     <span>Let's get it, time for some {this.props.workout.title}</span>
                     <span className = "workout-show-description" style = {{"fontSize": "24px"}}>{this.props.workout.description}</span>
                 </div>
+                {addWorkout}
                 <ul className = "workout-show-list">
                     {exerciseItems}
                 </ul>
-               {addWorkout}
+               
             </div>
         )
     }
