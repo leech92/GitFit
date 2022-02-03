@@ -55,12 +55,17 @@ class Profile extends React.Component {
       <div className='profile-container'>
 
         <section className='profile-top'>
-          <p>Here's Your Story, Morning Glory</p>
-          <h3>Username: {currentUser.username}</h3>
-          <h3> Joined the Team on {currentUser.date.split("T")[0]} </h3>
-          <h3> Height: {currentUser.height} </h3>
-          <h3> Weight: {currentUser.weight} </h3>
-          <h3> Following {currentUser.following.length} buddies </h3>
+          <img src={currentUser.photo} alt="user-pic" className='user-profile-pic'/>
+          
+          <div className = "user-profile-info">
+            <p>Here's Your Story, Morning Glory</p>
+            <h3>Username: {currentUser.username}</h3>
+            <h3> Joined the Team on {currentUser.date.split("T")[0]} </h3>
+            <h3> Height: {currentUser.height} </h3>
+            <h3> Weight: {currentUser.weight} </h3>
+            <h3> Following {currentUser.following.length} buddies </h3>
+          </div>
+        
 
         </section>
 

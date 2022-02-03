@@ -38,6 +38,7 @@
 
 .workout-description {
     width: 20vw;
+    color: gray;
 }
 
 .workout-title {
@@ -68,4 +69,5 @@
 
 .workout-message-content {
     font-size: 20px;
+    color: gray;
 }

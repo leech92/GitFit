@@ -10,17 +10,6 @@
     line-height: 130%; 
 }
 
-.profile-top{
-    width: 100%;
-    color: #028476;  
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid lightgray;
-    justify-content: flex;
-    display: flex;
-}
-
 .profile-top-left {
     height: 100px; 
     width: 200px; 
@@ -90,15 +79,12 @@
     width: 20vw;
     height: 40vh;
     border-radius: 12px;
-    /* box-shadow: 5px 5px 5px lightgray; */
 }
 
 .profile-workout-list {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
     padding-top: 10px;
-    /* border: 2px solid gold; */
     width: 90%;
 }
 
@@ -137,10 +123,11 @@
 }
 
 .checkout-workout {
-    color: #003049;
+    color: #028476;
     font-size: 5vh;
     padding-top: 15px;
     padding-bottom: 15px;
+    text-align: center;
 }
 
 .create-button{
@@ -176,4 +163,23 @@
 
 .profile-workout-item:hover .delete-workout-button {
     visibility: visible;
+}
+
+.user-profile-pic {
+    width: 175px;
+    height: 125px;
+}
+
+.user-profile-info {
+    padding-left: 10px;
+}
+
+.profile-top{
+    width: 100%;
+    color: #028476;  
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
 }
