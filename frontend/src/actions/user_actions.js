@@ -22,7 +22,6 @@ export const fetchUsers = () => dispatch => (
 // export const follow = (object) => dispatch => (
 //     APIUtil.follow(object['loggedId'], object['profileId'])
 //         .then(object => {
-//             debugger
 //             dispatch(follow(object['loggedId'], object['profileId']))})
 // )
 

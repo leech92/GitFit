@@ -8,12 +8,10 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
 
     switch(action.type) {
         case RECEIVE_WORKOUT:
-            // debugger
             newState.specific = action.workout.data;
             return newState;
 
-        case RECEIVE_USER_WORKOUT: 
-            // debugger
+        case RECEIVE_USER_WORKOUT:
             newState.user = action.workouts.data;
             return newState;
         case RECEIVE_NEW_WORKOUT:
@@ -25,7 +23,6 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
             return newState;
         
         case REMOVE_WORKOUT:
-            debugger
             // delete newState.user[action.id];
             for (let i = 0; i < newState.user.length; i++) {
                 if (newState.user[i]._id === action.id) {
@@ -33,7 +30,6 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
                     break;
                 }
             }
-            // debugger
             return newState;
         default:
             return state;
