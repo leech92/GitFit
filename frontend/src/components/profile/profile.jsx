@@ -69,12 +69,13 @@ class Profile extends React.Component {
           <div className='profile-bottom-top'>
 
               <span className = "profile-myworkouts">My Workouts</span>
-              <ul className= 'profile-workout-list'>
 
-           
-
-                {userWorkouts}
-              </ul>
+              <div className = "profile-workout-list-container">
+                <ul className= 'profile-workout-list'>
+                  {userWorkouts}
+                </ul>
+              </div>
+             
           </div>
 
           <div className='profile-bottom-bottom'>
