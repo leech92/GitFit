@@ -2,7 +2,8 @@ import { RECEIVE_MEALPLAN,
          RECEIVE_USER_MEALPLANS, 
          RECEIVE_NEW_MEALPLAN,
          REMOVE_MEALPLAN,
-         RECEIVE_ALL_MEALPLANS
+         RECEIVE_ALL_MEALPLANS,
+         UPDATE_MEALPLAN
         } from "../actions/mealplan_actions";
 
 const MealplansReducer = (state = { specific: {}, user: [], new: {}, all: {} }, action) => {
@@ -18,6 +19,10 @@ const MealplansReducer = (state = { specific: {}, user: [], new: {}, all: {} }, 
         case RECEIVE_NEW_MEALPLAN:
             newState.new = action.mealplan.data;
             newState.user.push(action.mealplan.data);
+            return newState;
+        case UPDATE_MEALPLAN:
+            debugger
+            newState.specific = action.mealplan.data
             return newState;
         case REMOVE_MEALPLAN:
             delete newState.user[action.id]

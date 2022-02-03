@@ -52,7 +52,7 @@ class UpdateMealplanForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`} className="mealplan-errors">
+                    <li key={`error-${i}`} style={{'color': 'red'}} className="mealplan-errors">
                         {this.state.errors[error]}
                     </li>
                 ))}
