@@ -31,17 +31,18 @@ class Profile extends React.Component {
 
     let userWorkouts = this.props.workouts.length ? this.props.workouts.map((workout,idx) => {
   
-    let workoutUrl;
+    // let workoutUrl;
 
-     for (let i = 0; i < this.props.allWorkouts.length; i++) {
-       if (this.props.allWorkouts[i].title === workout.title) {
-         workoutUrl = this.props.allWorkouts[i]._id;
-         break;
-       }
-     }
+    //  for (let i = 0; i < this.props.allWorkouts.length; i++) {
+    //    if (this.props.allWorkouts[i].originId.length > 0) {
+    //      workoutUrl = this.props.allWorkouts[i].originId;
+    //    } else {
+    //      workoutUrl = this.props.allWorkouts[i]._id
+    //    }
+    //  }
 
       return (
-        <li className = "profile-workout-item" key = {`workout-${idx}`}> <Link to = {`/workouts/${workoutUrl}`}>
+        <li className = "profile-workout-item" key = {`workout-${idx}`}> <Link to = {`/workouts/${workout.originId}`}>
               <img src= {workout.photo} alt= "workoutphoto" className = "profile-workout-pic" />
         </Link>
           <span className = "profile-workout-title">{workout.title}</span>
@@ -50,6 +51,7 @@ class Profile extends React.Component {
         </li>
       )
     }) : <Link to = "/discoverWorkouts"><div>Check out some workouts!</div></Link>
+    
     return(
 
       <div className='profile-container'>

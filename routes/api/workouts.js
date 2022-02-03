@@ -28,7 +28,8 @@ router.post('/',
             user: req.body.id,
             title: req.body.title,
             description: req.body.description,
-            photo: req.body.photo
+            photo: req.body.photo,
+            originId: req.body.originId
         })
         
     newWorkout.save().then(workout => res.json(workout))
