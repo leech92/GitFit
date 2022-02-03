@@ -52,26 +52,35 @@ class Feed extends React.Component {
             let userId = random.user
             let itemId = random._id
             let buddyName = allUsers.filter(user => user._id === userId)[0].username;
-            let obj = {name: buddyName, type: type, data: random, typeName: typeName, itemId: itemId}
+            let userPhoto = allUsers.filter(user => user._id === userId)[0].photo;
+            let obj = {name: buddyName, type: type, data: random, typeName: typeName, itemId: itemId, userPhoto: userPhoto}
             feed.push(obj)
             buddiesFeed.splice(buddiesFeed.indexOf(random),1)
         }
 
-        const feedItem = (item) => (
-            <div className="feed-item">
-                <h1>Check out {item.name}'s {item.type}: </h1>
-                <div className="feed-data">
-                    <h3>{item.typeName} </h3>
-                    <img src={item.data.photo} alt="Photo" style={{'height': '250px'}} />
+        const feedItem = (item) => {
+
+            return (
+                <div className="feed-item">
+                    <div className="feed-buddy-container">
+                         <img src= {item.userPhoto} alt="" className="feed-user-photo"/>
+                         <h1>Check out {item.name}'s {item.type}: </h1>
+                    </div>
+                   
+                    <div className="feed-data">
+                        <h3>{item.typeName} </h3>
+                        <img src={item.data.photo} alt="Photo" className = "feed-img" />
+                    </div>
                 </div>
-                
-            </div>
-        )
+            )
+        }
 
         return (
             <div className="feed-container">
-                <h1 id="feed">Feed:</h1>
+                <div className = "feed-content-container">
+                <h1 id="feed">Here's what's going on in the GitFit Community</h1>
                 {feed.map(item => {
+
                     return (
                          item.type === 'Mealplan' ?
                             // <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>
@@ -79,6 +88,7 @@ class Feed extends React.Component {
                             : <Link key={item.id} to={`workouts/${item.itemId}`}>{feedItem(item)}</Link>
                     )
                 })}
+                </div>
             </div>
         )
     }

@@ -11,7 +11,11 @@ const WorkoutReducer = (state = { specific: {}, user: {}, new: {}, all: {} },act
             newState.specific = action.workout.data;
             return newState;
 
+
+        case RECEIVE_USER_WORKOUT: 
+
         case RECEIVE_USER_WORKOUT:
+
             newState.user = action.workouts.data;
             return newState;
         case RECEIVE_NEW_WORKOUT:

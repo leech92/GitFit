@@ -1,51 +1,40 @@
-/* .feed-item {
-    border-radius: 25px;
-    height: 60px;
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-    font-family: 'Ubuntu';
-    background-color: hsl(166, 100%, 93%);
-}
-
-.feed-item:hover{
-    background-color: hsl(273, 100%, 93%);
-}
-
-#feed {
-    font-size: 32px;
-    margin: 20px;
-    text-decoration: underline;
-} */
-
 .feed-container {
     padding: 20px;
+    background-color: #E7E9EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
+.feed-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #feed {
     font-weight: bolder;
-    text-decoration: underline ;
-    font-size: 24px;
+    font-size: 30px;
     color: #028476;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 .feed-item {
     margin-top: 10px;
-    width: 50%;
+    width: 800px;
     display: flex;
     padding: 10px;
-}
-
-.feed-item:hover {
-    background-color: #ccc;
+    margin-bottom: 15px;
+    background-color: white;
     border-radius: 20px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
 }
 
 .feed-item h1 {
-    color: #028476
+    color: #028476;
+    padding-left: 10px;
 }
 
 .feed-data{
@@ -53,11 +42,29 @@
     flex-direction: column;
     margin-left: 10px;
     justify-content: space-between;
+    align-items: center;
 }
 
 
 .feed-data h3 {
     margin-bottom: 10px;
     font-weight: bold;
-    text-decoration: underline;
+    text-align: center;
+}
+
+.feed-img {
+    height: 350px;
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+.feed-user-photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.feed-buddy-container {
+    display: flex;
+    align-items: center;
 }

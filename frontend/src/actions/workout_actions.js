@@ -73,6 +73,7 @@ export const fetchAllWorkouts = () => dispatch => {
 };
 
 export const destroyWorkout = id => dispatch => {
+
     return deleteWorkout(id)
     .then(() => dispatch(removeWorkout(id)))
     .catch(error => console.log(error))
