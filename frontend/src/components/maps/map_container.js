@@ -22,7 +22,7 @@ class MapContainer extends React.Component {
             let lat = pos.coords.latitude;
             let long = pos.coords.longitude;
             this.setState({ lat: lat, lng: long });
-            this.map = new google.maps.Map(this.mapNode, {center: {lat: this.state.lat, lng: this.state.lng}, zoom: 16})
+            this.map = new window.google.maps.Map(this.mapNode, { mapId: "8e0a97af9386fef", center: {lat: this.state.lat, lng: this.state.lng}, zoom: 16})
             let position = new google.maps.LatLng(this.state.lat, this.state.lng);
             let marker = new google.maps.Marker({
                 position: position,
@@ -84,7 +84,7 @@ class MapContainer extends React.Component {
 
     render() {
         return (  
-            <div id="map" style={{ 'height': '700px' }} ref={map => this.mapNode = map}>      
+            <div id="map" style={{ 'height': '700px' }} ref={map => this.mapNode = map}>     
             </div>  
     
         )
