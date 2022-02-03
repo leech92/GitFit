@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer'> 
             <div className='footer-tech'> 
-                <h1>Technology</h1>
+                <h1 className = "footer-header" style = {{'fontSize': "22px"}}>Technology</h1>
                 <p>MongoDB</p>
                 <p>Express</p>
                 <p>React</p>
@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
 
             <div className='footer-peers'>
-                <h1>WORK WITH ME </h1>
+                <h1 className = "footer-header" style = {{'fontSize': "22px"}}>WORK WITH ME </h1>
                 <p>Tashi Sangpo, Assistant Janitor, Fearless Leader</p>
                 <p>Marco Countryman, Director of Design and Aquisitions</p>
                 <p>Anna Trott-Herdrich, President of NA Engineering</p>
@@ -24,12 +24,12 @@ const Footer = () => {
 
             <div className='footer-connect'> CONNECT
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-                <div className='socials'> 
+                <div className='socials' > 
                     <h1>Tashi Sangpo</h1>
                     <div>
-                        <a href="" target="_blank" className="fa fa-linkedin"></a>
-                        <a href="" target="_blank" className="fa fa-github"></a>
-                        <a href="" target="_blank" className="fa fa-instagram">
+                        <a href="https://www.linkedin.com/in/tashi-s-a868a2185/" target="_blank" className="fa fa-linkedin"></a>
+                        <a href="https://github.com/tasangpo" target="_blank" className="fa fa-github"></a>
+                        <a href="https://angel.co/u/tashi-sangpo" target="_blank" className="fa fa-instagram">
                         </a>
                     </div>
                     
@@ -37,9 +37,9 @@ const Footer = () => {
                 <div className='socials'> 
                     <h1>Marco Countryman</h1>
                     <div>   
-                        <a href="" target="_blank" className="fa fa-linkedin"></a>
-                        <a href="" target="_blank" className="fa fa-github"></a>
-                        <a href="" target="_blank" className="fa fa-instagram">
+                        <a href="https://www.linkedin.com/in/marco-countryman-40492922a/" target="_blank" className="fa fa-linkedin"></a>
+                        <a href="https://github.com/marcocountryman" target="_blank" className="fa fa-github"></a>
+                        <a href="https://angel.co/u/marco-countryman" target="_blank" className="fa fa-instagram">
                         </a>
                     </div>
                     

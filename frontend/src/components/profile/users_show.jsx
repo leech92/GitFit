@@ -74,34 +74,13 @@ class UsersProfile extends React.Component {
         </Link> :
         this.props.workouts.map((workout,idx) => {
 
-            let photo;
-                if (workout.title === "Chest") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/superman.jpg"
-                } else if (workout.title === "Triceps") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/the-rock.jpg"
-                } else if (workout.title === "Back") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/back-pullup.jpg"
-                } else if (workout.title === "Shoulders") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/brolic.jpg"
-                } else if (workout.title === "Legs") {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/legs.jpg"
-                } else if (workout.title.includes("Abs")) {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/summer-bod.jpg"
-                }
-                else {
-                    photo = "https://gitfit-app-images.s3.amazonaws.com/newarnold.jpg"
-                }
             return (
-                <li key = {`workout-${idx}`} className = "profile-workout-item">
-                    
+                <li key = {`workout-${idx}`} className = "profile-workout-item">   
                     <Link to = {`/workouts/${workout._id}`}>
-                        <img src= {photo} alt= "user-show" className = "profile-workout-pic"/>
+                        <img src= {workout.photo} alt= "user-show" className = "profile-workout-pic"/>
                     </Link>
-                    <span className = "profile-workout-title">{workout.title}</span>
-                    
+                    <span className = "profile-workout-title">{workout.title}</span>   
                     <br />
-
-                    <span className = "profile-workout-description">{workout.description}</span>
                 </li>
                   )
             })
