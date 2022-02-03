@@ -27,9 +27,9 @@ const Footer = () => {
                 <div className='socials'> 
                     <h1>Tashi Sangpo</h1>
                     <div>
-                        <a href="" target="_blank" className="fa fa-linkedin"></a>
-                        <a href="" target="_blank" className="fa fa-github"></a>
-                        <a href="" target="_blank" className="fa fa-instagram">
+                        <a href="https://www.linkedin.com/in/tashi-s-a868a2185/" target="_blank" className="fa fa-linkedin"></a>
+                        <a href="https://github.com/tasangpo" target="_blank" className="fa fa-github"></a>
+                        <a href="https://angel.co/u/tashi-sangpo" target="_blank" className="fa fa-instagram">
                         </a>
                     </div>
                     
@@ -37,9 +37,9 @@ const Footer = () => {
                 <div className='socials'> 
                     <h1>Marco Countryman</h1>
                     <div>   
-                        <a href="" target="_blank" className="fa fa-linkedin"></a>
-                        <a href="" target="_blank" className="fa fa-github"></a>
-                        <a href="" target="_blank" className="fa fa-instagram">
+                        <a href="https://www.linkedin.com/in/marco-countryman-40492922a/" target="_blank" className="fa fa-linkedin"></a>
+                        <a href="https://github.com/marcocountryman" target="_blank" className="fa fa-github"></a>
+                        <a href="https://angel.co/u/marco-countryman" target="_blank" className="fa fa-instagram">
                         </a>
                     </div>
                     
