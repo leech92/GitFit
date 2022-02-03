@@ -46,8 +46,6 @@ class Profile extends React.Component {
         </Link>
           <span className = "profile-workout-title">{workout.title}</span>
           <br />
-          <span className = "profile-workout-description">{workout.description}</span>
-          <br />
           <FaTrash className = "delete-workout-button" onClick = {() => destroyWorkout(workout._id).then(() => this.props.fetchUserWorkout(this.props.currentUser.id))}/>
         </li>
       )
@@ -71,12 +69,13 @@ class Profile extends React.Component {
           <div className='profile-bottom-top'>
 
               <span className = "profile-myworkouts">My Workouts</span>
-              <ul className= 'profile-workout-list'>
 
-           
-
-                {userWorkouts}
-              </ul>
+              <div className = "profile-workout-list-container">
+                <ul className= 'profile-workout-list'>
+                  {userWorkouts}
+                </ul>
+              </div>
+             
           </div>
 
           <div className='profile-bottom-bottom'>
