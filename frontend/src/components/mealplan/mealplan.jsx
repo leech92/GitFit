@@ -13,15 +13,7 @@ class Mealplan extends React.Component {
         this.props.fetchMealplanMeals(this.props.match.params.id);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.mealplan !== prevProps.mealplan) {
-    //         this.props.fetchMealplan(this.props.match.params.id);
-    //         this.props.fetchMealplanMeals(this.props.match.params.id);
-    //     }
-    // }
-
     handleDelete() {
-        
         this.props.destroyMealplan(this.props.match.params.id)
             .then(() => this.props.history.push('/profile'))
     }

@@ -75,6 +75,7 @@ export const editMealplan = data => dispatch => {
     return(
     updateMealplan(data)
         .then(mealplan => {
+            debugger
             dispatch(receiveUpdatedMealplan(mealplan))
         }, errors => {
             dispatch(receiveMealPlanErrors(errors.response.data))

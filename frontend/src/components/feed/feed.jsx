@@ -72,7 +72,6 @@ class Feed extends React.Component {
             <div className="feed-container">
                 <h1 id="feed">Feed:</h1>
                 {feed.map(item => {
-                    debugger
                     return (
                          item.type === 'Mealplan' ?
                             // <Link key={item.id} to={`mealplans/${item.itemId}`}><div className="feed-item">Check out {item.name}'s {item.type}: {item.typeName} </div></Link>

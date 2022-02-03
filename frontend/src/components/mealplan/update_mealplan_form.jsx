@@ -40,7 +40,6 @@ class UpdateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        debugger
         this.props.editMealplan(data).then(() => {
             if (this.state.errors.length === 0) {
                 this.props.closeModal()
@@ -53,7 +52,7 @@ class UpdateMealplanForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`} className="mealplan-errors">
+                    <li key={`error-${i}`} style={{'color': 'red'}} className="mealplan-errors">
                         {this.state.errors[error]}
                     </li>
                 ))}

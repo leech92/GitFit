@@ -40,7 +40,6 @@ class CreateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
-        debugger
         this.props.generateMealplan(data).then(() => {
             if (this.state.errors.length === 0) {
                 this.props.closeModal()
