@@ -7,10 +7,10 @@ module.exports = function validateMealplanInput(data) {
     
     data.name = validText(data.name) ? data.name : '';
     data.mealplanType = validText(data.mealplanType) ? data.mealplanType : '';
-    data.calories = validNumber(data.calories) ? data.calories : 0;
-    data.protein = validNumber(data.protein) ? data.protein : 0;
-    data.carbs = validNumber(data.carbs) ? data.carbs : 0;
-    data.fat = validNumber(data.fat) ? data.fat : 0;
+    data.calories = validNumber(parseInt(data.calories)) ? data.calories : 0;
+    data.protein = validNumber(parseInt(data.protein)) ? data.protein : 0;
+    data.carbs = validNumber(parseInt(data.carbs)) ? data.carbs : 0;
+    data.fat = validNumber(parseInt(data.fat)) ? data.fat : 0;
     data.description = validText(data.description) ? data.description : '';
 
     if (Validator.isEmpty(data.name)) {

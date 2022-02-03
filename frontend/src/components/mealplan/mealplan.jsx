@@ -64,7 +64,7 @@ class Mealplan extends React.Component {
                     <p className="mealplan-carbs">Carbs: {mealplan.carbs} grams</p>
                     <p className="mealplan-fat">Fat: {mealplan.fat} grams</p>
                 </div>
-                <button onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button>
+                <button className="mealplan-button" onClick={() => this.props.openModal('update mealplan')}>Edit Meal Plan</button>
                 {mealplan.user === this.props.currentUserId ? <button className='mealplan-button' onClick={this.handleDelete}>Delete Mealplan</button> : <button className='mealplan-button' onClick={() => setTimeout(() => this.handleAdd(), 100)} id="add-btn">Add to my meal plan</button>}
                 <Meals meals={meals}/>
             </div>

@@ -40,6 +40,7 @@ class CreateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
+        debugger
         this.props.generateMealplan(data).then(() => {
             if (this.state.errors.length === 0) {
                 this.props.closeModal()
@@ -72,7 +73,7 @@ class CreateMealplanForm extends React.Component {
                         <div className="create-mealplan-type">
                             {/* <p className="inp-label">Meal Plan Type</p>
                             <input className="inp-mp" type="text" value={this.state.mealplanType} onChange={this.update('mealplanType')}/> */}
-                            <select className="inp-select">
+                            <select className="inp-select" onChange={this.update('mealplanType')}>
                                 <option disabled selected value="">Choose Mealplan Type</option>
                                 <option value="Cut">Cut</option>
                                 <option value="Bulk">Bulk</option>

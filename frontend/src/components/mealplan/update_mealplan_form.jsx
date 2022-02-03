@@ -40,6 +40,7 @@ class UpdateMealplanForm extends React.Component {
             fat: this.state.fat,
             description: this.state.description
         }
+        debugger
         this.props.editMealplan(data).then(() => {
             if (this.state.errors.length === 0) {
                 this.props.closeModal()
@@ -61,41 +62,62 @@ class UpdateMealplanForm extends React.Component {
     }
 
     render() {
+        const mealplanType = (type) => {
+            if (type === this.state.mealplanType) {
+                return <option value={type} selected>{type}</option>
+            } else{
+                return <option value={type}>{type}</option>
+            }
+        }
+
         return (
             <div className="edit-mealplan-container">
                 <form className="edit-mealplan-form" onSubmit={this.handleSubmit}>
-                    <h1>Edit Mealplan</h1>
-                    <div className="edit-mealplan-name">
-                        <p>Meal Plan Name</p>
-                        <input type="text" value={this.state.name} onChange={this.update('name')}/>
+                    <div className="in-form">
+                        <h1>Edit Mealplan</h1>
+                        <div className="edit-mealplan-name">
+                            <p>Meal Plan Name</p>
+                            <input className="inp-mp" type="text" value={this.state.name} placeholder={this.state.name} onChange={this.update('name')}/>
+                        </div>
+                        <div className="edit-mealplan-type">
+                            <p>Meal Plan Type</p>
+                            <select className="inp-select" onChange={this.update('mealplanType')}>
+                                {/* <option disabled value="">Choose Mealplan Type</option> */}
+                                {mealplanType("Cut")}
+                                {mealplanType("Bulk")}
+                                {mealplanType("Super Bulk")}
+                                {mealplanType("Healthy")}
+                            </select>
+                        </div>
+                        <div className="edit-mealplan-calories">
+                            <p>Daily Calories</p>
+                            <input className="inp-mp" type="number" min={0.00} value={this.state.calories} placeholder={this.state.calories} onChange={this.update('calories')}/>
+                            {/* <input type="text" value={this.state.calories} onChange={this.update('calories')}/> */}
+                        </div>
+                        <div className="edit-mealplan-protein">
+                            <p>Daily Protein</p>
+                            <input className="inp-mp" type="number" min={0.00} value={this.state.protein} placeholder={this.state.protein} onChange={this.update('protein')}/>
+                            {/* <input type="text" value={this.state.protein} onChange={this.update('protein')}/> */}
+                        </div >
+                        <div className="edit-mealplan-carbs">
+                            <p>Daily Carbs</p>
+                            <input className="inp-mp" type="number" min={0.00} value={this.state.carbs} placeholder={this.state.carbs} onChange={this.update('carbs')}/>
+                            {/* <input type="text" placeholder={this.state.carbs} onChange={this.update('carbs')}/> */}
+                        </div>
+                        <div className="edit-mealplan-fat">
+                            <p>Daily Fat</p>
+                            <input className="inp-mp" type="number" min={0.00} value={this.state.fat} placeholder={this.state.fat} onChange={this.update('fat')}/>
+                            {/* <input type="text" value={this.state.fat} onChange={this.update('fat')}/> */}
+                        </div>
+                        <div className="edit-mealplan-desc">
+                            <p>Meal Plan Description</p>
+                            <textarea className="inp-mp" id="txt-area" type="text" value={this.state.description} placeholder={this.state.description} onChange={this.update('description')}/>
+                            {/* <input type="text" value={this.state.description} onChange={this.update('description')}/> */}
+                        </div>
+                        {/* <button className="edit-mealplan-exit" onClick={this.props.closeModal}>Exit</button> */}
+                        {this.renderErrors()}
+                        <button id="sub-create">Submit</button>
                     </div>
-                    <div className="edit-mealplan-type">
-                        <p>Meal Plan Type</p>
-                        <input type="text" value={this.state.mealplanType} onChange={this.update('mealplanType')}/>
-                    </div>
-                    <div className="edit-mealplan-calories">
-                        <p>Daily Calories</p>
-                        <input type="text" value={this.state.calories} onChange={this.update('calories')}/>
-                    </div>
-                    <div className="edit-mealplan-protein">
-                        <p>Daily Protein</p>
-                        <input type="text" value={this.state.protein} onChange={this.update('protein')}/>
-                    </div >
-                    <div className="edit-mealplan-carbs">
-                        <p>Daily Carbs</p>
-                        <input type="text" value={this.state.carbs} onChange={this.update('carbs')}/>
-                    </div>
-                    <div className="edit-mealplan-fat">
-                        <p>Daily Fat</p>
-                        <input type="text" value={this.state.fat} onChange={this.update('fat')}/>
-                    </div>
-                    <div className="edit-mealplan-desc">
-                        <p>Meal Plan Description</p>
-                        <input type="text" value={this.state.description} onChange={this.update('description')}/>
-                    </div>
-                    <button className="edit-mealplan-exit" onClick={this.props.closeModal}>Exit</button>
-                    {this.renderErrors()}
-                    <button>Submit</button>
                </form>
             </div>
         )
