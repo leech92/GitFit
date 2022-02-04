@@ -23,8 +23,8 @@ class MapContainer extends React.Component {
             let long = pos.coords.longitude;
             this.setState({ lat: lat, lng: long });
             this.map = new window.google.maps.Map(this.mapNode, { mapId: "8e0a97af9386fef", center: {lat: this.state.lat, lng: this.state.lng}, zoom: 16})
-            let position = new google.maps.LatLng(this.state.lat, this.state.lng);
-            let marker = new google.maps.Marker({
+            let position = new window.google.maps.LatLng(this.state.lat, this.state.lng);
+            let marker = new window.google.maps.Marker({
                 position: position,
                 map: this.map,
                 icon: "https://img.icons8.com/fluency/48/000000/home-page.png"
@@ -37,13 +37,13 @@ class MapContainer extends React.Component {
     }
 
     searchGyms() {
-        this.service = new google.maps.places.PlacesService(this.map);
+        this.service = new window.google.maps.places.PlacesService(this.map);
         this.service.nearbySearch({
             location: { lat: this.state.lat, lng: this.state.lng},
             radius: 5000,
             type: ['gym']
         }, (result, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
+            if (status === window.google.maps.places.PlacesServiceStatus.OK) {
                 for (let item of result) {
                     let obj = {};
                     let location = item.geometry.location.toString().slice(1,-1);
@@ -51,8 +51,8 @@ class MapContainer extends React.Component {
                     this.setState({results: this.state.results.concat([obj])})
                     let lat = parseFloat(location.split(' ')[0]);
                     let lng = parseFloat(location.split(' ')[1]);
-                    let position = new google.maps.LatLng(lat, lng);
-                    let marker = new google.maps.Marker({
+                    let position = new window.google.maps.LatLng(lat, lng);
+                    let marker = new window.google.maps.Marker({
                         position: position,
                         map: this.map,
                         icon: "https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-gym-location-pins-soft-fill-soft-fill-juicy-fish.png"
@@ -63,7 +63,7 @@ class MapContainer extends React.Component {
 
                     const contentString = '<div>' + `<h1>Name: ${name}</h1>` + `<h2>Address: ${address}</h2>` + `<h2> Rating: ${rating}</h2>` +  '</div>'
                     
-                    const infowindow = new google.maps.InfoWindow({
+                    const infowindow = new window.google.maps.InfoWindow({
                         content: contentString
                     })
 
