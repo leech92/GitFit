@@ -2,7 +2,7 @@ import React from 'react';
 import MealplanPreview from '../mealplan/mealplan_preview';
 import "../../stylesheets/profile.css";
 import { Link } from 'react-router-dom';
-import { FaTrash } from 'react-icons/fa'
+import { FaTrash } from 'react-icons/fa';
 
 class Profile extends React.Component {
 
